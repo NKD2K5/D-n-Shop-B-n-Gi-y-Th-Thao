@@ -1,6 +1,6 @@
 ﻿namespace Dự_Án_Shop_Bán_Giầy_Thể_Thao
 {
-    partial class Form1
+    partial class Hóa_Đơn
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            menuStrip1 = new MenuStrip();
+            label1 = new Label();
+            dataGridView1 = new DataGridView();
+            dataGridView2 = new DataGridView();
+            button1 = new Button();
             áoToolStripMenuItem = new ToolStripMenuItem();
             giầyTennisToolStripMenuItem = new ToolStripMenuItem();
             giầyĐáBóngToolStripMenuItem = new ToolStripMenuItem();
@@ -50,18 +53,51 @@
             đơnHàngToolStripMenuItem = new ToolStripMenuItem();
             giỏHàngToolStripMenuItem = new ToolStripMenuItem();
             liênHệToolStripMenuItem = new ToolStripMenuItem();
+            menuStrip1 = new MenuStrip();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
-            // menuStrip1
+            // label1
             // 
-            menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { áoToolStripMenuItem, quầnToolStripMenuItem, tấtToolStripMenuItem, đơnHàngToolStripMenuItem, giỏHàngToolStripMenuItem, liênHệToolStripMenuItem });
-            menuStrip1.Location = new Point(0, 0);
-            menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(937, 33);
-            menuStrip1.TabIndex = 1;
-            menuStrip1.Text = "menuStrip1";
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(16, 53);
+            label1.Name = "label1";
+            label1.Size = new Size(190, 28);
+            label1.TabIndex = 1;
+            label1.Text = "Trang Chủ/Giỏ Hàng";
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(24, 102);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.RowTemplate.Height = 29;
+            dataGridView1.Size = new Size(374, 515);
+            dataGridView1.TabIndex = 2;
+            // 
+            // dataGridView2
+            // 
+            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView2.Location = new Point(425, 102);
+            dataGridView2.Name = "dataGridView2";
+            dataGridView2.RowHeadersWidth = 51;
+            dataGridView2.RowTemplate.Height = 29;
+            dataGridView2.Size = new Size(462, 440);
+            dataGridView2.TabIndex = 3;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(425, 574);
+            button1.Name = "button1";
+            button1.Size = new Size(462, 43);
+            button1.TabIndex = 4;
+            button1.Text = "Thanh Toán ";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // áoToolStripMenuItem
             // 
@@ -213,14 +249,31 @@
             liênHệToolStripMenuItem.Size = new Size(89, 29);
             liênHệToolStripMenuItem.Text = "Liên Hệ";
             // 
-            // Form1
+            // menuStrip1
+            // 
+            menuStrip1.ImageScalingSize = new Size(20, 20);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { áoToolStripMenuItem, quầnToolStripMenuItem, tấtToolStripMenuItem, đơnHàngToolStripMenuItem, giỏHàngToolStripMenuItem, liênHệToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(953, 33);
+            menuStrip1.TabIndex = 0;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // Hóa_Đơn
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(937, 663);
+            ClientSize = new Size(953, 678);
+            Controls.Add(button1);
+            Controls.Add(dataGridView2);
+            Controls.Add(dataGridView1);
+            Controls.Add(label1);
             Controls.Add(menuStrip1);
-            Name = "Form1";
-            Text = "Form1";
+            MainMenuStrip = menuStrip1;
+            Name = "Hóa_Đơn";
+            Text = "Hóa_Đơn";
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);
@@ -228,8 +281,10 @@
         }
 
         #endregion
-
-        private MenuStrip menuStrip1;
+        private Label label1;
+        private DataGridView dataGridView1;
+        private DataGridView dataGridView2;
+        private Button button1;
         private ToolStripMenuItem áoToolStripMenuItem;
         private ToolStripMenuItem giầyTennisToolStripMenuItem;
         private ToolStripMenuItem giầyĐáBóngToolStripMenuItem;
@@ -251,5 +306,6 @@
         private ToolStripMenuItem đơnHàngToolStripMenuItem;
         private ToolStripMenuItem giỏHàngToolStripMenuItem;
         private ToolStripMenuItem liênHệToolStripMenuItem;
+        private MenuStrip menuStrip1;
     }
 }

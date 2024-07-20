@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Dự_Án_Shop_Bán_Giầy_Thể_Thao
 {
-    public partial class Form1 : Form
+    public partial class Hóa_Đơn : Form
     {
-        public Form1()
+        public Hóa_Đơn()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
