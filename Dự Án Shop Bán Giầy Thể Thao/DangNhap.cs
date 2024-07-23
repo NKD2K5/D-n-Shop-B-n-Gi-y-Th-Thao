@@ -10,14 +10,17 @@ namespace Dự_Án_Shop_Bán_Giầy_Thể_Thao
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             DangKy dangKy = new DangKy();
-            dangKy.ShowDialog();
+            dangKy.Show();
+            this.Hide();
+
         }
 
         private void QuanMatKhau_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             QuenMatKhau quanMatKhau = new QuenMatKhau();
-            quanMatKhau.ShowDialog();
-        }
+            quanMatKhau.Show();
+            this.Hide();
+;        }
 
         private void btn_DangNhap_Click(object sender, EventArgs e)
         {
@@ -30,7 +33,9 @@ namespace Dự_Án_Shop_Bán_Giầy_Thể_Thao
 
             if (loginSuccess)
             {
-                MessageBox.Show("Đăng nhập thành công!");
+                this.Hide();
+                TrangChu trangChu = new TrangChu();
+                trangChu.Show();
                 // Mở form chính của ứng dụng hoặc thực hiện hành động sau khi đăng nhập thành công
             }
             else
@@ -41,7 +46,7 @@ namespace Dự_Án_Shop_Bán_Giầy_Thể_Thao
         private bool CheckLogin(string username, string password)
         {
             // Thay thế bằng logic kiểm tra thực sự của bạn, ví dụ: kiểm tra từ cơ sở dữ liệu
-            if (username == "admin" && password == "admin")
+            if (username == "" && password == "")
             {
                 return true;
             }

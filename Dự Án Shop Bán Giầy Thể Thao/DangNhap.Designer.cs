@@ -84,6 +84,7 @@
             txt_MatKhau.Name = "txt_MatKhau";
             txt_MatKhau.Size = new Size(220, 27);
             txt_MatKhau.TabIndex = 4;
+            txt_MatKhau.UseSystemPasswordChar = true;
             // 
             // DangKy
             // 

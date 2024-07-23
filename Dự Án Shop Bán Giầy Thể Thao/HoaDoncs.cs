@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace Dự_Án_Shop_Bán_Giầy_Thể_Thao
 {
-    public partial class Hóa_Đơn : Form
+    public partial class HoaDoncs : Form
     {
-        public Hóa_Đơn()
+        public HoaDoncs()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void HoaDoncs_Load(object sender, EventArgs e)
         {
 
         }
