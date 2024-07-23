@@ -78,8 +78,8 @@
             button12 = new Button();
             panel2 = new Panel();
             panel4 = new Panel();
-            label15 = new Label();
             label16 = new Label();
+            label15 = new Label();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -285,7 +285,7 @@
             // 
             // button11
             // 
-            button11.BackColor = SystemColors.GradientActiveCaption;
+            button11.BackColor = SystemColors.GradientInactiveCaption;
             button11.Font = new Font("Segoe UI", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             button11.Location = new Point(289, 21);
             button11.Name = "button11";
@@ -614,16 +614,6 @@
             panel4.Size = new Size(1570, 157);
             panel4.TabIndex = 6;
             // 
-            // label15
-            // 
-            label15.AutoSize = true;
-            label15.Font = new Font("SimSun", 19.8000011F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            label15.Location = new Point(522, 30);
-            label15.Name = "label15";
-            label15.Size = new Size(555, 34);
-            label15.TabIndex = 9;
-            label15.Text = "Fpoly Shop Xin Chào Quý Khách \r\n";
-            // 
             // label16
             // 
             label16.AutoSize = true;
@@ -633,6 +623,16 @@
             label16.Size = new Size(214, 28);
             label16.TabIndex = 10;
             label16.Text = "Trang Chủ/Bán Hàng";
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Font = new Font("SimSun", 19.8000011F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            label15.Location = new Point(522, 30);
+            label15.Name = "label15";
+            label15.Size = new Size(555, 34);
+            label15.TabIndex = 9;
+            label15.Text = "Fpoly Shop Xin Chào Quý Khách \r\n";
             // 
             // TrangChu
             // 
