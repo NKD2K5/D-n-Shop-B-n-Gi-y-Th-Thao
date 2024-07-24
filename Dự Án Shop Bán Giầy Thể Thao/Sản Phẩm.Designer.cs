@@ -49,21 +49,22 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.BackgroundColor = SystemColors.ControlLight;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 187);
+            dataGridView1.Location = new Point(1, 212);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new Size(1342, 546);
+            dataGridView1.Size = new Size(1045, 629);
             dataGridView1.TabIndex = 0;
             // 
             // button1
             // 
             button1.BackColor = SystemColors.GradientActiveCaption;
             button1.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            button1.Location = new Point(1035, 112);
+            button1.Location = new Point(99, 156);
             button1.Name = "button1";
-            button1.Size = new Size(107, 38);
+            button1.Size = new Size(271, 38);
             button1.TabIndex = 1;
             button1.Text = "Thêm ";
             button1.UseVisualStyleBackColor = false;
@@ -72,9 +73,9 @@
             // 
             button2.BackColor = SystemColors.GradientActiveCaption;
             button2.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            button2.Location = new Point(1268, 112);
+            button2.Location = new Point(424, 156);
             button2.Name = "button2";
-            button2.Size = new Size(94, 38);
+            button2.Size = new Size(282, 38);
             button2.TabIndex = 2;
             button2.Text = "Sửa ";
             button2.UseVisualStyleBackColor = false;
@@ -83,9 +84,9 @@
             // 
             button3.BackColor = SystemColors.GradientActiveCaption;
             button3.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            button3.Location = new Point(1159, 112);
+            button3.Location = new Point(752, 156);
             button3.Name = "button3";
-            button3.Size = new Size(103, 38);
+            button3.Size = new Size(250, 38);
             button3.TabIndex = 3;
             button3.Text = "Xoá";
             button3.UseVisualStyleBackColor = false;
@@ -94,14 +95,14 @@
             // 
             textBox2.Location = new Point(209, 112);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(376, 27);
+            textBox2.Size = new Size(271, 27);
             textBox2.TabIndex = 9;
             // 
             // textBox4
             // 
             textBox4.Location = new Point(209, 64);
             textBox4.Name = "textBox4";
-            textBox4.Size = new Size(376, 27);
+            textBox4.Size = new Size(271, 27);
             textBox4.TabIndex = 7;
             // 
             // label2
@@ -138,7 +139,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            label4.Location = new Point(617, 14);
+            label4.Location = new Point(551, 14);
             label4.Name = "label4";
             label4.Size = new Size(110, 25);
             label4.TabIndex = 13;
@@ -146,7 +147,7 @@
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(754, 14);
+            dateTimePicker1.Location = new Point(688, 14);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(250, 27);
             dateTimePicker1.TabIndex = 14;
@@ -155,7 +156,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            label5.Location = new Point(614, 111);
+            label5.Location = new Point(548, 111);
             label5.Name = "label5";
             label5.Size = new Size(86, 25);
             label5.TabIndex = 15;
@@ -163,14 +164,14 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(754, 63);
+            textBox1.Location = new Point(688, 63);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(250, 27);
             textBox1.TabIndex = 16;
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(754, 109);
+            textBox3.Location = new Point(688, 109);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(250, 27);
             textBox3.TabIndex = 18;
@@ -179,7 +180,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            label6.Location = new Point(617, 63);
+            label6.Location = new Point(551, 63);
             label6.Name = "label6";
             label6.Size = new Size(85, 25);
             label6.TabIndex = 17;
@@ -190,7 +191,7 @@
             comboBox1.FormattingEnabled = true;
             comboBox1.Location = new Point(210, 18);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(375, 28);
+            comboBox1.Size = new Size(270, 28);
             comboBox1.TabIndex = 19;
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
@@ -198,8 +199,8 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.GradientActiveCaption;
-            ClientSize = new Size(1374, 726);
+            BackColor = SystemColors.GradientInactiveCaption;
+            ClientSize = new Size(1043, 839);
             Controls.Add(comboBox1);
             Controls.Add(textBox3);
             Controls.Add(label6);
