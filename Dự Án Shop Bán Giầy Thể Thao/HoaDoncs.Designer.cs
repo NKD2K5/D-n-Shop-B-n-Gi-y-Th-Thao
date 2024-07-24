@@ -34,11 +34,11 @@
             label4 = new Label();
             label5 = new Label();
             label6 = new Label();
-            dataGridView1 = new DataGridView();
             label7 = new Label();
             label8 = new Label();
             label9 = new Label();
             label10 = new Label();
+            dataGridView1 = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -102,16 +102,6 @@
             label6.TabIndex = 18;
             label6.Text = "Tên Khách Hàng: ";
             // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(3, 290);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new Size(738, 149);
-            dataGridView1.TabIndex = 19;
-            // 
             // label7
             // 
             label7.AutoSize = true;
@@ -152,6 +142,17 @@
             label10.TabIndex = 23;
             label10.Text = "Cảm Ơn Quý Khách Đã Mua Hàng Tại Shop\r\n              😍😍😍\r\n";
             // 
+            // dataGridView1
+            // 
+            dataGridView1.BackgroundColor = SystemColors.ControlLight;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(3, 290);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.RowTemplate.Height = 29;
+            dataGridView1.Size = new Size(738, 149);
+            dataGridView1.TabIndex = 19;
+            // 
             // HoaDoncs
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -185,10 +186,10 @@
         private Label label4;
         private Label label5;
         private Label label6;
-        private DataGridView dataGridView1;
         private Label label7;
         private Label label8;
         private Label label9;
         private Label label10;
+        private DataGridView dataGridView1;
     }
 }

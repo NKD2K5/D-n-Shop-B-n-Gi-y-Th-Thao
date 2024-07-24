@@ -16,5 +16,10 @@ namespace Dự_Án_Shop_Bán_Giầy_Thể_Thao
         {
             InitializeComponent();
         }
+
+        private void KhachHang_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

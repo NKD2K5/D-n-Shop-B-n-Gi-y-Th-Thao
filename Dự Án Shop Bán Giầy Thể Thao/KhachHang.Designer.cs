@@ -42,10 +42,10 @@
             label3 = new Label();
             textBox4 = new TextBox();
             label1 = new Label();
-            dataGridView1 = new DataGridView();
             button3 = new Button();
             button2 = new Button();
             button1 = new Button();
+            dataGridView1 = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -53,7 +53,7 @@
             // 
             textBox7.Location = new Point(769, 121);
             textBox7.Name = "textBox7";
-            textBox7.Size = new Size(307, 27);
+            textBox7.Size = new Size(295, 27);
             textBox7.TabIndex = 68;
             // 
             // label10
@@ -70,7 +70,7 @@
             // 
             textBox5.Location = new Point(769, 73);
             textBox5.Name = "textBox5";
-            textBox5.Size = new Size(307, 27);
+            textBox5.Size = new Size(295, 27);
             textBox5.TabIndex = 64;
             // 
             // label8
@@ -96,7 +96,7 @@
             // 
             textBox3.Location = new Point(769, 28);
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(307, 27);
+            textBox3.Size = new Size(295, 27);
             textBox3.TabIndex = 61;
             // 
             // label6
@@ -169,21 +169,11 @@
             label1.TabIndex = 53;
             label1.Text = "Mã Khách Hàng";
             // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(48, 211);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new Size(1340, 526);
-            dataGridView1.TabIndex = 52;
-            // 
             // button3
             // 
             button3.BackColor = SystemColors.GradientActiveCaption;
             button3.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            button3.Location = new Point(1280, 73);
+            button3.Location = new Point(453, 167);
             button3.Name = "button3";
             button3.Size = new Size(95, 38);
             button3.TabIndex = 51;
@@ -194,7 +184,7 @@
             // 
             button2.BackColor = SystemColors.GradientActiveCaption;
             button2.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            button2.Location = new Point(1280, 125);
+            button2.Location = new Point(796, 167);
             button2.Name = "button2";
             button2.Size = new Size(95, 38);
             button2.TabIndex = 50;
@@ -205,19 +195,31 @@
             // 
             button1.BackColor = SystemColors.GradientActiveCaption;
             button1.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            button1.Location = new Point(1280, 19);
+            button1.Location = new Point(153, 167);
             button1.Name = "button1";
             button1.Size = new Size(95, 38);
             button1.TabIndex = 49;
             button1.Text = "Thêm ";
             button1.UseVisualStyleBackColor = false;
             // 
+            // dataGridView1
+            // 
+            dataGridView1.BackgroundColor = Color.FromArgb(224, 224, 224);
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(0, 230);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.RowTemplate.Height = 29;
+            dataGridView1.Size = new Size(1064, 619);
+            dataGridView1.TabIndex = 69;
+            // 
             // KhachHang
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.GradientActiveCaption;
-            ClientSize = new Size(1436, 756);
+            BackColor = SystemColors.GradientInactiveCaption;
+            ClientSize = new Size(1066, 845);
+            Controls.Add(dataGridView1);
             Controls.Add(textBox7);
             Controls.Add(label10);
             Controls.Add(textBox5);
@@ -232,12 +234,12 @@
             Controls.Add(label3);
             Controls.Add(textBox4);
             Controls.Add(label1);
-            Controls.Add(dataGridView1);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
             Name = "KhachHang";
             Text = "KhachHang";
+            Load += KhachHang_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -259,9 +261,9 @@
         private Label label3;
         private TextBox textBox4;
         private Label label1;
-        private DataGridView dataGridView1;
         private Button button3;
         private Button button2;
         private Button button1;
+        private DataGridView dataGridView1;
     }
 }

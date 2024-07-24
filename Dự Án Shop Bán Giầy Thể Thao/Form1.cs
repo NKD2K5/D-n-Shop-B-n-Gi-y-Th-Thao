@@ -4,9 +4,11 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.DataFormats;
 
 namespace Dự_Án_Shop_Bán_Giầy_Thể_Thao
 {
@@ -69,7 +71,8 @@ namespace Dự_Án_Shop_Bán_Giầy_Thể_Thao
 
         private void button16_Click(object sender, EventArgs e)
         {
-
+            OpenChildForm(new ThongKe());
+            lb_TieuDe.Text = btn_SanPham.Text;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -98,6 +101,58 @@ namespace Dự_Án_Shop_Bán_Giầy_Thể_Thao
         private void TrangChu_Load(object sender, EventArgs e)
         {
 
+        }
+        private Form currentFormChild;
+        private void OpenChildForm(Form childForm)
+        {
+            if (currentFormChild != null)
+            {
+                currentFormChild.Close();
+            }
+            currentFormChild = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panel_Body.Controls.Add(childForm);
+            panel_Body.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Sản_Phẩm());
+            lb_TieuDe.Text = btn_SanPham.Text;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new KhachHang());
+            lb_TieuDe.Text = btn_KhachHang.Text;
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Nhân_Viên());
+            lb_TieuDe.Text = btn_NhanVien.Text;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Voucher());
+            lb_TieuDe.Text = btn_GiamGia.Text;
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FeedBack());
+            lb_TieuDe.Text = btn_FeedBack.Text;
+        }
+
+        private void btn_BanHang_Click(object sender, EventArgs e)
+        {
+            //OpenChildForm(new TrangChu());
+            //lb_TieuDe.Text = btn_BanHang.Text;
         }
     }
 }

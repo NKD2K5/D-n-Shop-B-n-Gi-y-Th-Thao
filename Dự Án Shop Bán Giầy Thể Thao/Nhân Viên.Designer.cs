@@ -41,7 +41,6 @@
             textBox4 = new TextBox();
             label1 = new Label();
             label2 = new Label();
-            dataGridView1 = new DataGridView();
             button3 = new Button();
             button2 = new Button();
             button1 = new Button();
@@ -49,6 +48,7 @@
             label5 = new Label();
             textBox7 = new TextBox();
             label10 = new Label();
+            dataGridView1 = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -164,23 +164,13 @@
             label2.Size = new Size(0, 25);
             label2.TabIndex = 30;
             // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(38, 210);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new Size(1340, 526);
-            dataGridView1.TabIndex = 29;
-            // 
             // button3
             // 
             button3.BackColor = SystemColors.GradientActiveCaption;
             button3.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            button3.Location = new Point(1270, 72);
+            button3.Location = new Point(750, 215);
             button3.Name = "button3";
-            button3.Size = new Size(95, 38);
+            button3.Size = new Size(217, 38);
             button3.TabIndex = 28;
             button3.Text = "Xoá";
             button3.UseVisualStyleBackColor = false;
@@ -189,9 +179,9 @@
             // 
             button2.BackColor = SystemColors.GradientActiveCaption;
             button2.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            button2.Location = new Point(1270, 124);
+            button2.Location = new Point(417, 215);
             button2.Name = "button2";
-            button2.Size = new Size(95, 38);
+            button2.Size = new Size(240, 38);
             button2.TabIndex = 27;
             button2.Text = "Sửa ";
             button2.UseVisualStyleBackColor = false;
@@ -200,9 +190,9 @@
             // 
             button1.BackColor = SystemColors.GradientActiveCaption;
             button1.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            button1.Location = new Point(1270, 18);
+            button1.Location = new Point(75, 215);
             button1.Name = "button1";
-            button1.Size = new Size(95, 38);
+            button1.Size = new Size(250, 38);
             button1.TabIndex = 26;
             button1.Text = "Thêm ";
             button1.UseVisualStyleBackColor = false;
@@ -241,12 +231,24 @@
             label10.TabIndex = 47;
             label10.Text = "Vị Trí";
             // 
+            // dataGridView1
+            // 
+            dataGridView1.BackgroundColor = Color.FromArgb(224, 224, 224);
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(3, 259);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.RowTemplate.Height = 29;
+            dataGridView1.Size = new Size(1033, 578);
+            dataGridView1.TabIndex = 49;
+            // 
             // Nhân_Viên
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.GradientActiveCaption;
-            ClientSize = new Size(1420, 737);
+            BackColor = SystemColors.GradientInactiveCaption;
+            ClientSize = new Size(1036, 841);
+            Controls.Add(dataGridView1);
             Controls.Add(textBox7);
             Controls.Add(label10);
             Controls.Add(textBox6);
@@ -264,7 +266,6 @@
             Controls.Add(textBox4);
             Controls.Add(label1);
             Controls.Add(label2);
-            Controls.Add(dataGridView1);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
@@ -290,7 +291,6 @@
         private TextBox textBox4;
         private Label label1;
         private Label label2;
-        private DataGridView dataGridView1;
         private Button button3;
         private Button button2;
         private Button button1;
@@ -298,5 +298,6 @@
         private Label label5;
         private TextBox textBox7;
         private Label label10;
+        private DataGridView dataGridView1;
     }
 }
