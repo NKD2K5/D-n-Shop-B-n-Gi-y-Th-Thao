@@ -48,25 +48,34 @@ namespace Dự_Án_Shop_Bán_Giầy_Thể_Thao
         private void SetupComboBox1()
         {
             // Thêm các mục vào ComboBox1
-            comboBox1.Items.Add("Giầy Bóng Rổ");
-            comboBox1.Items.Add("Giầy Bóng Đá");
-            comboBox1.Items.Add("Giầy Chạy Bộ");
-            comboBox1.Items.Add("Giầy Tennis");
-            comboBox1.Items.Add("Giầy Địa Hình");
-            comboBox1.Items.Add("Giầy Bóng Chuyền");
+            cbb_LoaiGiay.Items.Add("Giầy Bóng Rổ");
+            cbb_LoaiGiay.Items.Add("Giầy Bóng Đá");
+            cbb_LoaiGiay.Items.Add("Giầy Chạy Bộ");
+            cbb_LoaiGiay.Items.Add("Giầy Tennis");
+            cbb_LoaiGiay.Items.Add("Giầy Địa Hình");
+            cbb_LoaiGiay.Items.Add("Giầy Bóng Chuyền");
+
+            // Thêm các mục vào ComboBox Hãng
+            //List<string> hangGiay = new List<string> { "Nike", "Adidas", "Puma" };
+            //foreach (string hang in hangGiay)
+            //{
+            //    cbb_Hang.Items.Add(hang);
+            //}
+
             // Thiết lập sự kiện SelectedIndexChanged
-            //comboBox1.SelectedIndexChanged += ComboBox1_SelectedIndexChanged;
+            cbb_LoaiGiay.SelectedIndexChanged += cbb_LoaiGiay_SelectedIndexChanged;
+            cbb_Hang.SelectedIndexChanged += cbb_Hang_SelectedIndexChanged;
         }
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string selectedCategory = comboBox1.SelectedItem.ToString();
+            //string selectedCategory = cbb_LoaiGiay.SelectedItem.ToString();
 
-            // Cập nhật ComboBox2 dựa trên mục được chọn
-            if (comboBoxData.ContainsKey(selectedCategory))
-            {
-                comboBox2.Items.Clear();
-                comboBox2.Items.AddRange(comboBoxData[selectedCategory].ToArray());
-            }
+            //// Cập nhật ComboBox2 dựa trên mục được chọn
+            //if (comboBoxData.ContainsKey(selectedCategory))
+            //{
+            //    cbb_Giay.Items.Clear();
+            //    cbb_Giay.Items.AddRange(comboBoxData[selectedCategory].ToArray());
+            //}
         }
 
         private void button16_Click(object sender, EventArgs e)
@@ -153,6 +162,37 @@ namespace Dự_Án_Shop_Bán_Giầy_Thể_Thao
         {
             //OpenChildForm(new TrangChu());
             //lb_TieuDe.Text = btn_BanHang.Text;
+        }
+
+        private void cbb_LoaiGiay_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UpdateComboBoxGiay();
+        }
+
+        private void cbb_Hang_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UpdateComboBoxGiay();
+        }
+        private void UpdateComboBoxGiay()
+        {
+            if (cbb_LoaiGiay.SelectedItem != null && cbb_Hang.SelectedItem != null)
+            {
+                string selectedLoaiGiay = cbb_LoaiGiay.SelectedItem.ToString();
+                string selectedHang = cbb_Hang.SelectedItem.ToString();
+
+                // Cập nhật ComboBox giày dựa trên loại giày và hãng giày đã chọn
+                if (comboBoxData.ContainsKey(selectedLoaiGiay))
+                {
+                    cbb_Giay.Items.Clear();
+                    // Giả sử bạn có dữ liệu kết hợp giữa loại giày và hãng giày
+                    // Dưới đây là ví dụ đơn giản cập nhật dựa trên loại giày
+                    foreach (string item in comboBoxData[selectedLoaiGiay])
+                    {
+                        // Thêm giày với hãng giày vào ComboBox
+                        cbb_Giay.Items.Add($"{item} - {selectedHang}");
+                    }
+                }
+            }
         }
     }
 }

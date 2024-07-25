@@ -42,6 +42,11 @@
             button14 = new Button();
             pictureBox1 = new PictureBox();
             groupBox3 = new GroupBox();
+            label19 = new Label();
+            label18 = new Label();
+            textBox2 = new TextBox();
+            label17 = new Label();
+            richTextBox2 = new RichTextBox();
             label16 = new Label();
             comboBox7 = new ComboBox();
             label13 = new Label();
@@ -56,22 +61,22 @@
             lb_TieuDe = new Label();
             label15 = new Label();
             groupBox1 = new GroupBox();
-            comboBox6 = new ComboBox();
+            cbb_DichVu = new ComboBox();
             label14 = new Label();
             button9 = new Button();
-            comboBox5 = new ComboBox();
+            cbb_PhuKien = new ComboBox();
             label7 = new Label();
-            textBox1 = new TextBox();
+            txt_Mau = new TextBox();
             label6 = new Label();
-            comboBox4 = new ComboBox();
+            cbb_Hang = new ComboBox();
             button10 = new Button();
             label5 = new Label();
-            comboBox3 = new ComboBox();
+            cbb_Size = new ComboBox();
             label4 = new Label();
-            comboBox2 = new ComboBox();
+            cbb_Giay = new ComboBox();
             label3 = new Label();
             label2 = new Label();
-            comboBox1 = new ComboBox();
+            cbb_LoaiGiay = new ComboBox();
             groupBox2 = new GroupBox();
             numericUpDown1 = new NumericUpDown();
             button15 = new Button();
@@ -80,11 +85,6 @@
             button11 = new Button();
             dataGridView1 = new DataGridView();
             panel_Body = new Panel();
-            richTextBox2 = new RichTextBox();
-            label17 = new Label();
-            textBox2 = new TextBox();
-            label18 = new Label();
-            label19 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             groupBox3.SuspendLayout();
@@ -265,6 +265,51 @@
             groupBox3.TabStop = false;
             groupBox3.Text = "Thanh Toán ";
             // 
+            // label19
+            // 
+            label19.AutoSize = true;
+            label19.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label19.Location = new Point(10, 548);
+            label19.Name = "label19";
+            label19.Size = new Size(90, 23);
+            label19.TabIndex = 21;
+            label19.Text = "Tổng Tiền";
+            // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label18.Location = new Point(11, 493);
+            label18.Name = "label18";
+            label18.Size = new Size(89, 23);
+            label18.TabIndex = 20;
+            label18.Text = "Tiền Thừa";
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(17, 447);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(296, 27);
+            textBox2.TabIndex = 16;
+            // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label17.Location = new Point(11, 412);
+            label17.Name = "label17";
+            label17.Size = new Size(116, 23);
+            label17.TabIndex = 19;
+            label17.Text = "Số Tiền Nhận";
+            // 
+            // richTextBox2
+            // 
+            richTextBox2.Location = new Point(17, 657);
+            richTextBox2.Name = "richTextBox2";
+            richTextBox2.Size = new Size(296, 120);
+            richTextBox2.TabIndex = 18;
+            richTextBox2.Text = "";
+            // 
             // label16
             // 
             label16.AutoSize = true;
@@ -397,22 +442,22 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(comboBox6);
+            groupBox1.Controls.Add(cbb_DichVu);
             groupBox1.Controls.Add(label14);
             groupBox1.Controls.Add(button9);
-            groupBox1.Controls.Add(comboBox5);
+            groupBox1.Controls.Add(cbb_PhuKien);
             groupBox1.Controls.Add(label7);
-            groupBox1.Controls.Add(textBox1);
+            groupBox1.Controls.Add(txt_Mau);
             groupBox1.Controls.Add(label6);
-            groupBox1.Controls.Add(comboBox4);
+            groupBox1.Controls.Add(cbb_Hang);
             groupBox1.Controls.Add(button10);
             groupBox1.Controls.Add(label5);
-            groupBox1.Controls.Add(comboBox3);
+            groupBox1.Controls.Add(cbb_Size);
             groupBox1.Controls.Add(label4);
-            groupBox1.Controls.Add(comboBox2);
+            groupBox1.Controls.Add(cbb_Giay);
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(label2);
-            groupBox1.Controls.Add(comboBox1);
+            groupBox1.Controls.Add(cbb_LoaiGiay);
             groupBox1.Location = new Point(5, 3);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(1037, 293);
@@ -420,13 +465,13 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Sản Phẩm";
             // 
-            // comboBox6
+            // cbb_DichVu
             // 
-            comboBox6.FormattingEnabled = true;
-            comboBox6.Location = new Point(364, 184);
-            comboBox6.Name = "comboBox6";
-            comboBox6.Size = new Size(351, 28);
-            comboBox6.TabIndex = 15;
+            cbb_DichVu.FormattingEnabled = true;
+            cbb_DichVu.Location = new Point(364, 184);
+            cbb_DichVu.Name = "cbb_DichVu";
+            cbb_DichVu.Size = new Size(351, 28);
+            cbb_DichVu.TabIndex = 15;
             // 
             // label14
             // 
@@ -449,48 +494,51 @@
             button9.Text = "Làm Mới ";
             button9.UseVisualStyleBackColor = false;
             // 
-            // comboBox5
+            // cbb_PhuKien
             // 
-            comboBox5.FormattingEnabled = true;
-            comboBox5.Location = new Point(814, 101);
-            comboBox5.Name = "comboBox5";
-            comboBox5.Size = new Size(203, 28);
-            comboBox5.TabIndex = 11;
+            cbb_PhuKien.FormattingEnabled = true;
+            cbb_PhuKien.Items.AddRange(new object[] { "Dây giày", "Lót giày", "Tấm lót chống trượt", "Bảo vệ giày", "Bàn chải và dung dịch vệ sinh giày", "Miếng chống trầy", "Túi giặt giày", "Tất", "Thiết bị kéo giày", "Khung giữ form giày" });
+            cbb_PhuKien.Location = new Point(814, 101);
+            cbb_PhuKien.Name = "cbb_PhuKien";
+            cbb_PhuKien.Size = new Size(203, 28);
+            cbb_PhuKien.TabIndex = 11;
             // 
             // label7
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            label7.Location = new Point(349, 114);
+            label7.Location = new Point(14, 111);
             label7.Name = "label7";
             label7.Size = new Size(59, 25);
             label7.TabIndex = 10;
             label7.Text = "Hãng";
             // 
-            // textBox1
+            // txt_Mau
             // 
-            textBox1.Location = new Point(443, 35);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(240, 27);
-            textBox1.TabIndex = 9;
+            txt_Mau.Location = new Point(445, 103);
+            txt_Mau.Name = "txt_Mau";
+            txt_Mau.Size = new Size(240, 27);
+            txt_Mau.TabIndex = 9;
             // 
             // label6
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            label6.Location = new Point(349, 34);
+            label6.Location = new Point(349, 102);
             label6.Name = "label6";
             label6.Size = new Size(59, 28);
             label6.TabIndex = 8;
             label6.Text = "Màu ";
             // 
-            // comboBox4
+            // cbb_Hang
             // 
-            comboBox4.FormattingEnabled = true;
-            comboBox4.Location = new Point(443, 111);
-            comboBox4.Name = "comboBox4";
-            comboBox4.Size = new Size(240, 28);
-            comboBox4.TabIndex = 7;
+            cbb_Hang.FormattingEnabled = true;
+            cbb_Hang.Items.AddRange(new object[] { "Nike ", "Adisda", "Puma", "Vans", "Converse", "Under Armour", "New Balance", "ASICS", "Skechers" });
+            cbb_Hang.Location = new Point(112, 107);
+            cbb_Hang.Name = "cbb_Hang";
+            cbb_Hang.Size = new Size(202, 28);
+            cbb_Hang.TabIndex = 7;
+            cbb_Hang.SelectedIndexChanged += cbb_Hang_SelectedIndexChanged;
             // 
             // button10
             // 
@@ -513,13 +561,14 @@
             label5.TabIndex = 6;
             label5.Text = "Size";
             // 
-            // comboBox3
+            // cbb_Size
             // 
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(814, 35);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(203, 28);
-            comboBox3.TabIndex = 5;
+            cbb_Size.FormattingEnabled = true;
+            cbb_Size.Items.AddRange(new object[] { "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50" });
+            cbb_Size.Location = new Point(814, 35);
+            cbb_Size.Name = "cbb_Size";
+            cbb_Size.Size = new Size(203, 28);
+            cbb_Size.TabIndex = 5;
             // 
             // label4
             // 
@@ -531,19 +580,19 @@
             label4.TabIndex = 4;
             label4.Text = "Phụ Kiện";
             // 
-            // comboBox2
+            // cbb_Giay
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(112, 104);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(202, 28);
-            comboBox2.TabIndex = 3;
+            cbb_Giay.FormattingEnabled = true;
+            cbb_Giay.Location = new Point(445, 31);
+            cbb_Giay.Name = "cbb_Giay";
+            cbb_Giay.Size = new Size(240, 28);
+            cbb_Giay.TabIndex = 3;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            label3.Location = new Point(14, 107);
+            label3.Location = new Point(364, 30);
             label3.Name = "label3";
             label3.Size = new Size(52, 25);
             label3.TabIndex = 2;
@@ -559,14 +608,14 @@
             label2.TabIndex = 1;
             label2.Text = "Loại Giầy";
             // 
-            // comboBox1
+            // cbb_LoaiGiay
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(112, 31);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(202, 28);
-            comboBox1.TabIndex = 0;
-            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+            cbb_LoaiGiay.FormattingEnabled = true;
+            cbb_LoaiGiay.Location = new Point(112, 31);
+            cbb_LoaiGiay.Name = "cbb_LoaiGiay";
+            cbb_LoaiGiay.Size = new Size(202, 28);
+            cbb_LoaiGiay.TabIndex = 0;
+            cbb_LoaiGiay.SelectedIndexChanged += cbb_LoaiGiay_SelectedIndexChanged;
             // 
             // groupBox2
             // 
@@ -653,51 +702,6 @@
             panel_Body.Size = new Size(1042, 844);
             panel_Body.TabIndex = 4;
             // 
-            // richTextBox2
-            // 
-            richTextBox2.Location = new Point(17, 657);
-            richTextBox2.Name = "richTextBox2";
-            richTextBox2.Size = new Size(296, 120);
-            richTextBox2.TabIndex = 18;
-            richTextBox2.Text = "";
-            // 
-            // label17
-            // 
-            label17.AutoSize = true;
-            label17.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label17.Location = new Point(11, 412);
-            label17.Name = "label17";
-            label17.Size = new Size(116, 23);
-            label17.TabIndex = 19;
-            label17.Text = "Số Tiền Nhận";
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(17, 447);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(296, 27);
-            textBox2.TabIndex = 16;
-            // 
-            // label18
-            // 
-            label18.AutoSize = true;
-            label18.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label18.Location = new Point(11, 493);
-            label18.Name = "label18";
-            label18.Size = new Size(89, 23);
-            label18.TabIndex = 20;
-            label18.Text = "Tiền Thừa";
-            // 
-            // label19
-            // 
-            label19.AutoSize = true;
-            label19.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label19.Location = new Point(10, 548);
-            label19.Name = "label19";
-            label19.Size = new Size(90, 23);
-            label19.TabIndex = 21;
-            label19.Text = "Tổng Tiền";
-            // 
             // TrangChu
             // 
             AutoScaleMode = AutoScaleMode.None;
@@ -755,22 +759,22 @@
         private Label label15;
         private Label lb_TieuDe;
         private GroupBox groupBox1;
-        private ComboBox comboBox6;
+        private ComboBox cbb_DichVu;
         private Label label14;
         private Button button9;
-        private ComboBox comboBox5;
+        private ComboBox cbb_PhuKien;
         private Label label7;
-        private TextBox textBox1;
+        private TextBox txt_Mau;
         private Label label6;
-        private ComboBox comboBox4;
+        private ComboBox cbb_Hang;
         private Button button10;
         private Label label5;
-        private ComboBox comboBox3;
+        private ComboBox cbb_Size;
         private Label label4;
-        private ComboBox comboBox2;
+        private ComboBox cbb_Giay;
         private Label label3;
         private Label label2;
-        private ComboBox comboBox1;
+        private ComboBox cbb_LoaiGiay;
         private GroupBox groupBox2;
         private Button button15;
         private Button button13;

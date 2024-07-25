@@ -34,8 +34,6 @@ namespace Dự_Án_Shop_Bán_Giầy_Thể_Thao
                 MessageBox.Show("Mất khẩu không hợp lệ.");
                 return;
             }
-
-
             MessageBox.Show("Đăng ký thành công!");
             this.Close();
         }
