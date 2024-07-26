@@ -194,5 +194,15 @@ namespace Dự_Án_Shop_Bán_Giầy_Thể_Thao
                 }
             }
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

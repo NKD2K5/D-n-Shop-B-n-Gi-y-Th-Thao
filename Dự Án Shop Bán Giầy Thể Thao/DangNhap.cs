@@ -20,7 +20,8 @@ namespace Dự_Án_Shop_Bán_Giầy_Thể_Thao
             QuenMatKhau quanMatKhau = new QuenMatKhau();
             quanMatKhau.Show();
             this.Hide();
-;        }
+            ;
+        }
 
         private void btn_DangNhap_Click(object sender, EventArgs e)
         {
@@ -51,6 +52,21 @@ namespace Dự_Án_Shop_Bán_Giầy_Thể_Thao
                 return true;
             }
             return false;
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
