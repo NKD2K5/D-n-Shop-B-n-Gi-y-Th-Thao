@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DangNhap));
-            pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
             pictureBox3 = new PictureBox();
             txt_TenTk = new TextBox();
@@ -39,50 +38,54 @@
             btn_DangNhap = new Button();
             label1 = new Label();
             QuenMatKhau = new LinkLabel();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel1 = new Panel();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(164, -1);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(230, 199);
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
             // 
             // pictureBox2
             // 
+            pictureBox2.BackgroundImageLayout = ImageLayout.None;
+            pictureBox2.Enabled = false;
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(91, 261);
+            pictureBox2.Location = new Point(35, 87);
+            pictureBox2.Margin = new Padding(3, 2, 3, 2);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(39, 39);
+            pictureBox2.Size = new Size(36, 37);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 1;
             pictureBox2.TabStop = false;
+            pictureBox2.UseWaitCursor = true;
+            pictureBox2.Click += pictureBox2_Click;
             // 
             // pictureBox3
             // 
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(91, 322);
+            pictureBox3.Location = new Point(37, 141);
+            pictureBox3.Margin = new Padding(3, 2, 3, 2);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(39, 42);
+            pictureBox3.Size = new Size(34, 33);
+            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox3.TabIndex = 2;
             pictureBox3.TabStop = false;
             // 
             // txt_TenTk
             // 
-            txt_TenTk.Location = new Point(174, 273);
+            txt_TenTk.Location = new Point(89, 96);
+            txt_TenTk.Margin = new Padding(3, 2, 3, 2);
+            txt_TenTk.Multiline = true;
             txt_TenTk.Name = "txt_TenTk";
-            txt_TenTk.Size = new Size(220, 27);
+            txt_TenTk.ReadOnly = true;
+            txt_TenTk.Size = new Size(215, 26);
             txt_TenTk.TabIndex = 3;
             // 
             // txt_MatKhau
             // 
-            txt_MatKhau.Location = new Point(174, 337);
+            txt_MatKhau.Location = new Point(89, 151);
+            txt_MatKhau.Margin = new Padding(3, 2, 3, 2);
             txt_MatKhau.Name = "txt_MatKhau";
-            txt_MatKhau.Size = new Size(220, 27);
+            txt_MatKhau.Size = new Size(215, 23);
             txt_MatKhau.TabIndex = 4;
             txt_MatKhau.UseSystemPasswordChar = true;
             // 
@@ -91,9 +94,9 @@
             DangKy.AutoSize = true;
             DangKy.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             DangKy.LinkColor = Color.Black;
-            DangKy.Location = new Point(91, 388);
+            DangKy.Location = new Point(53, 185);
             DangKy.Name = "DangKy";
-            DangKy.Size = new Size(78, 23);
+            DangKy.Size = new Size(64, 19);
             DangKy.TabIndex = 5;
             DangKy.TabStop = true;
             DangKy.Text = "Đăng Ký ";
@@ -104,18 +107,18 @@
             linkLabel_QuenMatKhau.AutoSize = true;
             linkLabel_QuenMatKhau.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             linkLabel_QuenMatKhau.LinkColor = Color.Black;
-            linkLabel_QuenMatKhau.Location = new Point(292, 386);
+            linkLabel_QuenMatKhau.Location = new Point(246, 184);
             linkLabel_QuenMatKhau.Name = "linkLabel_QuenMatKhau";
-            linkLabel_QuenMatKhau.Size = new Size(0, 25);
+            linkLabel_QuenMatKhau.Size = new Size(0, 20);
             linkLabel_QuenMatKhau.TabIndex = 6;
-            linkLabel_QuenMatKhau.TabStop = true;
             // 
             // btn_DangNhap
             // 
             btn_DangNhap.ForeColor = SystemColors.ActiveCaptionText;
-            btn_DangNhap.Location = new Point(151, 435);
+            btn_DangNhap.Location = new Point(89, 228);
+            btn_DangNhap.Margin = new Padding(3, 2, 3, 2);
             btn_DangNhap.Name = "btn_DangNhap";
-            btn_DangNhap.Size = new Size(193, 48);
+            btn_DangNhap.Size = new Size(170, 40);
             btn_DangNhap.TabIndex = 7;
             btn_DangNhap.Text = "Đăng Nhập";
             btn_DangNhap.UseVisualStyleBackColor = true;
@@ -124,54 +127,67 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("SimSun", 19.8000011F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            label1.Location = new Point(73, 201);
+            label1.Font = new Font("Book Antiqua", 20.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            label1.Location = new Point(14, 18);
             label1.Name = "label1";
-            label1.Size = new Size(427, 34);
+            label1.Size = new Size(328, 32);
             label1.TabIndex = 8;
             label1.Text = "Shop Bán Giầy Thể Thao ";
+            label1.Click += label1_Click;
             // 
             // QuenMatKhau
             // 
             QuenMatKhau.AutoSize = true;
             QuenMatKhau.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             QuenMatKhau.LinkColor = Color.Black;
-            QuenMatKhau.Location = new Point(316, 388);
+            QuenMatKhau.Location = new Point(208, 184);
             QuenMatKhau.Name = "QuenMatKhau";
-            QuenMatKhau.Size = new Size(131, 23);
+            QuenMatKhau.Size = new Size(107, 19);
             QuenMatKhau.TabIndex = 9;
             QuenMatKhau.TabStop = true;
             QuenMatKhau.Text = "Quên Mật Khẩu";
             QuenMatKhau.LinkClicked += QuanMatKhau_LinkClicked;
             // 
+            // panel1
+            // 
+            panel1.BackColor = Color.Transparent;
+            panel1.Controls.Add(DangKy);
+            panel1.Controls.Add(label1);
+            panel1.Controls.Add(QuenMatKhau);
+            panel1.Controls.Add(txt_MatKhau);
+            panel1.Controls.Add(linkLabel_QuenMatKhau);
+            panel1.Controls.Add(txt_TenTk);
+            panel1.Controls.Add(pictureBox3);
+            panel1.Controls.Add(btn_DangNhap);
+            panel1.Controls.Add(pictureBox2);
+            panel1.Location = new Point(301, 85);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(330, 294);
+            panel1.TabIndex = 10;
+            // 
             // DangNhap
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ActiveCaption;
-            ClientSize = new Size(547, 511);
-            Controls.Add(QuenMatKhau);
-            Controls.Add(label1);
-            Controls.Add(btn_DangNhap);
-            Controls.Add(linkLabel_QuenMatKhau);
-            Controls.Add(DangKy);
-            Controls.Add(txt_MatKhau);
-            Controls.Add(txt_TenTk);
-            Controls.Add(pictureBox3);
-            Controls.Add(pictureBox2);
-            Controls.Add(pictureBox1);
+            BackColor = SystemColors.ActiveBorder;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Zoom;
+            ClientSize = new Size(643, 405);
+            Controls.Add(panel1);
+            Cursor = Cursors.No;
+            DoubleBuffered = true;
+            ForeColor = SystemColors.ControlLightLight;
+            Margin = new Padding(3, 2, 3, 2);
             Name = "DangNhap";
             Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-
-        private PictureBox pictureBox1;
         private PictureBox pictureBox2;
         private PictureBox pictureBox3;
         private TextBox txt_TenTk;
@@ -181,5 +197,6 @@
         private Button btn_DangNhap;
         private Label label1;
         private LinkLabel QuenMatKhau;
+        private Panel panel1;
     }
 }

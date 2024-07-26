@@ -37,5 +37,10 @@ namespace Dự_Án_Shop_Bán_Giầy_Thể_Thao
             MessageBox.Show("Đăng ký thành công!");
             this.Close();
         }
+
+        private void DangKy_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
