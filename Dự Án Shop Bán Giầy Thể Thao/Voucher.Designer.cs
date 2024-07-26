@@ -47,8 +47,6 @@
             comboBox1 = new ComboBox();
             dateTimePicker2 = new DateTimePicker();
             label4 = new Label();
-            textBox4 = new TextBox();
-            label10 = new Label();
             label11 = new Label();
             textBox5 = new TextBox();
             label12 = new Label();
@@ -59,7 +57,7 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            label8.Location = new Point(430, 117);
+            label8.Location = new Point(435, 71);
             label8.Name = "label8";
             label8.Size = new Size(134, 25);
             label8.TabIndex = 43;
@@ -87,9 +85,9 @@
             label6.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             label6.Location = new Point(435, 16);
             label6.Name = "label6";
-            label6.Size = new Size(139, 25);
+            label6.Size = new Size(102, 25);
             label6.TabIndex = 40;
-            label6.Text = "Mã Nhân Viên ";
+            label6.Text = "Người Tạo";
             // 
             // label7
             // 
@@ -111,7 +109,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            label5.Location = new Point(435, 68);
+            label5.Location = new Point(442, 125);
             label5.Name = "label5";
             label5.Size = new Size(95, 25);
             label5.TabIndex = 37;
@@ -174,9 +172,9 @@
             // 
             button3.BackColor = SystemColors.GradientActiveCaption;
             button3.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            button3.Location = new Point(397, 167);
+            button3.Location = new Point(336, 167);
             button3.Name = "button3";
-            button3.Size = new Size(95, 38);
+            button3.Size = new Size(190, 38);
             button3.TabIndex = 28;
             button3.Text = "Xoá";
             button3.UseVisualStyleBackColor = false;
@@ -185,9 +183,9 @@
             // 
             button2.BackColor = SystemColors.GradientActiveCaption;
             button2.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            button2.Location = new Point(498, 167);
+            button2.Location = new Point(665, 167);
             button2.Name = "button2";
-            button2.Size = new Size(95, 38);
+            button2.Size = new Size(161, 38);
             button2.TabIndex = 27;
             button2.Text = "Sửa ";
             button2.UseVisualStyleBackColor = false;
@@ -196,9 +194,9 @@
             // 
             button1.BackColor = SystemColors.GradientActiveCaption;
             button1.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            button1.Location = new Point(296, 167);
+            button1.Location = new Point(12, 167);
             button1.Name = "button1";
-            button1.Size = new Size(95, 38);
+            button1.Size = new Size(168, 38);
             button1.TabIndex = 26;
             button1.Text = "Thêm ";
             button1.UseVisualStyleBackColor = false;
@@ -206,6 +204,7 @@
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "Voucher Giam Gia Phan Tram", "", "Voucher Giam Gia So Tien Cu The", "", "Voucher Mua 1 Tang 1", "", "Voucher Lan Mua Dau Tien", "", "Voucher Sinh Nhat", "", "Voucher KH Than Thiet", "", "Voucher Nhom San Pham", "", "Voucher Su Kien", "", "Voucher Ung Dung Di Dong", "Voucher Dac Biet" });
             comboBox1.Location = new Point(160, 70);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(231, 28);
@@ -228,23 +227,6 @@
             label4.TabIndex = 47;
             label4.Text = "Mã Voucher";
             // 
-            // textBox4
-            // 
-            textBox4.Location = new Point(1014, 21);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(174, 27);
-            textBox4.TabIndex = 50;
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            label10.Location = new Point(869, 20);
-            label10.Name = "label10";
-            label10.Size = new Size(143, 25);
-            label10.TabIndex = 49;
-            label10.Text = "Tên Nhân Viên ";
-            // 
             // label11
             // 
             label11.AutoSize = true;
@@ -256,7 +238,7 @@
             // 
             // textBox5
             // 
-            textBox5.Location = new Point(1014, 70);
+            textBox5.Location = new Point(1003, 21);
             textBox5.Name = "textBox5";
             textBox5.Size = new Size(174, 27);
             textBox5.TabIndex = 52;
@@ -265,7 +247,7 @@
             // 
             label12.AutoSize = true;
             label12.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            label12.Location = new Point(869, 69);
+            label12.Location = new Point(858, 20);
             label12.Name = "label12";
             label12.Size = new Size(50, 25);
             label12.TabIndex = 51;
@@ -279,8 +261,6 @@
             ClientSize = new Size(1183, 827);
             Controls.Add(textBox5);
             Controls.Add(label12);
-            Controls.Add(textBox4);
-            Controls.Add(label10);
             Controls.Add(label11);
             Controls.Add(label4);
             Controls.Add(dateTimePicker2);
@@ -329,8 +309,6 @@
         private ComboBox comboBox1;
         private DateTimePicker dateTimePicker2;
         private Label label4;
-        private TextBox textBox4;
-        private Label label10;
         private Label label11;
         private TextBox textBox5;
         private Label label12;

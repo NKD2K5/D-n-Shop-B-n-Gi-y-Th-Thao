@@ -46,6 +46,9 @@
             button2 = new Button();
             button1 = new Button();
             dataGridView1 = new DataGridView();
+            label2 = new Label();
+            radioButton1 = new RadioButton();
+            radioButton2 = new RadioButton();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -173,7 +176,7 @@
             // 
             button3.BackColor = SystemColors.GradientActiveCaption;
             button3.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            button3.Location = new Point(453, 167);
+            button3.Location = new Point(458, 213);
             button3.Name = "button3";
             button3.Size = new Size(95, 38);
             button3.TabIndex = 51;
@@ -184,7 +187,7 @@
             // 
             button2.BackColor = SystemColors.GradientActiveCaption;
             button2.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            button2.Location = new Point(796, 167);
+            button2.Location = new Point(801, 213);
             button2.Name = "button2";
             button2.Size = new Size(95, 38);
             button2.TabIndex = 50;
@@ -195,7 +198,7 @@
             // 
             button1.BackColor = SystemColors.GradientActiveCaption;
             button1.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            button1.Location = new Point(153, 167);
+            button1.Location = new Point(158, 213);
             button1.Name = "button1";
             button1.Size = new Size(95, 38);
             button1.TabIndex = 49;
@@ -206,12 +209,44 @@
             // 
             dataGridView1.BackgroundColor = Color.FromArgb(224, 224, 224);
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(0, 230);
+            dataGridView1.Location = new Point(0, 257);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new Size(1064, 619);
+            dataGridView1.Size = new Size(1064, 592);
             dataGridView1.TabIndex = 69;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            label2.Location = new Point(249, 178);
+            label2.Name = "label2";
+            label2.Size = new Size(131, 25);
+            label2.TabIndex = 70;
+            label2.Text = "Số Điện Thoại";
+            // 
+            // radioButton1
+            // 
+            radioButton1.AutoSize = true;
+            radioButton1.Location = new Point(429, 178);
+            radioButton1.Name = "radioButton1";
+            radioButton1.Size = new Size(62, 24);
+            radioButton1.TabIndex = 71;
+            radioButton1.TabStop = true;
+            radioButton1.Text = "Nam\r\n";
+            radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            radioButton2.AutoSize = true;
+            radioButton2.Location = new Point(616, 178);
+            radioButton2.Name = "radioButton2";
+            radioButton2.Size = new Size(50, 24);
+            radioButton2.TabIndex = 72;
+            radioButton2.TabStop = true;
+            radioButton2.Text = "Nữ";
+            radioButton2.UseVisualStyleBackColor = true;
             // 
             // KhachHang
             // 
@@ -219,6 +254,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.GradientInactiveCaption;
             ClientSize = new Size(1066, 845);
+            Controls.Add(radioButton2);
+            Controls.Add(radioButton1);
+            Controls.Add(label2);
             Controls.Add(dataGridView1);
             Controls.Add(textBox7);
             Controls.Add(label10);
@@ -265,5 +303,8 @@
         private Button button2;
         private Button button1;
         private DataGridView dataGridView1;
+        private Label label2;
+        private RadioButton radioButton1;
+        private RadioButton radioButton2;
     }
 }

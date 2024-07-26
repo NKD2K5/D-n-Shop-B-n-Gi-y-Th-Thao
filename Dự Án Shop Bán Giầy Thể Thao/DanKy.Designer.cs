@@ -38,6 +38,8 @@
             label4 = new Label();
             label5 = new Label();
             button1 = new Button();
+            label6 = new Label();
+            textBox1 = new TextBox();
             SuspendLayout();
             // 
             // txt_XacNhanMK
@@ -71,7 +73,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(44, 147);
+            label1.Location = new Point(44, 153);
             label1.Name = "label1";
             label1.Size = new Size(107, 20);
             label1.TabIndex = 9;
@@ -117,7 +119,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(117, 358);
+            button1.Location = new Point(118, 395);
             button1.Name = "button1";
             button1.Size = new Size(255, 43);
             button1.TabIndex = 14;
@@ -125,12 +127,31 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(44, 357);
+            label6.Name = "label6";
+            label6.Size = new Size(105, 20);
+            label6.TabIndex = 16;
+            label6.Text = "Số Điện Thoại:\r\n";
+            label6.Click += label6_Click;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(229, 350);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(220, 27);
+            textBox1.TabIndex = 15;
+            // 
             // DangKy
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
             ClientSize = new Size(510, 450);
+            Controls.Add(label6);
+            Controls.Add(textBox1);
             Controls.Add(button1);
             Controls.Add(label5);
             Controls.Add(label4);
@@ -159,5 +180,7 @@
         private Label label4;
         private Label label5;
         private Button button1;
+        private Label label6;
+        private TextBox textBox1;
     }
 }
