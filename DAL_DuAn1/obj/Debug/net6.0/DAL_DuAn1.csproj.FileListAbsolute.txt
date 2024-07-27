@@ -1,0 +1,15 @@
+D:\Dự Án 1\DAL_DuAn1\bin\Debug\net6.0\DAL_DuAn1.deps.json
+D:\Dự Án 1\DAL_DuAn1\bin\Debug\net6.0\DAL_DuAn1.runtimeconfig.json
+D:\Dự Án 1\DAL_DuAn1\bin\Debug\net6.0\DAL_DuAn1.dll
+D:\Dự Án 1\DAL_DuAn1\bin\Debug\net6.0\DAL_DuAn1.pdb
+D:\Dự Án 1\DAL_DuAn1\obj\Debug\net6.0\DAL_DuAn1.csproj.AssemblyReference.cache
+D:\Dự Án 1\DAL_DuAn1\obj\Debug\net6.0\DAL_DuAn1.GeneratedMSBuildEditorConfig.editorconfig
+D:\Dự Án 1\DAL_DuAn1\obj\Debug\net6.0\DAL_DuAn1.AssemblyInfoInputs.cache
+D:\Dự Án 1\DAL_DuAn1\obj\Debug\net6.0\DAL_DuAn1.AssemblyInfo.cs
+D:\Dự Án 1\DAL_DuAn1\obj\Debug\net6.0\DAL_DuAn1.csproj.CoreCompileInputs.cache
+D:\Dự Án 1\DAL_DuAn1\obj\Debug\net6.0\DAL_DuAn1.sourcelink.json
+D:\Dự Án 1\DAL_DuAn1\obj\Debug\net6.0\DAL_DuAn1.dll
+D:\Dự Án 1\DAL_DuAn1\obj\Debug\net6.0\refint\DAL_DuAn1.dll
+D:\Dự Án 1\DAL_DuAn1\obj\Debug\net6.0\DAL_DuAn1.pdb
+D:\Dự Án 1\DAL_DuAn1\obj\Debug\net6.0\DAL_DuAn1.genruntimeconfig.cache
+D:\Dự Án 1\DAL_DuAn1\obj\Debug\net6.0\ref\DAL_DuAn1.dll
