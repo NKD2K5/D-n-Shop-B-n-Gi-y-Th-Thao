@@ -158,6 +158,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
+            BackgroundImage = Properties.Resources.Black_Abstract_Minimal_Zoom_Virtual_Background;
             ClientSize = new Size(738, 681);
             Controls.Add(label10);
             Controls.Add(label9);
