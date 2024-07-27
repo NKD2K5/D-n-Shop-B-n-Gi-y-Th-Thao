@@ -49,6 +49,9 @@
             textBox7 = new TextBox();
             label10 = new Label();
             dataGridView1 = new DataGridView();
+            radioButton2 = new RadioButton();
+            radioButton1 = new RadioButton();
+            label11 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -115,7 +118,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            label4.Location = new Point(38, 121);
+            label4.Location = new Point(47, 123);
             label4.Name = "label4";
             label4.Size = new Size(131, 25);
             label4.TabIndex = 35;
@@ -199,20 +202,22 @@
             // 
             // textBox6
             // 
-            textBox6.Location = new Point(448, 170);
+            textBox6.Location = new Point(195, 172);
             textBox6.Name = "textBox6";
-            textBox6.Size = new Size(307, 27);
+            textBox6.Size = new Size(343, 27);
             textBox6.TabIndex = 46;
+            textBox6.TextChanged += textBox6_TextChanged;
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            label5.Location = new Point(369, 170);
+            label5.Location = new Point(108, 172);
             label5.Name = "label5";
             label5.Size = new Size(70, 25);
             label5.TabIndex = 45;
             label5.Text = "Lương ";
+            //label5.Click += this.label5_Click;
             // 
             // textBox7
             // 
@@ -242,12 +247,47 @@
             dataGridView1.Size = new Size(1033, 578);
             dataGridView1.TabIndex = 49;
             // 
+            // radioButton2
+            // 
+            radioButton2.AutoSize = true;
+            radioButton2.Location = new Point(864, 176);
+            radioButton2.Name = "radioButton2";
+            radioButton2.Size = new Size(50, 24);
+            radioButton2.TabIndex = 75;
+            radioButton2.TabStop = true;
+            radioButton2.Text = "Nữ";
+            radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            radioButton1.AutoSize = true;
+            radioButton1.Location = new Point(694, 176);
+            radioButton1.Name = "radioButton1";
+            radioButton1.Size = new Size(62, 24);
+            radioButton1.TabIndex = 74;
+            radioButton1.TabStop = true;
+            radioButton1.Text = "Nam";
+            radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            label11.Location = new Point(560, 174);
+            label11.Name = "label11";
+            label11.Size = new Size(97, 25);
+            label11.TabIndex = 73;
+            label11.Text = "Giới Tính:";
+            // 
             // Nhân_Viên
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.GradientInactiveCaption;
             ClientSize = new Size(1036, 841);
+            Controls.Add(radioButton2);
+            Controls.Add(radioButton1);
+            Controls.Add(label11);
             Controls.Add(dataGridView1);
             Controls.Add(textBox7);
             Controls.Add(label10);
@@ -299,5 +339,8 @@
         private TextBox textBox7;
         private Label label10;
         private DataGridView dataGridView1;
+        private RadioButton radioButton2;
+        private RadioButton radioButton1;
+        private Label label11;
     }
 }

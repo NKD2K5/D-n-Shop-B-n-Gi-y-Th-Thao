@@ -38,6 +38,8 @@
             label4 = new Label();
             label5 = new Label();
             button1 = new Button();
+            label6 = new Label();
+            textBox1 = new TextBox();
             SuspendLayout();
             // 
             // txt_XacNhanMK
@@ -117,7 +119,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(117, 358);
+            button1.Location = new Point(121, 395);
             button1.Name = "button1";
             button1.Size = new Size(255, 43);
             button1.TabIndex = 14;
@@ -125,12 +127,30 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(44, 350);
+            label6.Name = "label6";
+            label6.Size = new Size(102, 20);
+            label6.TabIndex = 16;
+            label6.Text = "Số Điện Thoại";
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(229, 353);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(220, 27);
+            textBox1.TabIndex = 15;
+            // 
             // DangKy
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
             ClientSize = new Size(510, 450);
+            Controls.Add(label6);
+            Controls.Add(textBox1);
             Controls.Add(button1);
             Controls.Add(label5);
             Controls.Add(label4);
@@ -159,5 +179,7 @@
         private Label label4;
         private Label label5;
         private Button button1;
+        private Label label6;
+        private TextBox textBox1;
     }
 }

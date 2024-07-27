@@ -85,6 +85,7 @@
             button11 = new Button();
             dataGridView1 = new DataGridView();
             panel_Body = new Panel();
+            label20 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             groupBox3.SuspendLayout();
@@ -228,7 +229,7 @@
             button14.Name = "button14";
             button14.Size = new Size(317, 48);
             button14.TabIndex = 10;
-            button14.Text = "Mua ";
+            button14.Text = "Thanh Toán";
             button14.UseVisualStyleBackColor = false;
             button14.Click += button14_Click;
             // 
@@ -245,6 +246,7 @@
             // groupBox3
             // 
             groupBox3.BackColor = SystemColors.ActiveCaption;
+            groupBox3.Controls.Add(label20);
             groupBox3.Controls.Add(label19);
             groupBox3.Controls.Add(label18);
             groupBox3.Controls.Add(textBox2);
@@ -269,7 +271,7 @@
             // 
             label19.AutoSize = true;
             label19.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label19.Location = new Point(10, 548);
+            label19.Location = new Point(10, 551);
             label19.Name = "label19";
             label19.Size = new Size(90, 23);
             label19.TabIndex = 21;
@@ -279,7 +281,7 @@
             // 
             label18.AutoSize = true;
             label18.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label18.Location = new Point(11, 493);
+            label18.Location = new Point(11, 496);
             label18.Name = "label18";
             label18.Size = new Size(89, 23);
             label18.TabIndex = 20;
@@ -287,7 +289,7 @@
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(17, 447);
+            textBox2.Location = new Point(17, 450);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(296, 27);
             textBox2.TabIndex = 16;
@@ -296,7 +298,7 @@
             // 
             label17.AutoSize = true;
             label17.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label17.Location = new Point(11, 412);
+            label17.Location = new Point(11, 415);
             label17.Name = "label17";
             label17.Size = new Size(116, 23);
             label17.TabIndex = 19;
@@ -304,7 +306,7 @@
             // 
             // richTextBox2
             // 
-            richTextBox2.Location = new Point(17, 657);
+            richTextBox2.Location = new Point(17, 660);
             richTextBox2.Name = "richTextBox2";
             richTextBox2.Size = new Size(296, 120);
             richTextBox2.TabIndex = 18;
@@ -314,7 +316,7 @@
             // 
             label16.AutoSize = true;
             label16.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label16.Location = new Point(10, 607);
+            label16.Location = new Point(10, 610);
             label16.Name = "label16";
             label16.Size = new Size(78, 23);
             label16.TabIndex = 17;
@@ -324,7 +326,7 @@
             // 
             comboBox7.FormattingEnabled = true;
             comboBox7.Items.AddRange(new object[] { "Chuyển Khoản ", "TIền Mặt " });
-            comboBox7.Location = new Point(17, 370);
+            comboBox7.Location = new Point(17, 373);
             comboBox7.Name = "comboBox7";
             comboBox7.Size = new Size(296, 28);
             comboBox7.TabIndex = 16;
@@ -334,7 +336,7 @@
             // 
             label13.AutoSize = true;
             label13.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label13.Location = new Point(10, 325);
+            label13.Location = new Point(10, 328);
             label13.Name = "label13";
             label13.Size = new Size(198, 23);
             label13.TabIndex = 13;
@@ -344,7 +346,7 @@
             // 
             label12.AutoSize = true;
             label12.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label12.Location = new Point(11, 276);
+            label12.Location = new Point(11, 279);
             label12.Name = "label12";
             label12.Size = new Size(123, 23);
             label12.TabIndex = 5;
@@ -354,7 +356,7 @@
             // 
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label11.Location = new Point(11, 228);
+            label11.Location = new Point(11, 231);
             label11.Name = "label11";
             label11.Size = new Size(121, 23);
             label11.TabIndex = 4;
@@ -364,7 +366,7 @@
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label10.Location = new Point(11, 184);
+            label10.Location = new Point(10, 161);
             label10.Name = "label10";
             label10.Size = new Size(132, 23);
             label10.TabIndex = 3;
@@ -702,6 +704,16 @@
             panel_Body.Size = new Size(1042, 844);
             panel_Body.TabIndex = 4;
             // 
+            // label20
+            // 
+            label20.AutoSize = true;
+            label20.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label20.Location = new Point(10, 195);
+            label20.Name = "label20";
+            label20.Size = new Size(129, 23);
+            label20.TabIndex = 22;
+            label20.Text = "Tên Nhân Viên:";
+            // 
             // TrangChu
             // 
             AutoScaleMode = AutoScaleMode.None;
@@ -790,5 +802,6 @@
         private Label label17;
         private Label label19;
         private Label label18;
+        private Label label20;
     }
 }

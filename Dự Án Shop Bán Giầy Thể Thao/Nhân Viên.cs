@@ -21,5 +21,10 @@ namespace Dự_Án_Shop_Bán_Giầy_Thể_Thao
         {
 
         }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

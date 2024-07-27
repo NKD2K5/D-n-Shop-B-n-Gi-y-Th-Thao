@@ -78,9 +78,9 @@
             label4.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             label4.Location = new Point(39, 200);
             label4.Name = "label4";
-            label4.Size = new Size(138, 23);
+            label4.Size = new Size(133, 23);
             label4.TabIndex = 16;
-            label4.Text = "Nhân Viên Lập: ";
+            label4.Text = "Tên Nhân Viên:";
             // 
             // label5
             // 

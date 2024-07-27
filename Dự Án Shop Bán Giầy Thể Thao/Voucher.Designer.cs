@@ -47,8 +47,6 @@
             comboBox1 = new ComboBox();
             dateTimePicker2 = new DateTimePicker();
             label4 = new Label();
-            textBox4 = new TextBox();
-            label10 = new Label();
             label11 = new Label();
             textBox5 = new TextBox();
             label12 = new Label();
@@ -59,7 +57,7 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            label8.Location = new Point(372, 116);
+            label8.Location = new Point(372, 69);
             label8.Name = "label8";
             label8.Size = new Size(134, 25);
             label8.TabIndex = 43;
@@ -85,11 +83,11 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            label6.Location = new Point(372, 16);
+            label6.Location = new Point(390, 18);
             label6.Name = "label6";
-            label6.Size = new Size(139, 25);
+            label6.Size = new Size(102, 25);
             label6.TabIndex = 40;
-            label6.Text = "Mã Nhân Viên ";
+            label6.Text = "Người Tạo\r\n";
             // 
             // label7
             // 
@@ -111,7 +109,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            label5.Location = new Point(377, 67);
+            label5.Location = new Point(397, 119);
             label5.Name = "label5";
             label5.Size = new Size(95, 25);
             label5.TabIndex = 37;
@@ -207,6 +205,7 @@
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "Voucher Giảm Giá Phần Trăm", "", "Voucher Giảm Giá Số Tiền Cụ Thể", "", "Voucher Mua 1 Tặng 1", "", "Voucher Lần Mua Đầu Tiên", "Voucher Sinh Nhật", "", "Voucher Khách Hàng Thân Thiết", "", "Voucher Nhóm Sản Phẩm", "", "Voucher Sự Kiện", "", "Voucher Ứng Dụng Di Động" });
             comboBox1.Location = new Point(160, 70);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(198, 28);
@@ -229,23 +228,6 @@
             label4.TabIndex = 47;
             label4.Text = "Mã Voucher";
             // 
-            // textBox4
-            // 
-            textBox4.Location = new Point(877, 23);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(174, 27);
-            textBox4.TabIndex = 50;
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            label10.Location = new Point(732, 22);
-            label10.Name = "label10";
-            label10.Size = new Size(143, 25);
-            label10.TabIndex = 49;
-            label10.Text = "Tên Nhân Viên ";
-            // 
             // label11
             // 
             label11.AutoSize = true;
@@ -257,7 +239,7 @@
             // 
             // textBox5
             // 
-            textBox5.Location = new Point(877, 72);
+            textBox5.Location = new Point(878, 22);
             textBox5.Name = "textBox5";
             textBox5.Size = new Size(174, 27);
             textBox5.TabIndex = 52;
@@ -266,7 +248,7 @@
             // 
             label12.AutoSize = true;
             label12.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            label12.Location = new Point(785, 72);
+            label12.Location = new Point(786, 22);
             label12.Name = "label12";
             label12.Size = new Size(50, 25);
             label12.TabIndex = 51;
@@ -280,8 +262,6 @@
             ClientSize = new Size(1049, 841);
             Controls.Add(textBox5);
             Controls.Add(label12);
-            Controls.Add(textBox4);
-            Controls.Add(label10);
             Controls.Add(label11);
             Controls.Add(label4);
             Controls.Add(dateTimePicker2);
@@ -330,8 +310,6 @@
         private ComboBox comboBox1;
         private DateTimePicker dateTimePicker2;
         private Label label4;
-        private TextBox textBox4;
-        private Label label10;
         private Label label11;
         private TextBox textBox5;
         private Label label12;

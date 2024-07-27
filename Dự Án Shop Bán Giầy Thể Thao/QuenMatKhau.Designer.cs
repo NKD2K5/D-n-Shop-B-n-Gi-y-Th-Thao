@@ -34,6 +34,8 @@
             txt_MatKhau = new TextBox();
             label3 = new Label();
             button1 = new Button();
+            textBox1 = new TextBox();
+            label4 = new Label();
             SuspendLayout();
             // 
             // txt_EmailDangKy
@@ -57,9 +59,9 @@
             label2.AutoSize = true;
             label2.Location = new Point(39, 198);
             label2.Name = "label2";
-            label2.Size = new Size(133, 40);
+            label2.Size = new Size(105, 20);
             label2.TabIndex = 10;
-            label2.Text = "Mật Khẩu Của Bạn:\r\n\r\n";
+            label2.Text = "Mật Khẩu Mới:\r\n";
             // 
             // txt_MatKhau
             // 
@@ -81,7 +83,7 @@
             // button1
             // 
             button1.ForeColor = SystemColors.ActiveCaptionText;
-            button1.Location = new Point(120, 265);
+            button1.Location = new Point(122, 309);
             button1.Name = "button1";
             button1.Size = new Size(193, 48);
             button1.TabIndex = 13;
@@ -89,12 +91,30 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(200, 252);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(220, 27);
+            textBox1.TabIndex = 15;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(39, 255);
+            label4.Name = "label4";
+            label4.Size = new Size(142, 40);
+            label4.TabIndex = 14;
+            label4.Text = "Xác Nhận Mật Khẩu:\r\n\r\n";
+            // 
             // QuenMatKhau
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
             ClientSize = new Size(506, 369);
+            Controls.Add(textBox1);
+            Controls.Add(label4);
             Controls.Add(button1);
             Controls.Add(label3);
             Controls.Add(txt_MatKhau);
@@ -114,5 +134,7 @@
         private TextBox txt_MatKhau;
         private Label label3;
         private Button button1;
+        private TextBox textBox1;
+        private Label label4;
     }
 }
