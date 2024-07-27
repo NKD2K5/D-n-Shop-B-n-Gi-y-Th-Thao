@@ -76,7 +76,7 @@
             // 
             textBox3.Location = new Point(520, 16);
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(196, 27);
+            textBox3.Size = new Size(243, 27);
             textBox3.TabIndex = 41;
             // 
             // label6
