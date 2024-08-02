@@ -127,7 +127,7 @@
             lb_TieuDe.Font = new Font("Segoe UI", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             lb_TieuDe.Location = new Point(3, 123);
             lb_TieuDe.Name = "lb_TieuDe";
-            lb_TieuDe.Size = new Size(106, 28);
+            lb_TieuDe.Size = new Size(83, 21);
             lb_TieuDe.TabIndex = 10;
             lb_TieuDe.Text = "Bán Hàng";
             // 
@@ -139,7 +139,7 @@
             label15.ForeColor = Color.FromArgb(255, 128, 0);
             label15.Location = new Point(522, 30);
             label15.Name = "label15";
-            label15.Size = new Size(555, 34);
+            label15.Size = new Size(462, 27);
             label15.TabIndex = 9;
             label15.Text = "Fpoly Shop Xin Chào Quý Khách \r\n";
             // 
@@ -186,42 +186,43 @@
             // 
             textBox6.Location = new Point(149, 279);
             textBox6.Name = "textBox6";
-            textBox6.Size = new Size(164, 27);
+            textBox6.Size = new Size(164, 23);
             textBox6.TabIndex = 28;
             // 
             // txt_MaHoaDon
             // 
             txt_MaHoaDon.Location = new Point(149, 230);
             txt_MaHoaDon.Name = "txt_MaHoaDon";
-            txt_MaHoaDon.Size = new Size(164, 27);
+            txt_MaHoaDon.Size = new Size(164, 23);
             txt_MaHoaDon.TabIndex = 27;
             // 
             // txt_TenNhanVien
             // 
             txt_TenNhanVien.Location = new Point(149, 194);
             txt_TenNhanVien.Name = "txt_TenNhanVien";
-            txt_TenNhanVien.Size = new Size(164, 27);
+            txt_TenNhanVien.Size = new Size(164, 23);
             txt_TenNhanVien.TabIndex = 26;
             // 
             // textBox3
             // 
             textBox3.Location = new Point(149, 160);
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(164, 27);
+            textBox3.Size = new Size(164, 23);
             textBox3.TabIndex = 25;
             // 
             // txt_TienThua
             // 
             txt_TienThua.Location = new Point(17, 521);
             txt_TienThua.Name = "txt_TienThua";
-            txt_TienThua.Size = new Size(296, 27);
+            txt_TienThua.Size = new Size(296, 23);
             txt_TienThua.TabIndex = 24;
             // 
             // txt_TongTien
             // 
             txt_TongTien.Location = new Point(17, 580);
             txt_TongTien.Name = "txt_TongTien";
-            txt_TongTien.Size = new Size(296, 27);
+            txt_TongTien.ReadOnly = true;
+            txt_TongTien.Size = new Size(296, 23);
             txt_TongTien.TabIndex = 23;
             txt_TongTien.TextChanged += txt_TongTien_TextChanged;
             // 
@@ -232,7 +233,7 @@
             label20.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label20.Location = new Point(10, 195);
             label20.Name = "label20";
-            label20.Size = new Size(129, 23);
+            label20.Size = new Size(108, 19);
             label20.TabIndex = 22;
             label20.Text = "Tên Nhân Viên:";
             // 
@@ -243,7 +244,7 @@
             label19.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label19.Location = new Point(10, 551);
             label19.Name = "label19";
-            label19.Size = new Size(90, 23);
+            label19.Size = new Size(75, 19);
             label19.TabIndex = 21;
             label19.Text = "Tổng Tiền";
             // 
@@ -254,7 +255,7 @@
             label18.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label18.Location = new Point(11, 496);
             label18.Name = "label18";
-            label18.Size = new Size(89, 23);
+            label18.Size = new Size(74, 19);
             label18.TabIndex = 20;
             label18.Text = "Tiền Thừa";
             // 
@@ -262,8 +263,9 @@
             // 
             txt_SoTienNhan.Location = new Point(17, 450);
             txt_SoTienNhan.Name = "txt_SoTienNhan";
-            txt_SoTienNhan.Size = new Size(296, 27);
+            txt_SoTienNhan.Size = new Size(296, 23);
             txt_SoTienNhan.TabIndex = 16;
+            txt_SoTienNhan.TextChanged += txt_SoTienNhan_TextChanged;
             // 
             // label17
             // 
@@ -272,7 +274,7 @@
             label17.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label17.Location = new Point(11, 415);
             label17.Name = "label17";
-            label17.Size = new Size(116, 23);
+            label17.Size = new Size(97, 19);
             label17.TabIndex = 19;
             label17.Text = "Số Tiền Nhận";
             // 
@@ -291,7 +293,7 @@
             label16.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label16.Location = new Point(10, 610);
             label16.Name = "label16";
-            label16.Size = new Size(78, 23);
+            label16.Size = new Size(64, 19);
             label16.TabIndex = 17;
             label16.Text = "Ghi Chú ";
             // 
@@ -301,7 +303,7 @@
             comboBox7.Items.AddRange(new object[] { "Chuyển Khoản ", "TIền Mặt " });
             comboBox7.Location = new Point(17, 373);
             comboBox7.Name = "comboBox7";
-            comboBox7.Size = new Size(296, 28);
+            comboBox7.Size = new Size(296, 23);
             comboBox7.TabIndex = 16;
             comboBox7.Text = "Chọn Hình Thức Thanh Toán ";
             // 
@@ -312,7 +314,7 @@
             label13.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label13.Location = new Point(10, 328);
             label13.Name = "label13";
-            label13.Size = new Size(198, 23);
+            label13.Size = new Size(164, 19);
             label13.TabIndex = 13;
             label13.Text = "Hình Thức Thanh Toán  ";
             // 
@@ -336,7 +338,7 @@
             label12.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label12.Location = new Point(11, 279);
             label12.Name = "label12";
-            label12.Size = new Size(123, 23);
+            label12.Size = new Size(103, 19);
             label12.TabIndex = 5;
             label12.Text = "Mã Giảm Giá: ";
             // 
@@ -347,7 +349,7 @@
             label11.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label11.Location = new Point(11, 231);
             label11.Name = "label11";
-            label11.Size = new Size(121, 23);
+            label11.Size = new Size(101, 19);
             label11.TabIndex = 4;
             label11.Text = "Mã Hóa Đơn: ";
             // 
@@ -358,7 +360,7 @@
             label10.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label10.Location = new Point(10, 161);
             label10.Name = "label10";
-            label10.Size = new Size(132, 23);
+            label10.Size = new Size(110, 19);
             label10.TabIndex = 3;
             label10.Text = "Mã Nhân Viên: ";
             // 
@@ -379,14 +381,14 @@
             // 
             txt_TenKhachHang.Location = new Point(144, 76);
             txt_TenKhachHang.Name = "txt_TenKhachHang";
-            txt_TenKhachHang.Size = new Size(158, 27);
+            txt_TenKhachHang.Size = new Size(158, 23);
             txt_TenKhachHang.TabIndex = 18;
             // 
             // textBox1
             // 
             textBox1.Location = new Point(144, 33);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(158, 27);
+            textBox1.Size = new Size(158, 23);
             textBox1.TabIndex = 17;
             // 
             // label9
@@ -396,7 +398,7 @@
             label9.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label9.Location = new Point(6, 80);
             label9.Name = "label9";
-            label9.Size = new Size(148, 23);
+            label9.Size = new Size(124, 19);
             label9.TabIndex = 2;
             label9.Text = "Tên Khách Hàng: ";
             // 
@@ -407,7 +409,7 @@
             label8.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label8.Location = new Point(6, 34);
             label8.Name = "label8";
-            label8.Size = new Size(146, 23);
+            label8.Size = new Size(122, 19);
             label8.TabIndex = 1;
             label8.Text = "Mã Khách Hàng: ";
             // 
@@ -485,9 +487,12 @@
             dtgView_GioHang.BackgroundColor = Color.FromArgb(224, 224, 224);
             dtgView_GioHang.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dtgView_GioHang.Location = new Point(3, 64);
+            dtgView_GioHang.MultiSelect = false;
             dtgView_GioHang.Name = "dtgView_GioHang";
+            dtgView_GioHang.ReadOnly = true;
             dtgView_GioHang.RowHeadersWidth = 51;
             dtgView_GioHang.RowTemplate.Height = 29;
+            dtgView_GioHang.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dtgView_GioHang.Size = new Size(1031, 489);
             dtgView_GioHang.TabIndex = 8;
             dtgView_GioHang.CellClick += dtgView_GioHang_CellClick;
@@ -529,7 +534,7 @@
             label22.ForeColor = Color.FromArgb(255, 128, 0);
             label22.Location = new Point(717, 168);
             label22.Name = "label22";
-            label22.Size = new Size(90, 25);
+            label22.Size = new Size(75, 20);
             label22.TabIndex = 18;
             label22.Text = "Số Lượng";
             // 
@@ -537,7 +542,7 @@
             // 
             n_soluong.Location = new Point(814, 169);
             n_soluong.Name = "n_soluong";
-            n_soluong.Size = new Size(203, 27);
+            n_soluong.Size = new Size(203, 23);
             n_soluong.TabIndex = 13;
             n_soluong.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
@@ -549,7 +554,7 @@
             label21.ForeColor = Color.FromArgb(255, 128, 0);
             label21.Location = new Point(366, 167);
             label21.Name = "label21";
-            label21.Size = new Size(42, 25);
+            label21.Size = new Size(34, 20);
             label21.TabIndex = 17;
             label21.Text = "Giá";
             // 
@@ -557,7 +562,7 @@
             // 
             txt_Gia.Location = new Point(445, 168);
             txt_Gia.Name = "txt_Gia";
-            txt_Gia.Size = new Size(240, 27);
+            txt_Gia.Size = new Size(240, 23);
             txt_Gia.TabIndex = 16;
             // 
             // cbb_DichVu
@@ -565,7 +570,7 @@
             cbb_DichVu.FormattingEnabled = true;
             cbb_DichVu.Location = new Point(112, 164);
             cbb_DichVu.Name = "cbb_DichVu";
-            cbb_DichVu.Size = new Size(202, 28);
+            cbb_DichVu.Size = new Size(202, 23);
             cbb_DichVu.TabIndex = 15;
             // 
             // label14
@@ -576,7 +581,7 @@
             label14.ForeColor = Color.FromArgb(255, 128, 0);
             label14.Location = new Point(14, 167);
             label14.Name = "label14";
-            label14.Size = new Size(84, 25);
+            label14.Size = new Size(68, 20);
             label14.TabIndex = 14;
             label14.Text = "Dịch Vụ ";
             // 
@@ -598,7 +603,7 @@
             cbb_PhuKien.Items.AddRange(new object[] { "Dây giày", "Lót giày", "Tấm lót chống trượt", "Bảo vệ giày", "Bàn chải và dung dịch vệ sinh giày", "Miếng chống trầy", "Túi giặt giày", "Tất", "Thiết bị kéo giày", "Khung giữ form giày" });
             cbb_PhuKien.Location = new Point(814, 101);
             cbb_PhuKien.Name = "cbb_PhuKien";
-            cbb_PhuKien.Size = new Size(203, 28);
+            cbb_PhuKien.Size = new Size(203, 23);
             cbb_PhuKien.TabIndex = 11;
             // 
             // label7
@@ -609,7 +614,7 @@
             label7.ForeColor = Color.FromArgb(255, 128, 0);
             label7.Location = new Point(14, 111);
             label7.Name = "label7";
-            label7.Size = new Size(59, 25);
+            label7.Size = new Size(47, 20);
             label7.TabIndex = 10;
             label7.Text = "Hãng";
             // 
@@ -617,7 +622,7 @@
             // 
             txt_Mau.Location = new Point(445, 103);
             txt_Mau.Name = "txt_Mau";
-            txt_Mau.Size = new Size(240, 27);
+            txt_Mau.Size = new Size(240, 23);
             txt_Mau.TabIndex = 9;
             // 
             // label6
@@ -628,7 +633,7 @@
             label6.ForeColor = Color.FromArgb(255, 128, 0);
             label6.Location = new Point(364, 102);
             label6.Name = "label6";
-            label6.Size = new Size(59, 28);
+            label6.Size = new Size(47, 21);
             label6.TabIndex = 8;
             label6.Text = "Màu ";
             // 
@@ -638,7 +643,7 @@
             cbb_Hang.Items.AddRange(new object[] { "Nike ", "Adisda", "Puma", "Vans", "Converse", "Under Armour", "New Balance", "ASICS", "Skechers" });
             cbb_Hang.Location = new Point(112, 107);
             cbb_Hang.Name = "cbb_Hang";
-            cbb_Hang.Size = new Size(202, 28);
+            cbb_Hang.Size = new Size(202, 23);
             cbb_Hang.TabIndex = 7;
             // 
             // button10
@@ -662,7 +667,7 @@
             label5.ForeColor = Color.FromArgb(255, 128, 0);
             label5.Location = new Point(717, 38);
             label5.Name = "label5";
-            label5.Size = new Size(46, 25);
+            label5.Size = new Size(37, 20);
             label5.TabIndex = 6;
             label5.Text = "Size";
             // 
@@ -672,7 +677,7 @@
             cbb_Size.Items.AddRange(new object[] { "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50" });
             cbb_Size.Location = new Point(814, 35);
             cbb_Size.Name = "cbb_Size";
-            cbb_Size.Size = new Size(203, 28);
+            cbb_Size.Size = new Size(203, 23);
             cbb_Size.TabIndex = 5;
             // 
             // label4
@@ -683,7 +688,7 @@
             label4.ForeColor = Color.FromArgb(255, 128, 0);
             label4.Location = new Point(717, 110);
             label4.Name = "label4";
-            label4.Size = new Size(88, 25);
+            label4.Size = new Size(72, 20);
             label4.TabIndex = 4;
             label4.Text = "Phụ Kiện";
             // 
@@ -692,7 +697,7 @@
             cbb_Giay.FormattingEnabled = true;
             cbb_Giay.Location = new Point(445, 31);
             cbb_Giay.Name = "cbb_Giay";
-            cbb_Giay.Size = new Size(240, 28);
+            cbb_Giay.Size = new Size(240, 23);
             cbb_Giay.TabIndex = 3;
             // 
             // label3
@@ -703,7 +708,7 @@
             label3.ForeColor = Color.FromArgb(255, 128, 0);
             label3.Location = new Point(364, 30);
             label3.Name = "label3";
-            label3.Size = new Size(52, 25);
+            label3.Size = new Size(42, 20);
             label3.TabIndex = 2;
             label3.Text = "Giầy";
             // 
@@ -715,7 +720,7 @@
             label2.ForeColor = Color.FromArgb(255, 128, 0);
             label2.Location = new Point(14, 34);
             label2.Name = "label2";
-            label2.Size = new Size(93, 25);
+            label2.Size = new Size(77, 20);
             label2.TabIndex = 1;
             label2.Text = "Loại Giầy";
             // 
@@ -724,7 +729,7 @@
             cbb_LoaiGiay.FormattingEnabled = true;
             cbb_LoaiGiay.Location = new Point(112, 31);
             cbb_LoaiGiay.Name = "cbb_LoaiGiay";
-            cbb_LoaiGiay.Size = new Size(202, 28);
+            cbb_LoaiGiay.Size = new Size(202, 23);
             cbb_LoaiGiay.TabIndex = 0;
             // 
             // panel1
@@ -775,7 +780,7 @@
             label1.ForeColor = Color.FromArgb(255, 128, 0);
             label1.Location = new Point(3, 565);
             label1.Name = "label1";
-            label1.Size = new Size(71, 20);
+            label1.Size = new Size(58, 15);
             label1.TabIndex = 8;
             label1.Text = "Xin Chào:";
             // 

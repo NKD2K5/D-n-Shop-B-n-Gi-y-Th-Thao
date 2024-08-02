@@ -10,7 +10,7 @@ namespace BUS_DuAn.Repository
 {
     internal class Repository_GioHang
     {
-        MyContext context;
+        MyContext context; //
         public Repository_GioHang()
         {
             context = new MyContext();

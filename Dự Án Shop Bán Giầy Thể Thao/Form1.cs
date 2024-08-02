@@ -186,12 +186,16 @@ namespace Dự_Án_Shop_Bán_Giầy_Thể_Thao
             dtgView_GioHang.Columns[7].Name = "Dịch Vụ";
             dtgView_GioHang.Columns[8].Name = "Giá";
             dtgView_GioHang.Columns[9].Name = "Số Lượng";
+
             dtgView_GioHang.Rows.Clear();
+
+
 
             foreach (var gh in svgh.GetGioHangs())
             {
                 dtgView_GioHang.Rows.Add(gh.MaGioHang, gh.LoaiGiay, gh.Hang, gh.TenSanPham, gh.Mau, gh.Size, gh.PhuKien, gh.DichVu, gh.Gia, gh.SoLuong);
             }
+
         }
 
         private void button10_Click(object sender, EventArgs e)
@@ -241,61 +245,101 @@ namespace Dự_Án_Shop_Bán_Giầy_Thể_Thao
                 }
             }
         }
+
+        // comment het roi ko chay dc j
         private void button14_Click_1(object sender, EventArgs e)
         {
-            decimal tongTien = 0;
 
-            foreach (DataGridViewRow row in dtgView_GioHang.Rows)
+            #region Code cũ của duy gamiong
+            //decimal tongTien = 0;
+
+            //foreach (DataGridViewRow row in dtgView_GioHang.Rows) // thấy r b
+            //{
+            //    // Kiểm tra giá trị ô giá có hợp lệ không
+            //    if (row.Cells["Giá"].Value != null && !string.IsNullOrWhiteSpace(row.Cells["Giá"].Value.ToString()))
+            //    {
+            //        string giaString = row.Cells["Giá"].Value.ToString();
+
+            //        // Kiểm tra định dạng tiền tệ và chuyển đổi giá trị
+            //        if (decimal.TryParse(giaString, NumberStyles.Currency, CultureInfo.InvariantCulture, out decimal gia))
+            //        {
+            //            tongTien += gia;
+            //        }
+            //        else
+            //        {
+            //            // Xử lý lỗi nếu giá trị không thể parse
+            //            MessageBox.Show($"Giá trị không hợp lệ: {giaString}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //        }
+            //        txt_TongTien.Text = tongTien.ToString("", CultureInfo.CurrentCulture);
+            //    }
+            //}
+
+            //decimal soTienNhan;
+
+            //if (decimal.TryParse(txt_SoTienNhan.Text, NumberStyles.Currency, CultureInfo.CurrentCulture, out soTienNhan))
+            //{
+            //    if (soTienNhan >= tongTien)
+            //    {
+            //        decimal tienThua = soTienNhan - tongTien;
+            //        txt_TienThua.Text = tienThua.ToString("", CultureInfo.CurrentCulture);
+
+            //        string maHoaDon = txt_MaHoaDon.Text;
+            //        string tenNhanVien = txt_TenNhanVien.Text;
+            //        string tenKhachHang = txt_TenKhachHang.Text;
+            //        string ngayLap = DateTime.Now.ToString("dd/MM/yyyy");
+
+            //        HoaDoncs hoaDonForm = new HoaDoncs();
+            //        hoaDonForm.XuatHoaDon(maHoaDon, tenNhanVien, tenKhachHang, ngayLap, tongTien, soTienNhan, tienThua);
+
+            //        hoaDonForm.Show(); //no dien thong tin o phan thanh toan vao hoa don 
+
+            //        MessageBox.Show("Thanh toán thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("Số tiền nhận không đủ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    }
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Vui lòng nhập số tiền nhận hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
+
+            #endregion
+
+
+            //decimal tienThua = soTienNhan - tongTien;
+            //txt_TienThua.Text = tienThua.ToString("", CultureInfo.CurrentCulture);
+
+            //string maHoaDon = txt_MaHoaDon.Text;
+            //string tenNhanVien = txt_TenNhanVien.Text;
+            //string tenKhachHang = txt_TenKhachHang.Text;
+            //string ngayLap = DateTime.Now.ToString("dd/MM/yyyy");
+
+
+
+
+            if (decimal.TryParse(txt_TienThua.Text, out decimal tienThua) && decimal.TryParse(txt_SoTienNhan.Text, out decimal soTienNhan) && decimal.TryParse(txt_TongTien.Text, out decimal tongTien))
             {
-                // Kiểm tra giá trị ô giá có hợp lệ không
-                if (row.Cells["Giá"].Value != null && !string.IsNullOrWhiteSpace(row.Cells["Giá"].Value.ToString()))
-                {
-                    string giaString = row.Cells["Giá"].Value.ToString();
+                string maHoaDon = txt_MaHoaDon.Text;
+                string tenNhanVien = txt_TenNhanVien.Text;
+                string tenKhachHang = txt_TenKhachHang.Text;
+                string ngayLap = DateTime.Now.ToString("dd/MM/yyyy");
 
-                    // Kiểm tra định dạng tiền tệ và chuyển đổi giá trị
-                    if (decimal.TryParse(giaString, NumberStyles.Currency, CultureInfo.InvariantCulture, out decimal gia))
-                    {
-                        tongTien += gia;
-                    }
-                    else
-                    {
-                        // Xử lý lỗi nếu giá trị không thể parse
-                        MessageBox.Show($"Giá trị không hợp lệ: {giaString}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    txt_TongTien.Text = tongTien.ToString("", CultureInfo.CurrentCulture);
-                }
+
+                HoaDoncs hoaDonForm = new HoaDoncs();
+                hoaDonForm.XuatHoaDon(maHoaDon, tenNhanVien, tenKhachHang, ngayLap, tongTien, soTienNhan, tienThua);
+                hoaDonForm.Show(); //no dien thong tin o phan thanh toan vao hoa don 
+
+                MessageBox.Show("Thanh toán thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-                decimal soTienNhan;
-
-                if (decimal.TryParse(txt_SoTienNhan.Text, NumberStyles.Currency, CultureInfo.CurrentCulture, out soTienNhan))
-                {
-                    if (soTienNhan >= tongTien)
-                    {
-                        decimal tienThua = soTienNhan - tongTien;
-                        txt_TienThua.Text = tienThua.ToString("", CultureInfo.CurrentCulture);
-
-                        string maHoaDon = txt_MaHoaDon.Text;
-                        string tenNhanVien = txt_TenNhanVien.Text;
-                        string tenKhachHang = txt_TenKhachHang.Text;
-                        string ngayLap = DateTime.Now.ToString("dd/MM/yyyy");
-
-                        HoaDoncs hoaDonForm = new HoaDoncs();
-                        hoaDonForm.XuatHoaDon(maHoaDon, tenNhanVien, tenKhachHang, ngayLap, tongTien, soTienNhan, tienThua);
-
-                        hoaDonForm.ShowDialog();
-
-                        MessageBox.Show("Thanh toán thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Số tiền nhận không đủ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Vui lòng nhập số tiền nhận hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+            else
+            {
+                MessageBox.Show("thất bại!");
             }
+
+
+        }
 
 
         private void txt_TongTien_TextChanged(object sender, EventArgs e)
@@ -335,6 +379,28 @@ namespace Dự_Án_Shop_Bán_Giầy_Thể_Thao
             var gh = svgh.GetGioHangs().Find(x => x.MaGioHang == idWhenClick);
             MessageBox.Show(svgh.Xóa(gh));
             LoadData();
+        }
+
+        private void txt_SoTienNhan_TextChanged(object sender, EventArgs e)
+        {
+            if (!txt_SoTienNhan.Text.All(char.IsDigit))
+            {
+                MessageBox.Show("Không được nhập chữ!");
+            }
+            else
+            {
+                if (decimal.TryParse(txt_TongTien.Text, out decimal tongtien) && decimal.TryParse(txt_SoTienNhan.Text, out decimal tiennhan))
+                {
+                    if (tiennhan - tongtien < 0)
+                    {
+                        txt_TienThua.Text = "0";
+                    }
+                    else
+                    {
+                        txt_TienThua.Text = (tiennhan - tongtien).ToString();
+                    }
+                }
+            }
         }
     }
 }
