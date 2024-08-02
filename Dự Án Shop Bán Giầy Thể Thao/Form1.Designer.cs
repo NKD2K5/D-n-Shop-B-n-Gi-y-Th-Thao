@@ -97,7 +97,6 @@
             btn_GiamGia = new Button();
             btn_BanHang = new Button();
             pictureBox1 = new PictureBox();
-            label23 = new Label();
             panel4.SuspendLayout();
             panel2.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -114,7 +113,6 @@
             // panel4
             // 
             panel4.BackColor = SystemColors.GradientActiveCaption;
-            panel4.Controls.Add(label23);
             panel4.Controls.Add(lb_TieuDe);
             panel4.Controls.Add(label15);
             panel4.Location = new Point(0, 1);
@@ -869,15 +867,6 @@
             pictureBox1.TabIndex = 7;
             pictureBox1.TabStop = false;
             // 
-            // label23
-            // 
-            label23.AutoSize = true;
-            label23.Location = new Point(524, 77);
-            label23.Name = "label23";
-            label23.Size = new Size(126, 15);
-            label23.TabIndex = 11;
-            label23.Text = "Đây là code của NGhĩa";
-            // 
             // TrangChu
             // 
             AutoScaleMode = AutoScaleMode.None;
@@ -979,6 +968,5 @@
         private Button btn_GiamGia;
         private Button btn_BanHang;
         private PictureBox pictureBox1;
-        private Label label23;
     }
 }
