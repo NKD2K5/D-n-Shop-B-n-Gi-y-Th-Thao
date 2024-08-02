@@ -1,8 +1,11 @@
-﻿using System;
+﻿using BUS_DuAn.Service;
+using DAL_DuAn.DomainClass;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Reflection.Emit;
 using System.Text;
@@ -14,23 +17,22 @@ namespace Dự_Án_Shop_Bán_Giầy_Thể_Thao
 {
     public partial class TrangChu : Form
     {
+        Service_GioHang svgh;
         private Dictionary<string, List<string>> comboBoxData;
+        private decimal tongTien;
+        private string idWhenClick;
         public TrangChu()
         {
             InitializeComponent();
             InitializeComboBoxData();
             SetupComboBox1();
+            svgh = new Service_GioHang();
+            LoadData();
+            this.dtgView_GioHang.CellClick += new DataGridViewCellEventHandler(this.dtgView_GioHang_CellClick);
+            this.tongTien = tongTien; // ????
+            txt_TongTien.Text = tongTien.ToString();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void InitializeComboBoxData()
         {
@@ -84,16 +86,7 @@ namespace Dự_Án_Shop_Bán_Giầy_Thể_Thao
             lb_TieuDe.Text = btn_SanPham.Text;
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
-        }
-
-        private void button14_Click(object sender, EventArgs e)
-        {
-            HoaDoncs hoaDoncs = new HoaDoncs();
-            hoaDoncs.ShowDialog();
-        }
 
         private void button8_Click(object sender, EventArgs e)
         {
@@ -102,15 +95,7 @@ namespace Dự_Án_Shop_Bán_Giầy_Thể_Thao
             dangNhap.Show();
         }
 
-        private void button7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TrangChu_Load(object sender, EventArgs e)
-        {
-
-        }
+        //setting combobox
         private Form currentFormChild;
         private void OpenChildForm(Form childForm)
         {
@@ -158,12 +143,6 @@ namespace Dự_Án_Shop_Bán_Giầy_Thể_Thao
             lb_TieuDe.Text = btn_FeedBack.Text;
         }
 
-        private void btn_BanHang_Click(object sender, EventArgs e)
-        {
-            //OpenChildForm(new TrangChu());
-            //lb_TieuDe.Text = btn_BanHang.Text;
-        }
-
         private void cbb_LoaiGiay_SelectedIndexChanged(object sender, EventArgs e)
         {
             UpdateComboBoxGiay();
@@ -193,6 +172,169 @@ namespace Dự_Án_Shop_Bán_Giầy_Thể_Thao
                     }
                 }
             }
+        }
+        private void LoadData()
+        {
+            dtgView_GioHang.ColumnCount = 10;
+            dtgView_GioHang.Columns[0].Name = "Mã Giỏ Hàng";
+            dtgView_GioHang.Columns[1].Name = "Loại Giầy";
+            dtgView_GioHang.Columns[2].Name = "Hãng";
+            dtgView_GioHang.Columns[3].Name = "Tên Giầy";
+            dtgView_GioHang.Columns[4].Name = "Màu";
+            dtgView_GioHang.Columns[5].Name = "Size";
+            dtgView_GioHang.Columns[6].Name = "Phụ Kiện";
+            dtgView_GioHang.Columns[7].Name = "Dịch Vụ";
+            dtgView_GioHang.Columns[8].Name = "Giá";
+            dtgView_GioHang.Columns[9].Name = "Số Lượng";
+            dtgView_GioHang.Rows.Clear();
+
+            foreach (var gh in svgh.GetGioHangs())
+            {
+                dtgView_GioHang.Rows.Add(gh.MaGioHang, gh.LoaiGiay, gh.Hang, gh.TenSanPham, gh.Mau, gh.Size, gh.PhuKien, gh.DichVu, gh.Gia, gh.SoLuong);
+            }
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                GioHang gh = new GioHang
+                {
+                    MaGioHang = txt_MaHoaDon.Text,
+                    LoaiGiay = cbb_LoaiGiay.Text,
+                    Hang = cbb_Hang.Text,
+                    TenSanPham = cbb_Giay.Text,
+                    Mau = txt_Mau.Text,
+                    Size = cbb_Size.Text,
+                    PhuKien = cbb_PhuKien.Text,
+                    DichVu = cbb_DichVu.Text,
+                    Gia = Convert.ToInt32(txt_Gia.Text),
+                    SoLuong = Convert.ToInt32(n_soluong.Text)
+                };
+
+                DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn thêm không?", "Thông Báo", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    string resultMessage = svgh.Them(gh);
+                    LoadData();
+                    MessageBox.Show(resultMessage);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Đã xảy ra lỗi: {ex.Message}");
+            }
+        }
+        private void dtgView_GioHang_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                DataGridViewRow selectedRow = dtgView_GioHang.Rows[e.RowIndex];
+                if (selectedRow.Cells["Giá"].Value != null)
+                {
+                    string gia = selectedRow.Cells["Giá"].Value.ToString();
+                    txt_TongTien.Text = gia;
+                }
+                else
+                {
+                    MessageBox.Show("Ô Giá trị không hợp lệ hoặc trống", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+        private void button14_Click_1(object sender, EventArgs e)
+        {
+            decimal tongTien = 0;
+
+            foreach (DataGridViewRow row in dtgView_GioHang.Rows)
+            {
+                // Kiểm tra giá trị ô giá có hợp lệ không
+                if (row.Cells["Giá"].Value != null && !string.IsNullOrWhiteSpace(row.Cells["Giá"].Value.ToString()))
+                {
+                    string giaString = row.Cells["Giá"].Value.ToString();
+
+                    // Kiểm tra định dạng tiền tệ và chuyển đổi giá trị
+                    if (decimal.TryParse(giaString, NumberStyles.Currency, CultureInfo.InvariantCulture, out decimal gia))
+                    {
+                        tongTien += gia;
+                    }
+                    else
+                    {
+                        // Xử lý lỗi nếu giá trị không thể parse
+                        MessageBox.Show($"Giá trị không hợp lệ: {giaString}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    txt_TongTien.Text = tongTien.ToString("", CultureInfo.CurrentCulture);
+                }
+            }
+                decimal soTienNhan;
+
+                if (decimal.TryParse(txt_SoTienNhan.Text, NumberStyles.Currency, CultureInfo.CurrentCulture, out soTienNhan))
+                {
+                    if (soTienNhan >= tongTien)
+                    {
+                        decimal tienThua = soTienNhan - tongTien;
+                        txt_TienThua.Text = tienThua.ToString("", CultureInfo.CurrentCulture);
+
+                        string maHoaDon = txt_MaHoaDon.Text;
+                        string tenNhanVien = txt_TenNhanVien.Text;
+                        string tenKhachHang = txt_TenKhachHang.Text;
+                        string ngayLap = DateTime.Now.ToString("dd/MM/yyyy");
+
+                        HoaDoncs hoaDonForm = new HoaDoncs();
+                        hoaDonForm.XuatHoaDon(maHoaDon, tenNhanVien, tenKhachHang, ngayLap, tongTien, soTienNhan, tienThua);
+
+                        hoaDonForm.ShowDialog();
+
+                        MessageBox.Show("Thanh toán thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Số tiền nhận không đủ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng nhập số tiền nhận hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+
+        private void txt_TongTien_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void button7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TrangChu_Load(object sender, EventArgs e)
+        {
+
+        }
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+        private void btn_BanHang_Click(object sender, EventArgs e)
+        {
+            //OpenChildForm(new TrangChu());
+            //lb_TieuDe.Text = btn_BanHang.Text;
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            var gh = svgh.GetGioHangs().Find(x => x.MaGioHang == idWhenClick);
+            MessageBox.Show(svgh.Xóa(gh));
+            LoadData();
         }
     }
 }

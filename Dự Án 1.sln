@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dự Án Shop Bán Giầy T
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DAL_DuAn", "DAL_DuAn\DAL_DuAn.csproj", "{1FC104F3-B45B-452F-95E5-5EB1F4A0750D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BUS_DuAn", "BUS_DuAn\BUS_DuAn.csproj", "{398C874B-1B34-4E64-BD62-18D12029A177}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BUS_DuAn", "BUS_DuAn\BUS_DuAn.csproj", "{398C874B-1B34-4E64-BD62-18D12029A177}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

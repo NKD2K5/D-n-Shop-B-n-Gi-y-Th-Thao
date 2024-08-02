@@ -45,11 +45,11 @@
             button3 = new Button();
             button2 = new Button();
             button1 = new Button();
-            dataGridView1 = new DataGridView();
+            dtgView_KhachHang = new DataGridView();
             label2 = new Label();
             radioButton1 = new RadioButton();
             radioButton2 = new RadioButton();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dtgView_KhachHang).BeginInit();
             SuspendLayout();
             // 
             // textBox7
@@ -205,16 +205,16 @@
             button1.Text = "Thêm ";
             button1.UseVisualStyleBackColor = false;
             // 
-            // dataGridView1
+            // dtgView_KhachHang
             // 
-            dataGridView1.BackgroundColor = Color.FromArgb(224, 224, 224);
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(0, 259);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new Size(1064, 590);
-            dataGridView1.TabIndex = 69;
+            dtgView_KhachHang.BackgroundColor = Color.FromArgb(224, 224, 224);
+            dtgView_KhachHang.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtgView_KhachHang.Location = new Point(0, 259);
+            dtgView_KhachHang.Name = "dtgView_KhachHang";
+            dtgView_KhachHang.RowHeadersWidth = 51;
+            dtgView_KhachHang.RowTemplate.Height = 29;
+            dtgView_KhachHang.Size = new Size(1064, 590);
+            dtgView_KhachHang.TabIndex = 69;
             // 
             // label2
             // 
@@ -257,7 +257,7 @@
             Controls.Add(radioButton2);
             Controls.Add(radioButton1);
             Controls.Add(label2);
-            Controls.Add(dataGridView1);
+            Controls.Add(dtgView_KhachHang);
             Controls.Add(textBox7);
             Controls.Add(label10);
             Controls.Add(textBox5);
@@ -278,7 +278,7 @@
             Name = "KhachHang";
             Text = "KhachHang";
             Load += KhachHang_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dtgView_KhachHang).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -302,7 +302,7 @@
         private Button button3;
         private Button button2;
         private Button button1;
-        private DataGridView dataGridView1;
+        private DataGridView dtgView_KhachHang;
         private Label label2;
         private RadioButton radioButton1;
         private RadioButton radioButton2;
