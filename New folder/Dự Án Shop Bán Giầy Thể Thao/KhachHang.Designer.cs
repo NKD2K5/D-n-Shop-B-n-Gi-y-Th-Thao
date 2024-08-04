@@ -28,37 +28,37 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			textBox7 = new TextBox();
+			txt_SoLuongDH = new TextBox();
 			label10 = new Label();
-			textBox5 = new TextBox();
+			txt_Email = new TextBox();
 			label8 = new Label();
 			label9 = new Label();
-			textBox3 = new TextBox();
+			txt_DiaChi = new TextBox();
 			label6 = new Label();
 			label7 = new Label();
-			textBox2 = new TextBox();
+			txt_SoDientThoai = new TextBox();
 			label4 = new Label();
-			textBox1 = new TextBox();
+			txt_TenKhachHang = new TextBox();
 			label3 = new Label();
-			textBox4 = new TextBox();
+			txt_MakhachHang = new TextBox();
 			label1 = new Label();
 			button3 = new Button();
 			button2 = new Button();
 			button1 = new Button();
 			dtgView_KhachHang = new DataGridView();
 			label2 = new Label();
-			radioButton1 = new RadioButton();
-			radioButton2 = new RadioButton();
+			rbtn_Nam = new RadioButton();
+			rbtn_Nu = new RadioButton();
 			((System.ComponentModel.ISupportInitialize)dtgView_KhachHang).BeginInit();
 			SuspendLayout();
 			// 
-			// textBox7
+			// txt_SoLuongDH
 			// 
-			textBox7.Location = new Point(640, 88);
-			textBox7.Margin = new Padding(3, 2, 3, 2);
-			textBox7.Name = "textBox7";
-			textBox7.Size = new Size(259, 23);
-			textBox7.TabIndex = 68;
+			txt_SoLuongDH.Location = new Point(640, 88);
+			txt_SoLuongDH.Margin = new Padding(3, 2, 3, 2);
+			txt_SoLuongDH.Name = "txt_SoLuongDH";
+			txt_SoLuongDH.Size = new Size(259, 23);
+			txt_SoLuongDH.TabIndex = 68;
 			// 
 			// label10
 			// 
@@ -70,13 +70,13 @@
 			label10.TabIndex = 67;
 			label10.Text = "Số Lượng Đơn Hàng";
 			// 
-			// textBox5
+			// txt_Email
 			// 
-			textBox5.Location = new Point(640, 52);
-			textBox5.Margin = new Padding(3, 2, 3, 2);
-			textBox5.Name = "textBox5";
-			textBox5.Size = new Size(259, 23);
-			textBox5.TabIndex = 64;
+			txt_Email.Location = new Point(640, 52);
+			txt_Email.Margin = new Padding(3, 2, 3, 2);
+			txt_Email.Name = "txt_Email";
+			txt_Email.Size = new Size(259, 23);
+			txt_Email.TabIndex = 64;
 			// 
 			// label8
 			// 
@@ -97,13 +97,13 @@
 			label9.Size = new Size(0, 20);
 			label9.TabIndex = 62;
 			// 
-			// textBox3
+			// txt_DiaChi
 			// 
-			textBox3.Location = new Point(640, 19);
-			textBox3.Margin = new Padding(3, 2, 3, 2);
-			textBox3.Name = "textBox3";
-			textBox3.Size = new Size(259, 23);
-			textBox3.TabIndex = 61;
+			txt_DiaChi.Location = new Point(640, 19);
+			txt_DiaChi.Margin = new Padding(3, 2, 3, 2);
+			txt_DiaChi.Name = "txt_DiaChi";
+			txt_DiaChi.Size = new Size(259, 23);
+			txt_DiaChi.TabIndex = 61;
 			// 
 			// label6
 			// 
@@ -124,13 +124,13 @@
 			label7.Size = new Size(0, 20);
 			label7.TabIndex = 59;
 			// 
-			// textBox2
+			// txt_SoDientThoai
 			// 
-			textBox2.Location = new Point(154, 92);
-			textBox2.Margin = new Padding(3, 2, 3, 2);
-			textBox2.Name = "textBox2";
-			textBox2.Size = new Size(270, 23);
-			textBox2.TabIndex = 58;
+			txt_SoDientThoai.Location = new Point(154, 92);
+			txt_SoDientThoai.Margin = new Padding(3, 2, 3, 2);
+			txt_SoDientThoai.Name = "txt_SoDientThoai";
+			txt_SoDientThoai.Size = new Size(270, 23);
+			txt_SoDientThoai.TabIndex = 58;
 			// 
 			// label4
 			// 
@@ -142,13 +142,13 @@
 			label4.TabIndex = 57;
 			label4.Text = "Số Điện Thoại";
 			// 
-			// textBox1
+			// txt_TenKhachHang
 			// 
-			textBox1.Location = new Point(154, 52);
-			textBox1.Margin = new Padding(3, 2, 3, 2);
-			textBox1.Name = "textBox1";
-			textBox1.Size = new Size(270, 23);
-			textBox1.TabIndex = 56;
+			txt_TenKhachHang.Location = new Point(154, 52);
+			txt_TenKhachHang.Margin = new Padding(3, 2, 3, 2);
+			txt_TenKhachHang.Name = "txt_TenKhachHang";
+			txt_TenKhachHang.Size = new Size(270, 23);
+			txt_TenKhachHang.TabIndex = 56;
 			// 
 			// label3
 			// 
@@ -160,13 +160,13 @@
 			label3.TabIndex = 55;
 			label3.Text = "Tên Khách Hàng";
 			// 
-			// textBox4
+			// txt_MakhachHang
 			// 
-			textBox4.Location = new Point(154, 14);
-			textBox4.Margin = new Padding(3, 2, 3, 2);
-			textBox4.Name = "textBox4";
-			textBox4.Size = new Size(270, 23);
-			textBox4.TabIndex = 54;
+			txt_MakhachHang.Location = new Point(154, 14);
+			txt_MakhachHang.Margin = new Padding(3, 2, 3, 2);
+			txt_MakhachHang.Name = "txt_MakhachHang";
+			txt_MakhachHang.Size = new Size(270, 23);
+			txt_MakhachHang.TabIndex = 54;
 			// 
 			// label1
 			// 
@@ -237,29 +237,29 @@
 			label2.TabIndex = 70;
 			label2.Text = "Giới Tính:";
 			// 
-			// radioButton1
+			// rbtn_Nam
 			// 
-			radioButton1.AutoSize = true;
-			radioButton1.Location = new Point(345, 130);
-			radioButton1.Margin = new Padding(3, 2, 3, 2);
-			radioButton1.Name = "radioButton1";
-			radioButton1.Size = new Size(51, 19);
-			radioButton1.TabIndex = 71;
-			radioButton1.TabStop = true;
-			radioButton1.Text = "Nam";
-			radioButton1.UseVisualStyleBackColor = true;
+			rbtn_Nam.AutoSize = true;
+			rbtn_Nam.Location = new Point(345, 130);
+			rbtn_Nam.Margin = new Padding(3, 2, 3, 2);
+			rbtn_Nam.Name = "rbtn_Nam";
+			rbtn_Nam.Size = new Size(51, 19);
+			rbtn_Nam.TabIndex = 71;
+			rbtn_Nam.TabStop = true;
+			rbtn_Nam.Text = "Nam";
+			rbtn_Nam.UseVisualStyleBackColor = true;
 			// 
-			// radioButton2
+			// rbtn_Nu
 			// 
-			radioButton2.AutoSize = true;
-			radioButton2.Location = new Point(494, 130);
-			radioButton2.Margin = new Padding(3, 2, 3, 2);
-			radioButton2.Name = "radioButton2";
-			radioButton2.Size = new Size(41, 19);
-			radioButton2.TabIndex = 72;
-			radioButton2.TabStop = true;
-			radioButton2.Text = "Nữ";
-			radioButton2.UseVisualStyleBackColor = true;
+			rbtn_Nu.AutoSize = true;
+			rbtn_Nu.Location = new Point(494, 130);
+			rbtn_Nu.Margin = new Padding(3, 2, 3, 2);
+			rbtn_Nu.Name = "rbtn_Nu";
+			rbtn_Nu.Size = new Size(41, 19);
+			rbtn_Nu.TabIndex = 72;
+			rbtn_Nu.TabStop = true;
+			rbtn_Nu.Text = "Nữ";
+			rbtn_Nu.UseVisualStyleBackColor = true;
 			// 
 			// KhachHang
 			// 
@@ -267,23 +267,23 @@
 			AutoScaleMode = AutoScaleMode.Font;
 			BackColor = SystemColors.GradientInactiveCaption;
 			ClientSize = new Size(933, 634);
-			Controls.Add(radioButton2);
-			Controls.Add(radioButton1);
+			Controls.Add(rbtn_Nu);
+			Controls.Add(rbtn_Nam);
 			Controls.Add(label2);
 			Controls.Add(dtgView_KhachHang);
-			Controls.Add(textBox7);
+			Controls.Add(txt_SoLuongDH);
 			Controls.Add(label10);
-			Controls.Add(textBox5);
+			Controls.Add(txt_Email);
 			Controls.Add(label8);
 			Controls.Add(label9);
-			Controls.Add(textBox3);
+			Controls.Add(txt_DiaChi);
 			Controls.Add(label6);
 			Controls.Add(label7);
-			Controls.Add(textBox2);
+			Controls.Add(txt_SoDientThoai);
 			Controls.Add(label4);
-			Controls.Add(textBox1);
+			Controls.Add(txt_TenKhachHang);
 			Controls.Add(label3);
-			Controls.Add(textBox4);
+			Controls.Add(txt_MakhachHang);
 			Controls.Add(label1);
 			Controls.Add(button3);
 			Controls.Add(button2);
@@ -299,26 +299,26 @@
 
 		#endregion
 
-		private TextBox textBox7;
+		private TextBox txt_SoLuongDH;
         private Label label10;
-        private TextBox textBox5;
+        private TextBox txt_Email;
         private Label label8;
         private Label label9;
-        private TextBox textBox3;
+        private TextBox txt_DiaChi;
         private Label label6;
         private Label label7;
-        private TextBox textBox2;
+        private TextBox txt_SoDientThoai;
         private Label label4;
-        private TextBox textBox1;
+        private TextBox txt_TenKhachHang;
         private Label label3;
-        private TextBox textBox4;
+        private TextBox txt_MakhachHang;
         private Label label1;
         private Button button3;
         private Button button2;
         private Button button1;
         private DataGridView dtgView_KhachHang;
         private Label label2;
-        private RadioButton radioButton1;
-        private RadioButton radioButton2;
+        private RadioButton rbtn_Nam;
+        private RadioButton rbtn_Nu;
     }
 }

@@ -19,7 +19,7 @@ namespace BUS_DuAn.Repository
         {
             return context.KhachHangs.ToList();
         }
-		public bool Add(KhachHang kh)
+		public bool Addkh(KhachHang kh)
 		{
 			if (kh == null)
 			{
@@ -29,7 +29,7 @@ namespace BUS_DuAn.Repository
 			context.SaveChanges();
 			return true;
 		}
-		public bool Remove(KhachHang kh)
+		public bool Removekh(KhachHang kh)
 		{
 			if (kh == null)
 			{
@@ -39,7 +39,7 @@ namespace BUS_DuAn.Repository
 			context.SaveChanges();
 			return true;
 		}
-		public bool Update(KhachHang kh)
+		public bool Updatekh(KhachHang kh)
 		{
 			if (kh == null)
 			{

@@ -24,8 +24,8 @@ namespace Dự_Án_Shop_Bán_Giầy_Thể_Thao
 
 		private void KhachHang_Load(object sender, EventArgs e)
 		{
-
 		}
+
 		public void LoadData()
 		{
 			dtgView_KhachHang.ColumnCount = 6;
@@ -44,7 +44,30 @@ namespace Dự_Án_Shop_Bán_Giầy_Thể_Thao
 
 		private void button1_Click(object sender, EventArgs e)
 		{
+			try
+			{
+				DAL_DuAn.DomainClass.KhachHang kh = new DAL_DuAn.DomainClass.KhachHang
+				{
+					MaKhachHang = txt_MakhachHang.Text,
+					TenKhachHang = txt_TenKhachHang.Text,
+					DiaChi = txt_DiaChi.Text,
+					Email = txt_Email.Text,
+					SoDienThoai = txt_SoDientThoai.Text,
+					GioiTinh = rbtn_Nam.Checked ? "Nam" : "Nữ"
+				};
 
+				DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn thêm không?", "Thông Báo", MessageBoxButtons.YesNo);
+				if (result == DialogResult.Yes)
+				{
+					string resultMessage = svkh.Themkh(kh);
+					LoadData();
+					MessageBox.Show(resultMessage);
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show("Đã xảy ra lỗi: " + ex.Message);
+			}
 		}
 	}
 }

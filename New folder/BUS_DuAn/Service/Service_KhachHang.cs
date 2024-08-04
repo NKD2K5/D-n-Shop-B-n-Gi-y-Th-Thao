@@ -19,25 +19,25 @@ namespace BUS_DuAn.Service
         {
             return ropes.GetAll();
         }
-		public string Them(KhachHang kh)
+		public string Themkh(KhachHang kh)
 		{
-			if (ropes.Add(kh))
+			if (ropes.Addkh(kh))
 			{
 				return "Thêm thành công";
 			}
 			return "Thêm Thất bại";
 		}
-		public string Xóa(KhachHang kh)
+		public string Xóakh(KhachHang kh)
 		{
-			if (ropes.Remove(kh))
+			if (ropes.Removekh(kh))
 			{
 				return "Xóa thành công";
 			}
 			return "Xóa Thất bại";
 		}
-		public string Sửa(KhachHang kh)
+		public string Sửakh(KhachHang kh)
 		{
-			if (ropes.Update(kh))
+			if (ropes.Updatekh(kh))
 			{
 				return "Xóa thành công";
 			}
