@@ -2,9 +2,6 @@
 using DAL_DuAn.DomainClass;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +12,8 @@ namespace Dự_Án_Shop_Bán_Giầy_Thể_Thao
 	public partial class KhachHang : Form
 	{
 		Service_KhachHang svkh;
+		private string idWhenClick;
+
 		public KhachHang()
 		{
 			InitializeComponent();
@@ -68,6 +67,81 @@ namespace Dự_Án_Shop_Bán_Giầy_Thể_Thao
 			{
 				MessageBox.Show("Đã xảy ra lỗi: " + ex.Message);
 			}
+		}
+
+		private void button3_Click(object sender, EventArgs e)
+		{
+			var kh = svkh.GetKhachHangs().Find(x => x.MaKhachHang == idWhenClick);
+			MessageBox.Show(svkh.Xóakh(kh));
+			LoadData();
+		}
+
+		private void dtgView_KhachHang_CellClick(object sender, DataGridViewCellEventArgs e)
+		{
+			int index = e.RowIndex;
+			if (index < 0)
+			{
+				return;
+			}
+			// Nếu bấm đúng dòng có dữ liệu, thì phải lấy được ID của dòng đó
+			idWhenClick = dtgView_KhachHang.Rows[index].Cells[0].Value.ToString();
+			FillData();
+		}
+
+		public void FillData()
+		{
+			// Select * from nhanvien where manv = idewhenclick
+			var kh = svkh.GetKhachHangs().Where(x => x.MaKhachHang == idWhenClick).FirstOrDefault();
+			if (kh != null)
+			{
+				// Điền vào các trường textbox
+				txt_MakhachHang.Text = kh.MaKhachHang;
+				txt_TenKhachHang.Text = kh.TenKhachHang;
+				txt_DiaChi.Text = kh.DiaChi;
+				txt_Email.Text = kh.Email;
+				txt_SoDientThoai.Text = kh.SoDienThoai;
+				if (kh.GioiTinh == "Nam")
+				{
+					rbtn_Nam.Checked = true;
+				}
+				else
+				{
+					rbtn_Nu.Checked = true;
+				}
+			}
+		}
+
+		private void button2_Click_1(object sender, EventArgs e)
+		{
+			try
+			{
+				DAL_DuAn.DomainClass.KhachHang kh = new DAL_DuAn.DomainClass.KhachHang
+				{
+					MaKhachHang = txt_MakhachHang.Text,
+					TenKhachHang = txt_TenKhachHang.Text,
+					DiaChi = txt_DiaChi.Text,
+					Email = txt_Email.Text,
+					SoDienThoai = txt_SoDientThoai.Text,
+					GioiTinh = rbtn_Nam.Checked ? "Nam" : "Nữ"
+				};
+
+				DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn sửa không?", "Thông Báo", MessageBoxButtons.YesNo);
+				if (result == DialogResult.Yes)
+				{
+					string resultMessage = svkh.Sửakh(kh);
+					LoadData();
+					MessageBox.Show(resultMessage);
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show("Đã xảy ra lỗi: " + ex.Message);
+			}
+		}
+
+		private void txt_SoDientThoai_TextChanged(object sender, EventArgs e)
+		{
+
 		}
 	}
 }

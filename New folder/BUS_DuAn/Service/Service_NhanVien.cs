@@ -19,5 +19,29 @@ namespace BUS_DuAn.Service
         {
             return ropes.GetAll();
         }
-    }
+		public string Themnv(NhanVien nv)
+		{
+			if (ropes.Addkh(nv))
+			{
+				return "Thêm thành công";
+			}
+			return "Thêm Thất bại";
+		}
+		public string Xóanv(NhanVien nv)
+		{
+			if (ropes.Removekh(nv))
+			{
+				return "Xóa thành công";
+			}
+			return "Xóa Thất bại";
+		}
+		public string Sửanv(NhanVien nv)
+		{
+			if (ropes.Updatekh(nv))
+			{
+				return "Sửa thành công";
+			}
+			return "Sửa Thất bại";
+		}
+	}
 }

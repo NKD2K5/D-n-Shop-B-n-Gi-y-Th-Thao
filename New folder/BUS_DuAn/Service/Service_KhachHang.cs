@@ -39,9 +39,9 @@ namespace BUS_DuAn.Service
 		{
 			if (ropes.Updatekh(kh))
 			{
-				return "Xóa thành công";
+				return "Sửa thành công";
 			}
-			return "Xóa Thất bại";
+			return "Sửa Thất bại";
 		}
 	}
 }

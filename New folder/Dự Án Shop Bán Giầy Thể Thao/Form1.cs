@@ -19,19 +19,28 @@ namespace Dự_Án_Shop_Bán_Giầy_Thể_Thao
 {
 	public partial class TrangChu : Form
 	{
-		Service_GioHang svgh = new Service_GioHang();
+		Service_SanPham svsp = new Service_SanPham();
+		private Service_GioHang svgh = new Service_GioHang();
 		private Dictionary<string, Dictionary<string, int>> comboBoxData;
 		private Dictionary<string, int> phuKienData;
 		private Dictionary<string, int> dichVuData;
 		private decimal tongTien;
 		private string idWhenClick;
+		private ThongKe1 thongKeForm;
+		private HoaDoncs hoaDoncs;
 		public TrangChu()
 		{
 			InitializeComponent();
 			InitializeComboBoxData();
 			SetupComboBox1();
 			LoadData();
-			this.dtgView_GioHang.CellClick += new DataGridViewCellEventHandler(this.dtgView_GioHang_CellClick);
+			LoadDataSP();
+	
+			// Khởi tạo ThongKe1 và HoaDoncs
+			thongKeForm = new ThongKe1();
+			hoaDoncs = new HoaDoncs(thongKeForm);
+
+
 			txt_TongTien.Text = tongTien.ToString();
 
 			// Thêm sự kiện cho các ComboBox và NumericUpDown
@@ -42,7 +51,6 @@ namespace Dự_Án_Shop_Bán_Giầy_Thể_Thao
 			cbb_DichVu.SelectedIndexChanged += cbb_DichVu_SelectedIndexChanged;
 			n_soluong.ValueChanged += n_soluong_ValueChanged;
 		}
-
 
 		private void InitializeComboBoxData()
 		{
@@ -70,6 +78,7 @@ namespace Dự_Án_Shop_Bán_Giầy_Thể_Thao
 				{ "Thiết bị kéo giày", 150 },
 				{ "Khung giữ form giày", 200 }
 			};
+
 			dichVuData = new Dictionary<string, int>()
 			{
 				{ "Combo Vệ Sinh Giầy", 300 },
@@ -108,17 +117,6 @@ namespace Dự_Án_Shop_Bán_Giầy_Thể_Thao
 			{
 				cbb_DichVu.Items.Add(item.Key);
 			}
-		}
-		private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-		{
-			//string selectedCategory = cbb_LoaiGiay.SelectedItem.ToString();
-
-			//// Cập nhật ComboBox2 dựa trên mục được chọn
-			//if (comboBoxData.ContainsKey(selectedCategory))
-			//{
-			//    cbb_Giay.Items.Clear();
-			//    cbb_Giay.Items.AddRange(comboBoxData[selectedCategory].ToArray());
-			//}
 		}
 		private void button16_Click(object sender, EventArgs e)
 		{
@@ -182,23 +180,75 @@ namespace Dự_Án_Shop_Bán_Giầy_Thể_Thao
 		private void LoadData()
 		{
 
-			dtgView_GioHang.ColumnCount = 10;
-			dtgView_GioHang.Columns[0].Name = "Mã Giỏ Hàng";
-			dtgView_GioHang.Columns[1].Name = "Loại Giầy";
-			dtgView_GioHang.Columns[2].Name = "Hãng";
-			dtgView_GioHang.Columns[3].Name = "Tên Giầy";
-			dtgView_GioHang.Columns[4].Name = "Màu";
-			dtgView_GioHang.Columns[5].Name = "Size";
-			dtgView_GioHang.Columns[6].Name = "Phụ Kiện";
-			dtgView_GioHang.Columns[7].Name = "Dịch Vụ";
-			dtgView_GioHang.Columns[8].Name = "Giá";
-			dtgView_GioHang.Columns[9].Name = "Số Lượng";
+			dtgView_GioHang.ColumnCount = 3;
+			dtgView_GioHang.Columns[0].Name = "Tên Giỏ Hàng";
+			dtgView_GioHang.Columns[1].Name = "Giá";
+			dtgView_GioHang.Columns[2].Name = "Số Lượng Sản Phẩm";
 
 			dtgView_GioHang.Rows.Clear();
 
 			foreach (var gh in svgh.GetGioHangs())
 			{
-				dtgView_GioHang.Rows.Add(gh.MaGioHang, gh.LoaiGiay, gh.Hang, gh.TenSanPham, gh.Mau, gh.Size, gh.PhuKien, gh.DichVu, gh.Gia, gh.SoLuong);
+				dtgView_GioHang.Rows.Add(gh.MaGioHang, gh.Gia, gh.SoLuong);
+			}
+		}
+		private void button1_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				double totalPrice = 0;
+				int totalQuantity = 0;
+
+				// Xóa các dòng hiện tại trong giỏ hàng
+				dtgView_GioHang.Rows.Clear();
+
+				foreach (DataGridViewRow row in dtgView_SanPham.Rows)
+				{
+					if (row.Cells["Giá"].Value != null && row.Cells["Số Lượng"].Value != null)
+					{
+						double price;
+						int quantity;
+
+						if (double.TryParse(row.Cells["Giá"].Value.ToString(), out price) &&
+							int.TryParse(row.Cells["Số Lượng"].Value.ToString(), out quantity))
+						{
+							totalPrice += price;
+							totalQuantity += quantity;
+
+							// Thêm dòng vào giỏ hàng
+							dtgView_GioHang.Rows.Add(row.Cells["Tên Giầy"].Value, price, quantity);
+						}
+					}
+				}
+
+				// Thêm dòng tổng giá trị và số lượng vào giỏ hàng
+				dtgView_GioHang.Rows.Add("Tổng", totalPrice, totalQuantity);
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show("Đã xảy ra lỗi: " + ex.Message);
+			}
+		}
+		private void LoadDataSP()
+		{
+			dtgView_SanPham.ColumnCount = 12;
+			dtgView_SanPham.Columns[0].Name = "Mã Thông Tin Sản Phẩm";
+			dtgView_SanPham.Columns[1].Name = "Mã Loại Sản Phẩm";
+			dtgView_SanPham.Columns[2].Name = "Mã Hãng Giầy";
+			dtgView_SanPham.Columns[3].Name = "Loại Giầy";
+			dtgView_SanPham.Columns[4].Name = "Hãng";
+			dtgView_SanPham.Columns[5].Name = "Tên Giầy";
+			dtgView_SanPham.Columns[6].Name = "Màu";
+			dtgView_SanPham.Columns[7].Name = "Size";
+			dtgView_SanPham.Columns[8].Name = "Phụ Kiện";
+			dtgView_SanPham.Columns[9].Name = "Dịch Vụ";
+			dtgView_SanPham.Columns[10].Name = "Giá";
+			dtgView_SanPham.Columns[11].Name = "Số Lượng";
+
+			dtgView_SanPham.Rows.Clear();
+			foreach (var sp in svsp.GetThongTinSanPhams())
+			{
+				dtgView_SanPham.Rows.Add(sp.MaThongTinSanPham, sp.MaLoaiSanPham, sp.MaHangGiay, sp.LoaiGiay, sp.HangGiay, sp.TenGiay, sp.MauGiay, sp.SoSize, sp.Phukien, sp.Dichvu, sp.GiaSanPham, sp.SoLuong);
 			}
 		}
 
@@ -206,32 +256,34 @@ namespace Dự_Án_Shop_Bán_Giầy_Thể_Thao
 		{
 			try
 			{
-				GioHang gh = new GioHang
+
+				ThongTinSanPham sp = new ThongTinSanPham
 				{
-					MaGioHang = txt_MaHoaDon.Text,
+					MaThongTinSanPham = txt_mathongtin.Text,
+					MaLoaiSanPham = txt_Maloaigiay.Text,
+					MaHangGiay = txt_Mahang.Text,
 					LoaiGiay = cbb_LoaiGiay.Text,
-					Hang = cbb_Hang.Text,
-					TenSanPham = cbb_Giay.Text,
-					Mau = txt_Mau.Text,
-					Size = cbb_Size.Text,
-					PhuKien = cbb_PhuKien.Text,
-					DichVu = cbb_DichVu.Text,
-					Gia = Convert.ToInt32(txt_Gia.Text),
+					HangGiay = cbb_Hang.Text,
+					TenGiay = cbb_Giay.Text,
+					MauGiay = txt_Mau.Text,
+					SoSize = cbb_Size.Text,
+					Phukien = cbb_PhuKien.Text,
+					Dichvu = cbb_DichVu.Text,
+					GiaSanPham = Convert.ToInt32(txt_Gia.Text),
 					SoLuong = Convert.ToInt32(n_soluong.Text)
 				};
 
 				DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn thêm không?", "Thông Báo", MessageBoxButtons.YesNo);
 				if (result == DialogResult.Yes)
 				{
-					string resultMessage = svgh.Them(gh);
-					LoadData();
+					string resultMessage = svsp.Themsp(sp);
+					LoadDataSP();
 					MessageBox.Show(resultMessage);
 				}
-
 			}
 			catch (Exception ex)
 			{
-				MessageBox.Show($"Đã xảy ra lỗi: {ex.Message}");
+				MessageBox.Show($"Đã xảy ra lỗi: {ex.Message}\nChi tiết: {ex.InnerException?.Message}");
 			}
 		}
 		private void dtgView_GioHang_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -241,9 +293,9 @@ namespace Dự_Án_Shop_Bán_Giầy_Thể_Thao
 				DataGridViewRow selectedRow = dtgView_GioHang.Rows[e.RowIndex];
 
 				// Lấy giá trị của cột "Mã Giỏ Hàng"
-				if (selectedRow.Cells["Mã Giỏ Hàng"].Value != null)
+				if (selectedRow.Cells["Tên Giỏ Hàng"].Value != null)
 				{
-					string maGioHang = selectedRow.Cells["Mã Giỏ Hàng"].Value.ToString();
+					string maGioHang = selectedRow.Cells["Tên Giỏ Hàng"].Value.ToString();
 					txt_MaHoaDon.Text = maGioHang;
 				}
 				else
@@ -322,17 +374,6 @@ namespace Dự_Án_Shop_Bán_Giầy_Thể_Thao
 			#endregion
 
 
-			//decimal tienThua = soTienNhan - tongTien;
-			//txt_TienThua.Text = tienThua.ToString("", CultureInfo.CurrentCulture);
-
-			//string maHoaDon = txt_MaHoaDon.Text;
-			//string tenNhanVien = txt_TenNhanVien.Text;
-			//string tenKhachHang = txt_TenKhachHang.Text;
-			//string ngayLap = DateTime.Now.ToString("dd/MM/yyyy");
-
-
-
-
 			if (decimal.TryParse(txt_TienThua.Text, out decimal tienThua) && decimal.TryParse(txt_SoTienNhan.Text, out decimal soTienNhan) && decimal.TryParse(txt_TongTien.Text, out decimal tongTien))
 			{
 				string maHoaDon = txt_MaHoaDon.Text;
@@ -341,7 +382,7 @@ namespace Dự_Án_Shop_Bán_Giầy_Thể_Thao
 				string ngayLap = DateTime.Now.ToString("dd/MM/yyyy");
 
 
-				HoaDoncs hoaDonForm = new HoaDoncs();
+				HoaDoncs hoaDonForm = new HoaDoncs(thongKeForm);
 				hoaDonForm.XuatHoaDon(maHoaDon, tenNhanVien, tenKhachHang, ngayLap, tongTien, soTienNhan, tienThua);
 				hoaDonForm.Show(); //no dien thong tin o phan thanh toan vao hoa don 
 
@@ -352,30 +393,6 @@ namespace Dự_Án_Shop_Bán_Giầy_Thể_Thao
 				MessageBox.Show("thất bại!");
 			}
 
-
-		}
-		private void txt_TongTien_TextChanged(object sender, EventArgs e)
-		{
-
-		}
-		private void Form1_Load(object sender, EventArgs e)
-		{
-
-		}
-		private void pictureBox1_Click(object sender, EventArgs e)
-		{
-
-		}
-		private void button7_Click(object sender, EventArgs e)
-		{
-
-		}
-		private void TrangChu_Load(object sender, EventArgs e)
-		{
-
-		}
-		private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-		{
 
 		}
 		private void button13_Click(object sender, EventArgs e)
@@ -407,15 +424,6 @@ namespace Dự_Án_Shop_Bán_Giầy_Thể_Thao
 			}
 		}
 
-		private void txt_TienThua_TextChanged(object sender, EventArgs e)
-		{
-
-		}
-
-		private void button15_Click(object sender, EventArgs e)
-		{
-
-		}
 
 		private void btn_DangXuat_Click(object sender, EventArgs e)
 		{
@@ -550,6 +558,61 @@ namespace Dự_Án_Shop_Bán_Giầy_Thể_Thao
 				currentFormChild.Close();
 			}
 			label1.Text = "Home";
+		}
+
+		private void label15_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void label16_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void dtgView_GioHang_CellContentClick(object sender, DataGridViewCellEventArgs e)
+		{
+
+		}
+		private void txt_TienThua_TextChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void button15_Click(object sender, EventArgs e)
+		{
+
+		}
+		private void txt_TongTien_TextChanged(object sender, EventArgs e)
+		{
+
+		}
+		private void Form1_Load(object sender, EventArgs e)
+		{
+
+		}
+		private void pictureBox1_Click(object sender, EventArgs e)
+		{
+
+		}
+		private void button7_Click(object sender, EventArgs e)
+		{
+
+		}
+		private void TrangChu_Load(object sender, EventArgs e)
+		{
+
+		}
+		private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+		{
+
+		}
+		private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+		{
+
+		}
+		private void dtgView_SanPham_CellClick_1(object sender, DataGridViewCellEventArgs e)
+		{
 		}
 	}
 }

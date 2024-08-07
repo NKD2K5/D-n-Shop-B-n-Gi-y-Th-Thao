@@ -15,9 +15,29 @@ namespace BUS_DuAn.Repository
         {
             context = new MyContext();
         }
-        public List<SanPham> GetAll()
+        public List<ThongTinSanPham> GetAll()
         {
-            return context.SanPhams.ToList();
+            return context.ThongTinSanPhams.ToList();
         }
-    }
+		public bool Add(ThongTinSanPham sp)
+		{
+			if (sp == null)
+			{
+				return false;
+			}
+			context.ThongTinSanPhams.Add(sp);
+			context.SaveChanges();
+			return true;
+		}
+		public bool Remove(ThongTinSanPham sp)
+		{
+			if (sp == null)
+			{
+				return false;
+			}
+			context.ThongTinSanPhams.Remove(sp);
+			context.SaveChanges();
+			return true;
+		}
+	}
 }

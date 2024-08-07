@@ -41,12 +41,32 @@ namespace BUS_DuAn.Repository
 		}
 		public bool Updatekh(KhachHang kh)
 		{
-			if (kh == null)
+			try
 			{
-				return false;
+				if (kh == null)
+				{
+					return false;
+				}
+
+				var existingEntity = context.KhachHangs.Find(kh.MaKhachHang);
+				if (existingEntity != null)
+				{
+					context.Entry(existingEntity).CurrentValues.SetValues(kh);
+				}
+				else
+				{
+					context.KhachHangs.Update(kh);
+				}
+
+				context.SaveChanges();
+				return true;
 			}
-			context.KhachHangs.Update(kh);
-			return true;
+			catch (Exception ex)
+			{
+				// Ghi log hoặc xử lý ngoại lệ tùy theo yêu cầu của bạn
+				throw new Exception("Đã xảy ra lỗi khi cập nhật khách hàng.", ex);
+			}
 		}
+
 	}
 }
