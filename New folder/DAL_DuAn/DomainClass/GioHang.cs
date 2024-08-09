@@ -21,6 +21,10 @@ namespace DAL_DuAn.DomainClass
 		[Unicode(false)]
 		public string MaGioHang { get; set; } = null!;
 
+		[Column("tenSanPham")]
+		[StringLength(150)]
+		public string? TenSanPham { get; set; }
+
 		[Column("soLuong")]
 		public int? SoLuong { get; set; }
 

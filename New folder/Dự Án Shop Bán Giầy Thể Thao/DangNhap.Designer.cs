@@ -39,6 +39,7 @@
 			btn_DangNhap = new Button();
 			label1 = new Label();
 			QuenMatKhau = new LinkLabel();
+			cbx_hienThiMatKhau = new CheckBox();
 			((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
 			((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
 			((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -162,6 +163,18 @@
 			QuenMatKhau.Text = "Quên Mật Khẩu";
 			QuenMatKhau.LinkClicked += QuanMatKhau_LinkClicked;
 			// 
+			// cbx_hienThiMatKhau
+			// 
+			cbx_hienThiMatKhau.AutoSize = true;
+			cbx_hienThiMatKhau.BackColor = Color.White;
+			cbx_hienThiMatKhau.Location = new Point(214, 373);
+			cbx_hienThiMatKhau.Name = "cbx_hienThiMatKhau";
+			cbx_hienThiMatKhau.Size = new Size(108, 19);
+			cbx_hienThiMatKhau.TabIndex = 10;
+			cbx_hienThiMatKhau.Text = "Hiện Mật Khẩu ";
+			cbx_hienThiMatKhau.UseVisualStyleBackColor = false;
+			cbx_hienThiMatKhau.CheckedChanged += cbx_hienThiMatKhau_CheckedChanged;
+			// 
 			// DangNhap
 			// 
 			AutoScaleDimensions = new SizeF(7F, 15F);
@@ -169,6 +182,7 @@
 			BackColor = Color.IndianRed;
 			BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
 			ClientSize = new Size(789, 547);
+			Controls.Add(cbx_hienThiMatKhau);
 			Controls.Add(QuenMatKhau);
 			Controls.Add(label1);
 			Controls.Add(btn_DangNhap);
@@ -201,5 +215,6 @@
         private Button btn_DangNhap;
         private Label label1;
         private LinkLabel QuenMatKhau;
-    }
+		private CheckBox cbx_hienThiMatKhau;
+	}
 }

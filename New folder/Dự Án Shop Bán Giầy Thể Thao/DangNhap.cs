@@ -1,3 +1,5 @@
+using Du_An_Shop_Ban_Giay_The_Thao;
+
 namespace Dự_Án_Shop_Bán_Giầy_Thể_Thao
 {
 	public partial class DangNhap : Form
@@ -51,19 +53,36 @@ namespace Dự_Án_Shop_Bán_Giầy_Thể_Thao
 
 
 
-		private bool CheckLogin(string username, string password)
+		private bool CheckLogin(string usename, string password)
 		{
-			// Thay thế bằng logic kiểm tra thực sự của bạn, ví dụ: kiểm tra từ cơ sở dữ liệu
-			if (username == "" && password == "")
+			for (int i = 0; i < ListUser.Instance.List.Count; i++)
 			{
-				return true;
+				if (usename == ListUser.Instance.List[i].Username && password == ListUser.Instance.List[i].Password)
+				{
+					Const.loaiTaiKhoan = ListUser.Instance.List[i].loaiTaiKhoan;
+					return true;
+
+				}
 			}
+
 			return false;
 		}
 
 		private void label1_Click(object sender, EventArgs e)
 		{
 
+		}
+
+		private void cbx_hienThiMatKhau_CheckedChanged(object sender, EventArgs e)
+		{
+			if (cbx_hienThiMatKhau.Checked)
+			{
+				txt_MatKhau.UseSystemPasswordChar = false;
+			}
+			if (!cbx_hienThiMatKhau.Checked)
+			{
+				txt_MatKhau.UseSystemPasswordChar = true;
+			}
 		}
 	}
 }

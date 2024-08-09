@@ -35,7 +35,7 @@ namespace Dự_Án_Shop_Bán_Giầy_Thể_Thao
 			SetupComboBox1();
 			LoadData();
 			LoadDataSP();
-	
+
 			// Khởi tạo ThongKe1 và HoaDoncs
 			thongKeForm = new ThongKe1();
 			hoaDoncs = new HoaDoncs(thongKeForm);
@@ -57,7 +57,7 @@ namespace Dự_Án_Shop_Bán_Giầy_Thể_Thao
 			// Khởi tạo dữ liệu cho ComboBox
 			comboBoxData = new Dictionary<string, Dictionary<string, int>>()
 			{
-				{ "Giầy Bóng Rổ", new Dictionary<string, int> { { "Táo", 1000 }, { "Chuối", 500 }, { "Cam", 800 } } },
+				{ "Giầy Bóng Rổ", new Dictionary<string, int> { { "Nike Air Zoom Pegasus", 1000 }, { "Nike React Infinity Run Flyknit", 500 }, { "Nike Air Max ", 800 }, { "Adidas Ultraboos", 800 }, { "Adidas Solarboost", 800 } } },
 				{ "Giầy Bóng Đá", new Dictionary<string, int> { { "Cà rốt", 200 }, { "Bông cải", 300 }, { "Rau chân vịt", 150 } } },
 				{ "Giầy Chạy Bộ", new Dictionary<string, int> { { "Mèo", 10 }, { "Chó", 15 }, { "Voi", 5 } } },
 				{ "Giầy Tennis", new Dictionary<string, int> { { "Mèo", 10 }, { "Chó", 15 }, { "Voi", 5 } } },
@@ -102,7 +102,7 @@ namespace Dự_Án_Shop_Bán_Giầy_Thể_Thao
 			});
 
 			// Thêm các mục vào ComboBox Hãng
-			cbb_Hang.Items.AddRange(new string[] { "Nike", "Adisda", "Puma", "Vans", "Converse", "Under", "Armour", "New Balance", "ASICS", "Skechers" });
+			//cbb_Hang.Items.AddRange(new string[] { "Nike", "Adisda", "Puma", "Vans", "Converse", "Under", "Armour", "New Balance", "ASICS", "Skechers" });
 
 			// Thiết lập sự kiện SelectedIndexChanged
 			cbb_LoaiGiay.SelectedIndexChanged += cbb_LoaiGiay_SelectedIndexChanged;
@@ -116,6 +116,72 @@ namespace Dự_Án_Shop_Bán_Giầy_Thể_Thao
 			foreach (var item in dichVuData)
 			{
 				cbb_DichVu.Items.Add(item.Key);
+			}
+		}
+		private void cbb_LoaiGiay_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			UpdateComboBoxHang();
+			UpdateComboBoxGiay();
+			TinhTongGiaTri();
+		}
+
+		private void cbb_Hang_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			UpdateComboBoxGiay();
+			TinhTongGiaTri();
+		}
+		private void UpdateComboBoxGiay()
+		{
+			if (cbb_LoaiGiay.SelectedItem != null && cbb_Hang.SelectedItem != null)
+			{
+				string selectedLoaiGiay = cbb_LoaiGiay.SelectedItem.ToString();
+				string selectedHang = cbb_Hang.SelectedItem.ToString();
+
+				// Cập nhật ComboBox giày dựa trên loại giày và hãng giày đã chọn
+				if (comboBoxData.ContainsKey(selectedLoaiGiay))
+				{
+					cbb_Giay.Items.Clear();
+					foreach (var item in comboBoxData[selectedLoaiGiay])
+					{
+						// Thêm giày với hãng giày vào ComboBox
+						cbb_Giay.Items.Add(item.Key);
+					}
+				}
+			}
+		}
+		private void UpdateComboBoxHang()
+		{
+			// Xóa các mục hiện có trong ComboBox Hãng
+			cbb_Hang.Items.Clear();
+
+			// Lấy loại giày đã chọn
+			string selectedLoaiGiay = cbb_LoaiGiay.SelectedItem?.ToString();
+
+			// Dựa trên loại giày chọn, thêm các hãng phù hợp vào ComboBox Hãng
+			switch (selectedLoaiGiay)
+			{
+				case "Giầy Bóng Rổ":
+					cbb_Hang.Items.AddRange(new string[] { "Nike", "Adidas" });
+					break;
+				case "Giầy Bóng Đá":
+					cbb_Hang.Items.AddRange(new string[] { "Puma", "Nike", "Adidas" });
+					break;
+				case "Giầy Chạy Bộ":
+					cbb_Hang.Items.AddRange(new string[] { "Nike", "Adidas", "New Balance" });
+					break;
+				case "Giầy Tennis":
+					cbb_Hang.Items.AddRange(new string[] { "Nike", "Adidas", "Puma" });
+					break;
+				case "Giầy Địa Hình":
+					cbb_Hang.Items.AddRange(new string[] { "Nike", "Adidas", "New Balance" });
+					break;
+				case "Giầy Bóng Chuyền":
+					cbb_Hang.Items.AddRange(new string[] { "Nike", "Adidas", "Puma" });
+					break;
+				default:
+					// Nếu không có loại giày nào được chọn, làm sạch danh sách hãng
+					cbb_Hang.Items.Clear();
+					break;
 			}
 		}
 		private void button16_Click(object sender, EventArgs e)
@@ -147,57 +213,39 @@ namespace Dự_Án_Shop_Bán_Giầy_Thể_Thao
 			childForm.BringToFront();
 			childForm.Show();
 		}
-		private void cbb_LoaiGiay_SelectedIndexChanged(object sender, EventArgs e)
-		{
-			UpdateComboBoxGiay();
-			TinhTongGiaTri();
-		}
-
-		private void cbb_Hang_SelectedIndexChanged(object sender, EventArgs e)
-		{
-			UpdateComboBoxGiay();
-			TinhTongGiaTri();
-		}
-		private void UpdateComboBoxGiay()
-		{
-			if (cbb_LoaiGiay.SelectedItem != null && cbb_Hang.SelectedItem != null)
-			{
-				string selectedLoaiGiay = cbb_LoaiGiay.SelectedItem.ToString();
-				string selectedHang = cbb_Hang.SelectedItem.ToString();
-
-				// Cập nhật ComboBox giày dựa trên loại giày và hãng giày đã chọn
-				if (comboBoxData.ContainsKey(selectedLoaiGiay))
-				{
-					cbb_Giay.Items.Clear();
-					foreach (var item in comboBoxData[selectedLoaiGiay])
-					{
-						// Thêm giày với hãng giày vào ComboBox
-						cbb_Giay.Items.Add(item.Key);
-					}
-				}
-			}
-		}
 		private void LoadData()
 		{
 
-			dtgView_GioHang.ColumnCount = 3;
-			dtgView_GioHang.Columns[0].Name = "Tên Giỏ Hàng";
-			dtgView_GioHang.Columns[1].Name = "Giá";
-			dtgView_GioHang.Columns[2].Name = "Số Lượng Sản Phẩm";
+			dtgView_GioHang.ColumnCount = 4;
+			dtgView_GioHang.Columns[0].Name = "Mã Giỏ Hàng";
+			dtgView_GioHang.Columns[1].Name = "Tên San Phẩm";
+			dtgView_GioHang.Columns[2].Name = "Giá";
+			dtgView_GioHang.Columns[3].Name = "Số Lượng Sản Phẩm";
 
 			dtgView_GioHang.Rows.Clear();
 
 			foreach (var gh in svgh.GetGioHangs())
 			{
-				dtgView_GioHang.Rows.Add(gh.MaGioHang, gh.Gia, gh.SoLuong);
+				dtgView_GioHang.Rows.Add(gh.MaGioHang, gh.TenSanPham, gh.Gia, gh.SoLuong);
 			}
 		}
 		private void button1_Click(object sender, EventArgs e)
 		{
 			try
 			{
-				double totalPrice = 0;
-				int totalQuantity = 0;
+				// Kiểm tra nếu txt_MaHoaDon trống
+				if (string.IsNullOrWhiteSpace(txt_MaHoaDon.Text))
+				{
+					MessageBox.Show("Vui lòng nhập mã hóa đơn.");
+					return; // Dừng thực hiện nếu mã hóa đơn không có giá trị
+				}
+
+				double tongSoluong = 0;
+				int tongGia = 0;
+				string tenSanPham = string.Empty;
+
+				// Lấy giá trị từ TextBox txt_MaHoaDon
+				string maHoaDon = txt_MaHoaDon.Text;
 
 				// Xóa các dòng hiện tại trong giỏ hàng
 				dtgView_GioHang.Rows.Clear();
@@ -206,28 +254,30 @@ namespace Dự_Án_Shop_Bán_Giầy_Thể_Thao
 				{
 					if (row.Cells["Giá"].Value != null && row.Cells["Số Lượng"].Value != null)
 					{
-						double price;
-						int quantity;
+						double soluong;
+						int gia;
 
-						if (double.TryParse(row.Cells["Giá"].Value.ToString(), out price) &&
-							int.TryParse(row.Cells["Số Lượng"].Value.ToString(), out quantity))
+						if (double.TryParse(row.Cells["Giá"].Value.ToString(), out soluong) &&
+							int.TryParse(row.Cells["Số Lượng"].Value.ToString(), out gia))
 						{
-							totalPrice += price;
-							totalQuantity += quantity;
+							tongSoluong += soluong * gia; // Tính tổng giá trị
+							tongGia += gia;
+							tenSanPham = row.Cells["Tên Giầy"].Value.ToString(); // Lưu tên sản phẩm
 
 							// Thêm dòng vào giỏ hàng
-							dtgView_GioHang.Rows.Add(row.Cells["Tên Giầy"].Value, price, quantity);
+							dtgView_GioHang.Rows.Add(maHoaDon, tenSanPham, soluong, gia);
 						}
 					}
 				}
 
 				// Thêm dòng tổng giá trị và số lượng vào giỏ hàng
-				dtgView_GioHang.Rows.Add("Tổng", totalPrice, totalQuantity);
+				dtgView_GioHang.Rows.Add("Tổng", tenSanPham, tongSoluong, tongGia);
 			}
 			catch (Exception ex)
 			{
 				MessageBox.Show("Đã xảy ra lỗi: " + ex.Message);
 			}
+
 		}
 		private void LoadDataSP()
 		{
@@ -293,15 +343,15 @@ namespace Dự_Án_Shop_Bán_Giầy_Thể_Thao
 				DataGridViewRow selectedRow = dtgView_GioHang.Rows[e.RowIndex];
 
 				// Lấy giá trị của cột "Mã Giỏ Hàng"
-				if (selectedRow.Cells["Tên Giỏ Hàng"].Value != null)
-				{
-					string maGioHang = selectedRow.Cells["Tên Giỏ Hàng"].Value.ToString();
-					txt_MaHoaDon.Text = maGioHang;
-				}
-				else
-				{
-					MessageBox.Show("Ô Mã Giỏ Hàng không hợp lệ hoặc trống", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-				}
+				//if (selectedRow.Cells["Mã Giỏ Hàng"].Value != null)
+				//{
+				//	string maGioHang = selectedRow.Cells["Mã Giỏ Hàng"].Value.ToString();
+				//	txt_MaHoaDon.Text = maGioHang;
+				//}
+				//else
+				//{
+				//	MessageBox.Show("Ô Mã Giỏ Hàng không hợp lệ hoặc trống", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				//}
 				if (selectedRow.Cells["Giá"].Value != null)
 				{
 					string gia = selectedRow.Cells["Giá"].Value.ToString();
@@ -372,27 +422,40 @@ namespace Dự_Án_Shop_Bán_Giầy_Thể_Thao
 			//}
 
 			#endregion
-
-
-			if (decimal.TryParse(txt_TienThua.Text, out decimal tienThua) && decimal.TryParse(txt_SoTienNhan.Text, out decimal soTienNhan) && decimal.TryParse(txt_TongTien.Text, out decimal tongTien))
+			if (string.IsNullOrWhiteSpace(txt_TenKhachHang.Text) || string.IsNullOrWhiteSpace(txt_TenNhanVien.Text))
 			{
-				string maHoaDon = txt_MaHoaDon.Text;
-				string tenNhanVien = txt_TenNhanVien.Text;
-				string tenKhachHang = txt_TenKhachHang.Text;
-				string ngayLap = DateTime.Now.ToString("dd/MM/yyyy");
+				MessageBox.Show("Vui lòng điền đầy đủ tên khách hàng và tên nhân viên.", "Lỗi nhập liệu", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				return; // Dừng thực hiện nếu tên khách hàng hoặc tên nhân viên không có giá trị
+			}
 
+			if (decimal.TryParse(txt_TongTien.Text, out decimal tongTien))
+			{
+				if (tongTien == 0)
+				{
+					MessageBox.Show("Không Thanh Toán Được!!!", "Lỗi thanh toán", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				}
+				else if (decimal.TryParse(txt_TienThua.Text, out decimal tienThua) && decimal.TryParse(txt_SoTienNhan.Text, out decimal soTienNhan))
+				{
+					string maHoaDon = txt_MaHoaDon.Text;
+					string tenNhanVien = txt_TenNhanVien.Text;
+					string tenKhachHang = txt_TenKhachHang.Text;
+					string ngayLap = DateTime.Now.ToString("dd/MM/yyyy");
 
-				HoaDoncs hoaDonForm = new HoaDoncs(thongKeForm);
-				hoaDonForm.XuatHoaDon(maHoaDon, tenNhanVien, tenKhachHang, ngayLap, tongTien, soTienNhan, tienThua);
-				hoaDonForm.Show(); //no dien thong tin o phan thanh toan vao hoa don 
+					HoaDoncs hoaDonForm = new HoaDoncs(thongKeForm);
+					hoaDonForm.XuatHoaDon(maHoaDon, tenNhanVien, tenKhachHang, ngayLap, tongTien, soTienNhan, tienThua);
+					hoaDonForm.Show(); // Hiển thị thông tin thanh toán vào hóa đơn
 
-				MessageBox.Show("Thanh toán thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					MessageBox.Show("Thanh toán thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				}
+				else
+				{
+					MessageBox.Show("Thông tin nhập không hợp lệ. Vui lòng kiểm tra lại.", "Lỗi nhập liệu", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				}
 			}
 			else
 			{
-				MessageBox.Show("thất bại!");
+				MessageBox.Show("Thông tin tổng tiền không hợp lệ. Vui lòng kiểm tra lại.", "Lỗi nhập liệu", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
-
 
 		}
 		private void button13_Click(object sender, EventArgs e)
@@ -601,7 +664,7 @@ namespace Dự_Án_Shop_Bán_Giầy_Thể_Thao
 		}
 		private void TrangChu_Load(object sender, EventArgs e)
 		{
-
+			phanquyen();
 		}
 		private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
 		{
@@ -613,6 +676,14 @@ namespace Dự_Án_Shop_Bán_Giầy_Thể_Thao
 		}
 		private void dtgView_SanPham_CellClick_1(object sender, DataGridViewCellEventArgs e)
 		{
+		}
+		private void phanquyen()
+		{
+			if (Const.loaiTaiKhoan == false)
+			{
+				btn_NhanVien.Enabled = false;
+				btn_GiamGia.Enabled = false;
+			}
 		}
 	}
 }

@@ -48,7 +48,6 @@
 			txt_TienKhachTra = new TextBox();
 			txt_TongTien = new TextBox();
 			btn_luu = new Button();
-			button1 = new Button();
 			sqlCommand1 = new Microsoft.Data.SqlClient.SqlCommand();
 			((System.ComponentModel.ISupportInitialize)dtgView_HoaDon).BeginInit();
 			SuspendLayout();
@@ -245,25 +244,13 @@
 			// 
 			btn_luu.BackColor = SystemColors.Info;
 			btn_luu.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-			btn_luu.Location = new Point(26, 468);
+			btn_luu.Location = new Point(619, 603);
 			btn_luu.Name = "btn_luu";
-			btn_luu.Size = new Size(162, 49);
+			btn_luu.Size = new Size(234, 36);
 			btn_luu.TabIndex = 49;
 			btn_luu.Text = "Lưu Hoá Đơn";
 			btn_luu.UseVisualStyleBackColor = false;
 			btn_luu.Click += btn_luu_Click;
-			// 
-			// button1
-			// 
-			button1.BackColor = SystemColors.Info;
-			button1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-			button1.Location = new Point(229, 468);
-			button1.Name = "button1";
-			button1.Size = new Size(166, 49);
-			button1.TabIndex = 50;
-			button1.Text = "Lưu Hoá Đơn";
-			button1.UseVisualStyleBackColor = false;
-			button1.Click += button1_Click;
 			// 
 			// sqlCommand1
 			// 
@@ -279,7 +266,6 @@
 			BackColor = SystemColors.GradientActiveCaption;
 			BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
 			ClientSize = new Size(856, 639);
-			Controls.Add(button1);
 			Controls.Add(btn_luu);
 			Controls.Add(txt_NgayLap);
 			Controls.Add(txt_TenNhanVien);
@@ -329,7 +315,6 @@
         private TextBox txt_TienKhachTra;
         private TextBox txt_TongTien;
 		private Button btn_luu;
-		private Button button1;
 		private Microsoft.Data.SqlClient.SqlCommand sqlCommand1;
 	}
 }

@@ -59,8 +59,8 @@ namespace Dự_Án_Shop_Bán_Giầy_Thể_Thao
 		private void btn_luu_Click(object sender, EventArgs e)
 		{
 			SaveFileDialog saveFileDialog = new SaveFileDialog();
-			saveFileDialog.Filter = "Text Files (*.txt)|*.txt|Excel Files (*.xlsx)|*.xlsx";
-			saveFileDialog.DefaultExt = "txt";
+			saveFileDialog.Filter = "Excel Files (*.xlsx)|*.xlsx";
+			saveFileDialog.DefaultExt = "xlsx";
 			saveFileDialog.AddExtension = true;
 			saveFileDialog.FileName = "MaHoaDon";
 
@@ -75,74 +75,46 @@ namespace Dự_Án_Shop_Bán_Giầy_Thể_Thao
 				string soTienNhan = txt_TienKhachTra.Text;
 				string tienThua = txt_TienThua.Text;
 
-				if (Path.GetExtension(filePath) == ".txt")
+				bool fileExists = File.Exists(filePath);
+
+				using (var workbook = fileExists ? new XLWorkbook(filePath) : new XLWorkbook())
 				{
-					using (StreamWriter writer = new StreamWriter(filePath))
+					var worksheet = workbook.Worksheets.FirstOrDefault() ?? workbook.Worksheets.Add("HoaDon");
+
+					// Tạo các tiêu đề ở hàng đầu tiên nếu chưa có
+					if (worksheet.Cell(1, 1).Value.ToString() == string.Empty)
 					{
-						writer.WriteLine("Mã hóa đơn: " + maHoaDon);
-						writer.WriteLine("Tên nhân viên: " + tenNhanVien);
-						writer.WriteLine("Tên khách hàng: " + tenKhachHang);
-						writer.WriteLine("Ngày lập: " + ngayLap);
-						writer.WriteLine("Tổng tiền: " + tongTien);
-						writer.WriteLine("Số tiền nhận: " + soTienNhan);
-						writer.WriteLine("Tiền thừa: " + tienThua);
-					}
-				}
-				else if (Path.GetExtension(filePath) == ".xlsx")
-				{
-					using (var workbook = new XLWorkbook())
-					{
-						var worksheet = workbook.Worksheets.Add("HoaDon");
 						worksheet.Cell(1, 1).Value = "Mã hóa đơn";
-						worksheet.Cell(1, 2).Value = maHoaDon;
-						worksheet.Cell(2, 1).Value = "Tên nhân viên";
-						worksheet.Cell(2, 2).Value = tenNhanVien;
-						worksheet.Cell(3, 1).Value = "Tên khách hàng";
-						worksheet.Cell(3, 2).Value = tenKhachHang;
-						worksheet.Cell(4, 1).Value = "Ngày lập";
-						worksheet.Cell(4, 2).Value = ngayLap;
-						worksheet.Cell(5, 1).Value = "Tổng tiền";
-						worksheet.Cell(5, 2).Value = tongTien;
-						worksheet.Cell(6, 1).Value = "Số tiền nhận";
-						worksheet.Cell(6, 2).Value = soTienNhan;
-						worksheet.Cell(7, 1).Value = "Tiền thừa";
-						worksheet.Cell(7, 2).Value = tienThua;
-						workbook.SaveAs(filePath);
+						worksheet.Cell(1, 2).Value = "Tên nhân viên";
+						worksheet.Cell(1, 3).Value = "Tên khách hàng";
+						worksheet.Cell(1, 4).Value = "Ngày lập";
+						worksheet.Cell(1, 5).Value = "Tổng tiền";
+						worksheet.Cell(1, 6).Value = "Số tiền nhận";
+						worksheet.Cell(1, 7).Value = "Tiền thừa";
 					}
+
+					// Tìm hàng cuối cùng có dữ liệu
+					int lastRow = worksheet.LastRowUsed()?.RowNumber() ?? 1;
+					int newRow = lastRow + 1;
+
+					// Ghi dữ liệu vào hàng mới
+					worksheet.Cell(newRow, 1).Value = maHoaDon;
+					worksheet.Cell(newRow, 2).Value = tenNhanVien;
+					worksheet.Cell(newRow, 3).Value = tenKhachHang;
+					worksheet.Cell(newRow, 4).Value = ngayLap;
+					worksheet.Cell(newRow, 5).Value = tongTien;
+					worksheet.Cell(newRow, 6).Value = soTienNhan;
+					worksheet.Cell(newRow, 7).Value = tienThua;
+
+					workbook.SaveAs(filePath);
 				}
+
 
 				MessageBox.Show("Mã hóa đơn đã được lưu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 				// Thêm mã hóa đơn vào DataGridView thống kê trong form ThongKe1
 				ThongKe1 thongKeForm = new ThongKe1();
 				thongKeForm.dtgView_ThongKe.Rows.Add(maHoaDon, tenNhanVien, tenKhachHang, ngayLap, tongTien);
-			}
-		}
-
-		private void button1_Click(object sender, EventArgs e)
-		{
-			try
-			{
-				HoaDon hd = new HoaDon()
-				{
-					MaHoaDon = txt_MaHoaDon.Text,
-					ThoiGian = DateTime.Parse(txt_NgayLap.Text),
-					MaNhanVien = txt_TenNhanVien.Text,
-				};
-
-				DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn thêm không?", "Thông Báo", MessageBoxButtons.YesNo);
-				if (result == DialogResult.Yes)
-				{
-					string resultMessage = svhd.Themhd(hd);
-
-
-					MessageBox.Show(resultMessage);
-				}
-
-			}
-			catch (Exception ex)
-			{
-				MessageBox.Show($"Đã xảy ra lỗi: {ex.Message}");
 			}
 		}
 	}
