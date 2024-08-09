@@ -29,30 +29,113 @@
 		private void InitializeComponent()
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Voucher));
+			cbb_TenVoucher = new ComboBox();
+			label10 = new Label();
+			txt_HSD = new TextBox();
+			label12 = new Label();
+			label11 = new Label();
+			label4 = new Label();
+			dateTime_NgayHetHan = new DateTimePicker();
+			cbb_LoaiVoucher = new ComboBox();
 			label8 = new Label();
 			label9 = new Label();
-			textBox3 = new TextBox();
+			txt_NguoiTao = new TextBox();
 			label6 = new Label();
 			label7 = new Label();
-			dateTimePicker1 = new DateTimePicker();
+			dateTime_NgayTao = new DateTimePicker();
 			label5 = new Label();
-			textBox2 = new TextBox();
-			textBox1 = new TextBox();
+			txt_TrangThai = new TextBox();
+			txt_MaVoucher = new TextBox();
 			label3 = new Label();
 			label1 = new Label();
 			label2 = new Label();
-			dataGridView1 = new DataGridView();
-			button3 = new Button();
-			button2 = new Button();
+			dtgView_Voucher = new DataGridView();
+			btn_Xoa = new Button();
+			btn_Sua = new Button();
 			button1 = new Button();
-			comboBox1 = new ComboBox();
-			dateTimePicker2 = new DateTimePicker();
-			label4 = new Label();
-			label11 = new Label();
-			textBox5 = new TextBox();
-			label12 = new Label();
-			((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+			((System.ComponentModel.ISupportInitialize)dtgView_Voucher).BeginInit();
 			SuspendLayout();
+			// 
+			// cbb_TenVoucher
+			// 
+			cbb_TenVoucher.FormattingEnabled = true;
+			cbb_TenVoucher.Items.AddRange(new object[] { "Voucher Giảm Giá Phần Trăm", "", "Voucher Giảm Giá Số Tiền Cụ Thể", "", "Voucher Mua 1 Tặng 1", "", "Voucher Lần Mua Đầu Tiên", "Voucher Sinh Nhật", "", "Voucher Khách Hàng Thân Thiết", "", "Voucher Nhóm Sản Phẩm", "", "Voucher Sự Kiện", "", "Voucher Ứng Dụng Di Động" });
+			cbb_TenVoucher.Location = new Point(779, 48);
+			cbb_TenVoucher.Margin = new Padding(3, 2, 3, 2);
+			cbb_TenVoucher.Name = "cbb_TenVoucher";
+			cbb_TenVoucher.Size = new Size(140, 23);
+			cbb_TenVoucher.TabIndex = 78;
+			// 
+			// label10
+			// 
+			label10.AutoSize = true;
+			label10.BackColor = Color.Transparent;
+			label10.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+			label10.ForeColor = Color.White;
+			label10.Location = new Point(674, 51);
+			label10.Name = "label10";
+			label10.Size = new Size(97, 20);
+			label10.TabIndex = 77;
+			label10.Text = "Tên Voucher";
+			// 
+			// txt_HSD
+			// 
+			txt_HSD.Location = new Point(768, 9);
+			txt_HSD.Margin = new Padding(3, 2, 3, 2);
+			txt_HSD.Name = "txt_HSD";
+			txt_HSD.Size = new Size(153, 23);
+			txt_HSD.TabIndex = 76;
+			// 
+			// label12
+			// 
+			label12.AutoSize = true;
+			label12.BackColor = Color.Transparent;
+			label12.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+			label12.ForeColor = Color.White;
+			label12.Location = new Point(688, 9);
+			label12.Name = "label12";
+			label12.Size = new Size(39, 20);
+			label12.TabIndex = 75;
+			label12.Text = "HSD";
+			// 
+			// label11
+			// 
+			label11.AutoSize = true;
+			label11.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+			label11.Location = new Point(430, 267);
+			label11.Name = "label11";
+			label11.Size = new Size(0, 20);
+			label11.TabIndex = 74;
+			// 
+			// label4
+			// 
+			label4.AutoSize = true;
+			label4.BackColor = Color.Transparent;
+			label4.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+			label4.ForeColor = Color.White;
+			label4.Location = new Point(10, 8);
+			label4.Name = "label4";
+			label4.Size = new Size(93, 20);
+			label4.TabIndex = 73;
+			label4.Text = "Mã Voucher";
+			// 
+			// dateTime_NgayHetHan
+			// 
+			dateTime_NgayHetHan.Location = new Point(455, 45);
+			dateTime_NgayHetHan.Margin = new Padding(3, 2, 3, 2);
+			dateTime_NgayHetHan.Name = "dateTime_NgayHetHan";
+			dateTime_NgayHetHan.Size = new Size(213, 23);
+			dateTime_NgayHetHan.TabIndex = 72;
+			// 
+			// cbb_LoaiVoucher
+			// 
+			cbb_LoaiVoucher.FormattingEnabled = true;
+			cbb_LoaiVoucher.Items.AddRange(new object[] { "Voucher Giảm Giá Phần Trăm", "", "Voucher Giảm Giá Số Tiền Cụ Thể", "", "Voucher Mua 1 Tặng 1", "", "Voucher Lần Mua Đầu Tiên", "Voucher Sinh Nhật", "", "Voucher Khách Hàng Thân Thiết", "", "Voucher Nhóm Sản Phẩm", "", "Voucher Sự Kiện", "", "Voucher Ứng Dụng Di Động" });
+			cbb_LoaiVoucher.Location = new Point(140, 45);
+			cbb_LoaiVoucher.Margin = new Padding(3, 2, 3, 2);
+			cbb_LoaiVoucher.Name = "cbb_LoaiVoucher";
+			cbb_LoaiVoucher.Size = new Size(174, 23);
+			cbb_LoaiVoucher.TabIndex = 71;
 			// 
 			// label8
 			// 
@@ -60,10 +143,10 @@
 			label8.BackColor = Color.Transparent;
 			label8.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
 			label8.ForeColor = Color.White;
-			label8.Location = new Point(326, 52);
+			label8.Location = new Point(326, 45);
 			label8.Name = "label8";
 			label8.Size = new Size(109, 20);
-			label8.TabIndex = 43;
+			label8.TabIndex = 70;
 			label8.Text = "Ngày Hết Hạn";
 			// 
 			// label9
@@ -72,18 +155,18 @@
 			label9.BackColor = Color.Transparent;
 			label9.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
 			label9.ForeColor = Color.White;
-			label9.Location = new Point(330, 50);
+			label9.Location = new Point(330, 43);
 			label9.Name = "label9";
 			label9.Size = new Size(0, 20);
-			label9.TabIndex = 42;
+			label9.TabIndex = 69;
 			// 
-			// textBox3
+			// txt_NguoiTao
 			// 
-			textBox3.Location = new Point(455, 12);
-			textBox3.Margin = new Padding(3, 2, 3, 2);
-			textBox3.Name = "textBox3";
-			textBox3.Size = new Size(213, 23);
-			textBox3.TabIndex = 41;
+			txt_NguoiTao.Location = new Point(455, 5);
+			txt_NguoiTao.Margin = new Padding(3, 2, 3, 2);
+			txt_NguoiTao.Name = "txt_NguoiTao";
+			txt_NguoiTao.Size = new Size(213, 23);
+			txt_NguoiTao.TabIndex = 68;
 			// 
 			// label6
 			// 
@@ -91,10 +174,10 @@
 			label6.BackColor = Color.Transparent;
 			label6.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
 			label6.ForeColor = Color.White;
-			label6.Location = new Point(341, 14);
+			label6.Location = new Point(341, 7);
 			label6.Name = "label6";
 			label6.Size = new Size(85, 20);
-			label6.TabIndex = 40;
+			label6.TabIndex = 67;
 			label6.Text = "Người Tạo\r\n";
 			// 
 			// label7
@@ -103,18 +186,18 @@
 			label7.BackColor = Color.Transparent;
 			label7.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
 			label7.ForeColor = Color.White;
-			label7.Location = new Point(330, 11);
+			label7.Location = new Point(330, 4);
 			label7.Name = "label7";
 			label7.Size = new Size(0, 20);
-			label7.TabIndex = 39;
+			label7.TabIndex = 66;
 			// 
-			// dateTimePicker1
+			// dateTime_NgayTao
 			// 
-			dateTimePicker1.Location = new Point(455, 88);
-			dateTimePicker1.Margin = new Padding(3, 2, 3, 2);
-			dateTimePicker1.Name = "dateTimePicker1";
-			dateTimePicker1.Size = new Size(213, 23);
-			dateTimePicker1.TabIndex = 38;
+			dateTime_NgayTao.Location = new Point(455, 81);
+			dateTime_NgayTao.Margin = new Padding(3, 2, 3, 2);
+			dateTime_NgayTao.Name = "dateTime_NgayTao";
+			dateTime_NgayTao.Size = new Size(213, 23);
+			dateTime_NgayTao.TabIndex = 65;
 			// 
 			// label5
 			// 
@@ -122,27 +205,27 @@
 			label5.BackColor = Color.Transparent;
 			label5.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
 			label5.ForeColor = Color.White;
-			label5.Location = new Point(347, 89);
+			label5.Location = new Point(347, 82);
 			label5.Name = "label5";
 			label5.Size = new Size(78, 20);
-			label5.TabIndex = 37;
+			label5.TabIndex = 64;
 			label5.Text = "Ngày Tạo";
 			// 
-			// textBox2
+			// txt_TrangThai
 			// 
-			textBox2.Location = new Point(140, 92);
-			textBox2.Margin = new Padding(3, 2, 3, 2);
-			textBox2.Name = "textBox2";
-			textBox2.Size = new Size(174, 23);
-			textBox2.TabIndex = 36;
+			txt_TrangThai.Location = new Point(140, 85);
+			txt_TrangThai.Margin = new Padding(3, 2, 3, 2);
+			txt_TrangThai.Name = "txt_TrangThai";
+			txt_TrangThai.Size = new Size(174, 23);
+			txt_TrangThai.TabIndex = 63;
 			// 
-			// textBox1
+			// txt_MaVoucher
 			// 
-			textBox1.Location = new Point(140, 15);
-			textBox1.Margin = new Padding(3, 2, 3, 2);
-			textBox1.Name = "textBox1";
-			textBox1.Size = new Size(174, 23);
-			textBox1.TabIndex = 34;
+			txt_MaVoucher.Location = new Point(140, 8);
+			txt_MaVoucher.Margin = new Padding(3, 2, 3, 2);
+			txt_MaVoucher.Name = "txt_MaVoucher";
+			txt_MaVoucher.Size = new Size(174, 23);
+			txt_MaVoucher.TabIndex = 62;
 			// 
 			// label3
 			// 
@@ -150,10 +233,10 @@
 			label3.BackColor = Color.Transparent;
 			label3.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
 			label3.ForeColor = Color.White;
-			label3.Location = new Point(10, 92);
+			label3.Location = new Point(10, 85);
 			label3.Name = "label3";
 			label3.Size = new Size(87, 20);
-			label3.TabIndex = 33;
+			label3.TabIndex = 61;
 			label3.Text = "Trạng Thái";
 			// 
 			// label1
@@ -162,130 +245,74 @@
 			label1.BackColor = Color.Transparent;
 			label1.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
 			label1.ForeColor = Color.White;
-			label1.Location = new Point(10, 52);
+			label1.Location = new Point(10, 45);
 			label1.Name = "label1";
 			label1.Size = new Size(102, 20);
-			label1.TabIndex = 31;
+			label1.TabIndex = 60;
 			label1.Text = "Loại Voucher";
 			// 
 			// label2
 			// 
 			label2.AutoSize = true;
 			label2.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-			label2.Location = new Point(10, 15);
+			label2.Location = new Point(10, 8);
 			label2.Name = "label2";
 			label2.Size = new Size(0, 20);
-			label2.TabIndex = 30;
+			label2.TabIndex = 59;
 			// 
-			// dataGridView1
+			// dtgView_Voucher
 			// 
-			dataGridView1.BackgroundColor = SystemColors.ControlLight;
-			dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			dataGridView1.Location = new Point(-2, 174);
-			dataGridView1.Margin = new Padding(3, 2, 3, 2);
-			dataGridView1.Name = "dataGridView1";
-			dataGridView1.RowHeadersWidth = 51;
-			dataGridView1.RowTemplate.Height = 29;
-			dataGridView1.Size = new Size(921, 459);
-			dataGridView1.TabIndex = 29;
+			dtgView_Voucher.BackgroundColor = SystemColors.ControlLight;
+			dtgView_Voucher.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			dtgView_Voucher.Location = new Point(-2, 167);
+			dtgView_Voucher.Margin = new Padding(3, 2, 3, 2);
+			dtgView_Voucher.Name = "dtgView_Voucher";
+			dtgView_Voucher.RowHeadersWidth = 51;
+			dtgView_Voucher.RowTemplate.Height = 29;
+			dtgView_Voucher.Size = new Size(921, 459);
+			dtgView_Voucher.TabIndex = 58;
 			// 
-			// button3
+			// btn_Xoa
 			// 
-			button3.BackColor = SystemColors.GradientActiveCaption;
-			button3.BackgroundImage = (Image)resources.GetObject("button3.BackgroundImage");
-			button3.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-			button3.Location = new Point(664, 125);
-			button3.Margin = new Padding(3, 2, 3, 2);
-			button3.Name = "button3";
-			button3.Size = new Size(208, 45);
-			button3.TabIndex = 28;
-			button3.Text = "Xoá";
-			button3.UseVisualStyleBackColor = false;
+			btn_Xoa.BackColor = SystemColors.GradientActiveCaption;
+			btn_Xoa.BackgroundImage = (Image)resources.GetObject("btn_Xoa.BackgroundImage");
+			btn_Xoa.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+			btn_Xoa.Location = new Point(664, 118);
+			btn_Xoa.Margin = new Padding(3, 2, 3, 2);
+			btn_Xoa.Name = "btn_Xoa";
+			btn_Xoa.Size = new Size(208, 45);
+			btn_Xoa.TabIndex = 57;
+			btn_Xoa.Text = "Xoá";
+			btn_Xoa.UseVisualStyleBackColor = false;
+			btn_Xoa.Click += btn_Xoa_Click;
 			// 
-			// button2
+			// btn_Sua
 			// 
-			button2.BackColor = SystemColors.GradientActiveCaption;
-			button2.BackgroundImage = (Image)resources.GetObject("button2.BackgroundImage");
-			button2.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-			button2.Location = new Point(384, 125);
-			button2.Margin = new Padding(3, 2, 3, 2);
-			button2.Name = "button2";
-			button2.Size = new Size(203, 45);
-			button2.TabIndex = 27;
-			button2.Text = "Sửa ";
-			button2.UseVisualStyleBackColor = false;
+			btn_Sua.BackColor = SystemColors.GradientActiveCaption;
+			btn_Sua.BackgroundImage = (Image)resources.GetObject("btn_Sua.BackgroundImage");
+			btn_Sua.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+			btn_Sua.Location = new Point(384, 118);
+			btn_Sua.Margin = new Padding(3, 2, 3, 2);
+			btn_Sua.Name = "btn_Sua";
+			btn_Sua.Size = new Size(203, 45);
+			btn_Sua.TabIndex = 56;
+			btn_Sua.Text = "Sửa ";
+			btn_Sua.UseVisualStyleBackColor = false;
+			btn_Sua.Click += btn_Sua_Click;
 			// 
 			// button1
 			// 
 			button1.BackColor = SystemColors.GradientActiveCaption;
 			button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
 			button1.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-			button1.Location = new Point(76, 125);
+			button1.Location = new Point(76, 118);
 			button1.Margin = new Padding(3, 2, 3, 2);
 			button1.Name = "button1";
 			button1.Size = new Size(202, 45);
-			button1.TabIndex = 26;
+			button1.TabIndex = 55;
 			button1.Text = "Thêm ";
 			button1.UseVisualStyleBackColor = false;
-			// 
-			// comboBox1
-			// 
-			comboBox1.FormattingEnabled = true;
-			comboBox1.Items.AddRange(new object[] { "Voucher Giảm Giá Phần Trăm", "", "Voucher Giảm Giá Số Tiền Cụ Thể", "", "Voucher Mua 1 Tặng 1", "", "Voucher Lần Mua Đầu Tiên", "Voucher Sinh Nhật", "", "Voucher Khách Hàng Thân Thiết", "", "Voucher Nhóm Sản Phẩm", "", "Voucher Sự Kiện", "", "Voucher Ứng Dụng Di Động" });
-			comboBox1.Location = new Point(140, 52);
-			comboBox1.Margin = new Padding(3, 2, 3, 2);
-			comboBox1.Name = "comboBox1";
-			comboBox1.Size = new Size(174, 23);
-			comboBox1.TabIndex = 45;
-			// 
-			// dateTimePicker2
-			// 
-			dateTimePicker2.Location = new Point(455, 52);
-			dateTimePicker2.Margin = new Padding(3, 2, 3, 2);
-			dateTimePicker2.Name = "dateTimePicker2";
-			dateTimePicker2.Size = new Size(213, 23);
-			dateTimePicker2.TabIndex = 46;
-			// 
-			// label4
-			// 
-			label4.AutoSize = true;
-			label4.BackColor = Color.Transparent;
-			label4.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-			label4.ForeColor = Color.White;
-			label4.Location = new Point(10, 15);
-			label4.Name = "label4";
-			label4.Size = new Size(93, 20);
-			label4.TabIndex = 47;
-			label4.Text = "Mã Voucher";
-			// 
-			// label11
-			// 
-			label11.AutoSize = true;
-			label11.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-			label11.Location = new Point(430, 274);
-			label11.Name = "label11";
-			label11.Size = new Size(0, 20);
-			label11.TabIndex = 48;
-			// 
-			// textBox5
-			// 
-			textBox5.Location = new Point(768, 16);
-			textBox5.Margin = new Padding(3, 2, 3, 2);
-			textBox5.Name = "textBox5";
-			textBox5.Size = new Size(153, 23);
-			textBox5.TabIndex = 52;
-			// 
-			// label12
-			// 
-			label12.AutoSize = true;
-			label12.BackColor = Color.Transparent;
-			label12.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-			label12.ForeColor = Color.White;
-			label12.Location = new Point(688, 16);
-			label12.Name = "label12";
-			label12.Size = new Size(39, 20);
-			label12.TabIndex = 51;
-			label12.Text = "HSD";
+			button1.Click += button1_Click;
 			// 
 			// Voucher
 			// 
@@ -294,59 +321,63 @@
 			BackColor = SystemColors.GradientInactiveCaption;
 			BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
 			ClientSize = new Size(918, 631);
-			Controls.Add(textBox5);
+			Controls.Add(cbb_TenVoucher);
+			Controls.Add(label10);
+			Controls.Add(txt_HSD);
 			Controls.Add(label12);
 			Controls.Add(label11);
 			Controls.Add(label4);
-			Controls.Add(dateTimePicker2);
-			Controls.Add(comboBox1);
+			Controls.Add(dateTime_NgayHetHan);
+			Controls.Add(cbb_LoaiVoucher);
 			Controls.Add(label8);
 			Controls.Add(label9);
-			Controls.Add(textBox3);
+			Controls.Add(txt_NguoiTao);
 			Controls.Add(label6);
 			Controls.Add(label7);
-			Controls.Add(dateTimePicker1);
+			Controls.Add(dateTime_NgayTao);
 			Controls.Add(label5);
-			Controls.Add(textBox2);
-			Controls.Add(textBox1);
+			Controls.Add(txt_TrangThai);
+			Controls.Add(txt_MaVoucher);
 			Controls.Add(label3);
 			Controls.Add(label1);
 			Controls.Add(label2);
-			Controls.Add(dataGridView1);
-			Controls.Add(button3);
-			Controls.Add(button2);
+			Controls.Add(dtgView_Voucher);
+			Controls.Add(btn_Xoa);
+			Controls.Add(btn_Sua);
 			Controls.Add(button1);
 			Margin = new Padding(3, 2, 3, 2);
 			Name = "Voucher";
 			Text = "Voucher";
-			((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+			((System.ComponentModel.ISupportInitialize)dtgView_Voucher).EndInit();
 			ResumeLayout(false);
 			PerformLayout();
 		}
 
 		#endregion
 
+		private ComboBox cbb_TenVoucher;
+		private Label label10;
+		private TextBox txt_HSD;
+		private Label label12;
+		private Label label11;
+		private Label label4;
+		private DateTimePicker dateTime_NgayHetHan;
+		private ComboBox cbb_LoaiVoucher;
 		private Label label8;
-        private Label label9;
-        private TextBox textBox3;
-        private Label label6;
-        private Label label7;
-        private DateTimePicker dateTimePicker1;
-        private Label label5;
-        private TextBox textBox2;
-        private TextBox textBox1;
-        private Label label3;
-        private Label label1;
-        private Label label2;
-        private DataGridView dataGridView1;
-        private Button button3;
-        private Button button2;
-        private Button button1;
-        private ComboBox comboBox1;
-        private DateTimePicker dateTimePicker2;
-        private Label label4;
-        private Label label11;
-        private TextBox textBox5;
-        private Label label12;
-    }
+		private Label label9;
+		private TextBox txt_NguoiTao;
+		private Label label6;
+		private Label label7;
+		private DateTimePicker dateTime_NgayTao;
+		private Label label5;
+		private TextBox txt_TrangThai;
+		private TextBox txt_MaVoucher;
+		private Label label3;
+		private Label label1;
+		private Label label2;
+		private DataGridView dtgView_Voucher;
+		private Button btn_Xoa;
+		private Button btn_Sua;
+		private Button button1;
+	}
 }

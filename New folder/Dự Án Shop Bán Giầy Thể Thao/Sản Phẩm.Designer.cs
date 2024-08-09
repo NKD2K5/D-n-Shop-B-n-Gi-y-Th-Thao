@@ -29,91 +29,94 @@
 		private void InitializeComponent()
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Sản_Phẩm));
-			dataGridView1 = new DataGridView();
-			button1 = new Button();
-			button2 = new Button();
-			button3 = new Button();
-			textBox2 = new TextBox();
-			textBox4 = new TextBox();
+			dgvSanPham = new DataGridView();
+			btn_Them = new Button();
+			btn_Sua = new Button();
+			btn_Xoa = new Button();
+			txt_TonKho = new TextBox();
+			txt_TenSanPham = new TextBox();
 			label2 = new Label();
 			label1 = new Label();
 			label3 = new Label();
 			label4 = new Label();
-			dateTimePicker1 = new DateTimePicker();
+			dateTime_NgayNhap = new DateTimePicker();
 			label5 = new Label();
-			textBox1 = new TextBox();
-			textBox3 = new TextBox();
+			txt_GiaNhap = new TextBox();
+			txt_GiaBan = new TextBox();
 			label6 = new Label();
-			comboBox1 = new ComboBox();
-			((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+			cbb_MaLoaiSanPham = new ComboBox();
+			((System.ComponentModel.ISupportInitialize)dgvSanPham).BeginInit();
 			SuspendLayout();
 			// 
-			// dataGridView1
+			// dgvSanPham
 			// 
-			dataGridView1.BackgroundColor = SystemColors.ControlLight;
-			dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			dataGridView1.Location = new Point(1, 176);
-			dataGridView1.Margin = new Padding(3, 2, 3, 2);
-			dataGridView1.Name = "dataGridView1";
-			dataGridView1.RowHeadersWidth = 51;
-			dataGridView1.RowTemplate.Height = 29;
-			dataGridView1.Size = new Size(1043, 455);
-			dataGridView1.TabIndex = 0;
+			dgvSanPham.BackgroundColor = SystemColors.ControlLight;
+			dgvSanPham.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			dgvSanPham.Location = new Point(1, 176);
+			dgvSanPham.Margin = new Padding(3, 2, 3, 2);
+			dgvSanPham.Name = "dgvSanPham";
+			dgvSanPham.RowHeadersWidth = 51;
+			dgvSanPham.RowTemplate.Height = 29;
+			dgvSanPham.Size = new Size(1043, 455);
+			dgvSanPham.TabIndex = 0;
 			// 
-			// button1
+			// btn_Them
 			// 
-			button1.BackColor = SystemColors.GradientActiveCaption;
-			button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
-			button1.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-			button1.Location = new Point(149, 126);
-			button1.Margin = new Padding(3, 2, 3, 2);
-			button1.Name = "button1";
-			button1.Size = new Size(237, 46);
-			button1.TabIndex = 1;
-			button1.Text = "Thêm ";
-			button1.UseVisualStyleBackColor = false;
+			btn_Them.BackColor = SystemColors.GradientActiveCaption;
+			btn_Them.BackgroundImage = (Image)resources.GetObject("btn_Them.BackgroundImage");
+			btn_Them.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+			btn_Them.Location = new Point(149, 126);
+			btn_Them.Margin = new Padding(3, 2, 3, 2);
+			btn_Them.Name = "btn_Them";
+			btn_Them.Size = new Size(237, 46);
+			btn_Them.TabIndex = 1;
+			btn_Them.Text = "Thêm ";
+			btn_Them.UseVisualStyleBackColor = false;
+			btn_Them.Click += button1_Click_1;
 			// 
-			// button2
+			// btn_Sua
 			// 
-			button2.BackColor = SystemColors.GradientActiveCaption;
-			button2.BackgroundImage = (Image)resources.GetObject("button2.BackgroundImage");
-			button2.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-			button2.Location = new Point(433, 126);
-			button2.Margin = new Padding(3, 2, 3, 2);
-			button2.Name = "button2";
-			button2.Size = new Size(247, 46);
-			button2.TabIndex = 2;
-			button2.Text = "Sửa ";
-			button2.UseVisualStyleBackColor = false;
+			btn_Sua.BackColor = SystemColors.GradientActiveCaption;
+			btn_Sua.BackgroundImage = (Image)resources.GetObject("btn_Sua.BackgroundImage");
+			btn_Sua.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+			btn_Sua.Location = new Point(433, 126);
+			btn_Sua.Margin = new Padding(3, 2, 3, 2);
+			btn_Sua.Name = "btn_Sua";
+			btn_Sua.Size = new Size(247, 46);
+			btn_Sua.TabIndex = 2;
+			btn_Sua.Text = "Sửa ";
+			btn_Sua.UseVisualStyleBackColor = false;
+			btn_Sua.Click += button2_Click;
 			// 
-			// button3
+			// btn_Xoa
 			// 
-			button3.BackColor = SystemColors.GradientActiveCaption;
-			button3.BackgroundImage = (Image)resources.GetObject("button3.BackgroundImage");
-			button3.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-			button3.Location = new Point(720, 126);
-			button3.Margin = new Padding(3, 2, 3, 2);
-			button3.Name = "button3";
-			button3.Size = new Size(219, 46);
-			button3.TabIndex = 3;
-			button3.Text = "Xoá";
-			button3.UseVisualStyleBackColor = false;
+			btn_Xoa.BackColor = SystemColors.GradientActiveCaption;
+			btn_Xoa.BackgroundImage = (Image)resources.GetObject("btn_Xoa.BackgroundImage");
+			btn_Xoa.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+			btn_Xoa.Location = new Point(720, 126);
+			btn_Xoa.Margin = new Padding(3, 2, 3, 2);
+			btn_Xoa.Name = "btn_Xoa";
+			btn_Xoa.Size = new Size(219, 46);
+			btn_Xoa.TabIndex = 3;
+			btn_Xoa.Text = "Xoá";
+			btn_Xoa.UseVisualStyleBackColor = false;
+			btn_Xoa.Click += button3_Click;
 			// 
-			// textBox2
+			// txt_TonKho
 			// 
-			textBox2.Location = new Point(183, 84);
-			textBox2.Margin = new Padding(3, 2, 3, 2);
-			textBox2.Name = "textBox2";
-			textBox2.Size = new Size(238, 23);
-			textBox2.TabIndex = 9;
+			txt_TonKho.Location = new Point(183, 84);
+			txt_TonKho.Margin = new Padding(3, 2, 3, 2);
+			txt_TonKho.Name = "txt_TonKho";
+			txt_TonKho.Size = new Size(238, 23);
+			txt_TonKho.TabIndex = 9;
 			// 
-			// textBox4
+			// txt_TenSanPham
 			// 
-			textBox4.Location = new Point(183, 48);
-			textBox4.Margin = new Padding(3, 2, 3, 2);
-			textBox4.Name = "textBox4";
-			textBox4.Size = new Size(238, 23);
-			textBox4.TabIndex = 7;
+			txt_TenSanPham.Location = new Point(183, 48);
+			txt_TenSanPham.Margin = new Padding(3, 2, 3, 2);
+			txt_TenSanPham.Name = "txt_TenSanPham";
+			txt_TenSanPham.Size = new Size(238, 23);
+			txt_TenSanPham.TabIndex = 7;
 			// 
 			// label2
 			// 
@@ -163,13 +166,13 @@
 			label4.TabIndex = 13;
 			label4.Text = "Ngày Nhập";
 			// 
-			// dateTimePicker1
+			// dateTime_NgayNhap
 			// 
-			dateTimePicker1.Location = new Point(783, 14);
-			dateTimePicker1.Margin = new Padding(3, 2, 3, 2);
-			dateTimePicker1.Name = "dateTimePicker1";
-			dateTimePicker1.Size = new Size(219, 23);
-			dateTimePicker1.TabIndex = 14;
+			dateTime_NgayNhap.Location = new Point(783, 14);
+			dateTime_NgayNhap.Margin = new Padding(3, 2, 3, 2);
+			dateTime_NgayNhap.Name = "dateTime_NgayNhap";
+			dateTime_NgayNhap.Size = new Size(219, 23);
+			dateTime_NgayNhap.TabIndex = 14;
 			// 
 			// label5
 			// 
@@ -183,21 +186,21 @@
 			label5.TabIndex = 15;
 			label5.Text = " Giá Bán";
 			// 
-			// textBox1
+			// txt_GiaNhap
 			// 
-			textBox1.Location = new Point(783, 47);
-			textBox1.Margin = new Padding(3, 2, 3, 2);
-			textBox1.Name = "textBox1";
-			textBox1.Size = new Size(219, 23);
-			textBox1.TabIndex = 16;
+			txt_GiaNhap.Location = new Point(783, 47);
+			txt_GiaNhap.Margin = new Padding(3, 2, 3, 2);
+			txt_GiaNhap.Name = "txt_GiaNhap";
+			txt_GiaNhap.Size = new Size(219, 23);
+			txt_GiaNhap.TabIndex = 16;
 			// 
-			// textBox3
+			// txt_GiaBan
 			// 
-			textBox3.Location = new Point(783, 82);
-			textBox3.Margin = new Padding(3, 2, 3, 2);
-			textBox3.Name = "textBox3";
-			textBox3.Size = new Size(219, 23);
-			textBox3.TabIndex = 18;
+			txt_GiaBan.Location = new Point(783, 82);
+			txt_GiaBan.Margin = new Padding(3, 2, 3, 2);
+			txt_GiaBan.Name = "txt_GiaBan";
+			txt_GiaBan.Size = new Size(219, 23);
+			txt_GiaBan.TabIndex = 18;
 			// 
 			// label6
 			// 
@@ -207,19 +210,19 @@
 			label6.ForeColor = Color.White;
 			label6.Location = new Point(661, 48);
 			label6.Name = "label6";
-			label6.Size = new Size(70, 20);
+			label6.Size = new Size(77, 20);
 			label6.TabIndex = 17;
-			label6.Text = "Giá Vốn ";
+			label6.Text = "Giá Nhập";
 			// 
-			// comboBox1
+			// cbb_MaLoaiSanPham
 			// 
-			comboBox1.FormattingEnabled = true;
-			comboBox1.Location = new Point(184, 14);
-			comboBox1.Margin = new Padding(3, 2, 3, 2);
-			comboBox1.Name = "comboBox1";
-			comboBox1.Size = new Size(237, 23);
-			comboBox1.TabIndex = 19;
-			comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+			cbb_MaLoaiSanPham.FormattingEnabled = true;
+			cbb_MaLoaiSanPham.Location = new Point(184, 14);
+			cbb_MaLoaiSanPham.Margin = new Padding(3, 2, 3, 2);
+			cbb_MaLoaiSanPham.Name = "cbb_MaLoaiSanPham";
+			cbb_MaLoaiSanPham.Size = new Size(237, 23);
+			cbb_MaLoaiSanPham.TabIndex = 19;
+			cbb_MaLoaiSanPham.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
 			// 
 			// Sản_Phẩm
 			// 
@@ -228,47 +231,47 @@
 			BackColor = SystemColors.GradientInactiveCaption;
 			BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
 			ClientSize = new Size(1046, 629);
-			Controls.Add(comboBox1);
-			Controls.Add(textBox3);
+			Controls.Add(cbb_MaLoaiSanPham);
+			Controls.Add(txt_GiaBan);
 			Controls.Add(label6);
-			Controls.Add(textBox1);
+			Controls.Add(txt_GiaNhap);
 			Controls.Add(label5);
-			Controls.Add(dateTimePicker1);
+			Controls.Add(dateTime_NgayNhap);
 			Controls.Add(label4);
 			Controls.Add(label3);
 			Controls.Add(label1);
 			Controls.Add(label2);
-			Controls.Add(textBox2);
-			Controls.Add(textBox4);
-			Controls.Add(button3);
-			Controls.Add(button2);
-			Controls.Add(button1);
-			Controls.Add(dataGridView1);
+			Controls.Add(txt_TonKho);
+			Controls.Add(txt_TenSanPham);
+			Controls.Add(btn_Xoa);
+			Controls.Add(btn_Sua);
+			Controls.Add(btn_Them);
+			Controls.Add(dgvSanPham);
 			Margin = new Padding(3, 2, 3, 2);
 			Name = "Sản_Phẩm";
 			Text = "Sản_Phẩm";
-			((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+			((System.ComponentModel.ISupportInitialize)dgvSanPham).EndInit();
 			ResumeLayout(false);
 			PerformLayout();
 		}
 
 		#endregion
 
-		private DataGridView dataGridView1;
-        private Button button1;
-        private Button button2;
-        private Button button3;
-        private TextBox textBox2;
-        private TextBox textBox4;
+		private DataGridView dgvSanPham;
+        private Button btn_Them;
+        private Button btn_Sua;
+        private Button btn_Xoa;
+        private TextBox txt_TonKho;
+        private TextBox txt_TenSanPham;
         private Label label2;
         private Label label1;
         private Label label3;
         private Label label4;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker dateTime_NgayNhap;
         private Label label5;
-        private TextBox textBox1;
-        private TextBox textBox3;
+        private TextBox txt_GiaNhap;
+        private TextBox txt_GiaBan;
         private Label label6;
-        private ComboBox comboBox1;
+        private ComboBox cbb_MaLoaiSanPham;
     }
 }
