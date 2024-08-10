@@ -58,11 +58,17 @@ namespace Dự_Án_Shop_Bán_Giầy_Thể_Thao
 			comboBoxData = new Dictionary<string, Dictionary<string, int>>()
 			{
 				{ "Giầy Bóng Rổ", new Dictionary<string, int> { { "Nike Air Zoom Pegasus", 1000 }, { "Nike React Infinity Run Flyknit", 500 }, { "Nike Air Max ", 800 }, { "Adidas Ultraboos", 800 }, { "Adidas Solarboost", 800 } } },
-				{ "Giầy Bóng Đá", new Dictionary<string, int> { { "Cà rốt", 200 }, { "Bông cải", 300 }, { "Rau chân vịt", 150 } } },
-				{ "Giầy Chạy Bộ", new Dictionary<string, int> { { "Mèo", 10 }, { "Chó", 15 }, { "Voi", 5 } } },
-				{ "Giầy Tennis", new Dictionary<string, int> { { "Mèo", 10 }, { "Chó", 15 }, { "Voi", 5 } } },
-				{ "Giầy Địa Hình", new Dictionary<string, int> { { "Mèo", 10 }, { "Chó", 15 }, { "Voi", 5 } } },
-				{ "Giầy Bóng Chuyền", new Dictionary<string, int> { { "Mèo", 10 }, { "Chó", 15 }, { "Voi", 5 } } }
+
+				{ "Giầy Chạy Bộ", new Dictionary<string, int> { { "Nike ZoomX Vaporfly", 1200 }, { "Asics Gel-Kayano 28", 1100 }, { "Brooks Ghost 14", 900 }, { "Hoka One One Clifton 8", 950 }, { "New Balance Fresh Foam 1080v11", 850 } } },
+
+				{ "Giầy Tập Gym", new Dictionary<string, int> { { "Reebok Nano X1", 950 }, { "Under Armour Project Rock 3", 1000 }, { "Nike Metcon 7", 1100 }, { "Adidas Adipower 2", 1200 }, { "Inov-8 F-Lite 260", 900 } } },
+
+				{ "Giầy Tennis", new Dictionary<string, int> { { "Nike Air Zoom Vapor", 1000 }, { "Asics Gel Resolution 8", 900 }, { "Adidas Adizero Ubersonic 4", 950 }, { "Wilson Rush Pro 3.5", 850 }, { "Babolat Jet Mach II", 800 } } },
+
+				{ "Giầy Bóng Đá", new Dictionary<string, int> { { "Nike Mercurial Superfly", 1400 }, { "Adidas Predator Mutator 20", 1300 }, { "Puma Future Z 1.1", 1200 }, { "New Balance Furon v6", 1150 }, { "Under Armour Magnetico Pro", 1100 } } },
+
+				{ "Giầy Đi Bộ", new Dictionary<string, int> { { "Merrell Moab 2", 900 }, { "Columbia Newton Ridge", 850 }, { "Salomon X Ultra 3", 950 }, { "Skechers Go Walk 5", 800 }, { "Hoka One One Bondi 7", 900 } } },
+
 			};
 
 			phuKienData = new Dictionary<string, int>()

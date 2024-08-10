@@ -19,23 +19,31 @@ namespace DAL_DuAn.DomainClass
 		[StringLength(20)]
 		[Unicode(false)]
 		public string MaKhachHang { get; set; } = null!;
+
 		[Column("tenKhachHang")]
 		[StringLength(80)]
 		public string? TenKhachHang { get; set; }
+
 		[Column("diaChi")]
 		[StringLength(150)]
 		public string? DiaChi { get; set; }
+
 		[Column("email")]
 		[StringLength(50)]
 		[Unicode(false)]
 		public string? Email { get; set; }
+
 		[Column("soDienThoai")]
 		[StringLength(15)]
 		[Unicode(false)]
 		public string? SoDienThoai { get; set; }
+
 		[Column("gioiTinh")]
 		[StringLength(20)]
 		public string? GioiTinh { get; set; }
+
+		[Column("soLuong")]
+		public int? SoLuong { get; set; }  
 
 		[InverseProperty(nameof(HoaDonChiTiet.MaKhachHangNavigation))]
 		public virtual ICollection<HoaDonChiTiet> HoaDonChiTiets { get; set; }

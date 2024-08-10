@@ -27,17 +27,18 @@ namespace Dự_Án_Shop_Bán_Giầy_Thể_Thao
 
 		public void LoadData()
 		{
-			dtgView_KhachHang.ColumnCount = 6;
+			dtgView_KhachHang.ColumnCount = 7;
 			dtgView_KhachHang.Columns[0].Name = "Mã NV";
 			dtgView_KhachHang.Columns[1].Name = "Tên NV";
 			dtgView_KhachHang.Columns[2].Name = "Địa Chỉ";
 			dtgView_KhachHang.Columns[3].Name = "Email";
 			dtgView_KhachHang.Columns[4].Name = "Số Điện Thoại";
 			dtgView_KhachHang.Columns[5].Name = "Giới Tính";
+			dtgView_KhachHang.Columns[6].Name = "Số Lượng Đặt Hàng";
 			dtgView_KhachHang.Rows.Clear();
 			foreach (var kh in svkh.GetKhachHangs())
 			{
-				dtgView_KhachHang.Rows.Add(kh.MaKhachHang, kh.TenKhachHang, kh.DiaChi, kh.Email, kh.SoDienThoai, kh.GioiTinh);
+				dtgView_KhachHang.Rows.Add(kh.MaKhachHang, kh.TenKhachHang, kh.DiaChi, kh.Email, kh.SoDienThoai, kh.GioiTinh,kh.SoLuong);
 			}
 		}
 
@@ -52,7 +53,8 @@ namespace Dự_Án_Shop_Bán_Giầy_Thể_Thao
 					DiaChi = txt_DiaChi.Text,
 					Email = txt_Email.Text,
 					SoDienThoai = txt_SoDientThoai.Text,
-					GioiTinh = rbtn_Nam.Checked ? "Nam" : "Nữ"
+					GioiTinh = rbtn_Nam.Checked ? "Nam" : "Nữ",
+					SoLuong = Convert.ToInt32(txt_SoLuongDH.Text),
 				};
 
 				DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn thêm không?", "Thông Báo", MessageBoxButtons.YesNo);
@@ -67,13 +69,6 @@ namespace Dự_Án_Shop_Bán_Giầy_Thể_Thao
 			{
 				MessageBox.Show("Đã xảy ra lỗi: " + ex.Message);
 			}
-		}
-
-		private void button3_Click(object sender, EventArgs e)
-		{
-			var kh = svkh.GetKhachHangs().Find(x => x.MaKhachHang == idWhenClick);
-			MessageBox.Show(svkh.Xóakh(kh));
-			LoadData();
 		}
 
 		private void dtgView_KhachHang_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -108,10 +103,16 @@ namespace Dự_Án_Shop_Bán_Giầy_Thể_Thao
 				{
 					rbtn_Nu.Checked = true;
 				}
+				txt_SoLuongDH.Text = kh.SoLuong?.ToString() ?? string.Empty;
 			}
 		}
 
-		private void button2_Click_1(object sender, EventArgs e)
+		private void txt_SoDientThoai_TextChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void button3_Click_1(object sender, EventArgs e)
 		{
 			try
 			{
@@ -122,7 +123,8 @@ namespace Dự_Án_Shop_Bán_Giầy_Thể_Thao
 					DiaChi = txt_DiaChi.Text,
 					Email = txt_Email.Text,
 					SoDienThoai = txt_SoDientThoai.Text,
-					GioiTinh = rbtn_Nam.Checked ? "Nam" : "Nữ"
+					GioiTinh = rbtn_Nam.Checked ? "Nam" : "Nữ",
+					SoLuong = Convert.ToInt32(txt_SoLuongDH.Text)
 				};
 
 				DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn sửa không?", "Thông Báo", MessageBoxButtons.YesNo);
@@ -139,9 +141,11 @@ namespace Dự_Án_Shop_Bán_Giầy_Thể_Thao
 			}
 		}
 
-		private void txt_SoDientThoai_TextChanged(object sender, EventArgs e)
+		private void button2_Click(object sender, EventArgs e)
 		{
-
+			var kh = svkh.GetKhachHangs().Find(x => x.MaKhachHang == idWhenClick);
+			MessageBox.Show(svkh.Xóakh(kh));
+			LoadData();
 		}
 	}
 }

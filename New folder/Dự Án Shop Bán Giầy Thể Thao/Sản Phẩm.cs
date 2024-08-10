@@ -57,7 +57,6 @@ namespace Dự_Án_Shop_Bán_Giầy_Thể_Thao
 					sp.NgayNhap,
 					sp.GiaNhap,
 					sp.GiaBan
-
 				);
 			}
 		}
@@ -112,13 +111,8 @@ namespace Dự_Án_Shop_Bán_Giầy_Thể_Thao
 				{
 					// Gọi phương thức sửa trong Service
 					string resultMessage = svsp.Suasp(sp);
+					LoadDataSP();
 					MessageBox.Show(resultMessage); // Hiển thị kết quả sửa
-
-					// Tải lại dữ liệu lên DataGridView sau khi sửa thành công
-					if (resultMessage.Contains("thành công"))
-					{
-						LoadDataSP();
-					}
 				}
 			}
 			catch (Exception ex)
@@ -140,6 +134,27 @@ namespace Dự_Án_Shop_Bán_Giầy_Thể_Thao
 			else
 			{
 				MessageBox.Show("Sản phẩm không tìm thấy.");
+			}
+		}
+
+		private void dgvSanPham_CellClick(object sender, DataGridViewCellEventArgs e)
+		{
+			if (e.RowIndex >= 0)
+			{
+				idWhenClick = dgvSanPham.Rows[e.RowIndex].Cells[0].Value.ToString();
+
+				// Find the selected product
+				var sp = svsp.GetSanPhams().Find(x => x.MaSanPham == idWhenClick);
+
+				if (sp != null)
+				{
+					cbb_MaLoaiSanPham.Text = sp.MaSanPham;
+					txt_TenSanPham.Text = sp.TenSanPham;
+					txt_TonKho.Text = sp.TonKho.ToString();
+					dateTime_NgayNhap.Value = (DateTime)sp.NgayNhap;
+					txt_GiaNhap.Text = sp.GiaNhap.ToString();
+					txt_GiaBan.Text = sp.GiaBan.ToString();
+				}
 			}
 		}
 	}

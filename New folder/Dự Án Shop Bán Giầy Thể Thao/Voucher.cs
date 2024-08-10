@@ -149,5 +149,31 @@ namespace Dự_Án_Shop_Bán_Giầy_Thể_Thao
 			MessageBox.Show(svvch.Xoávoucher(voucher));
 			LoadData();
 		}
+
+		private void dtgView_Voucher_CellClick(object sender, DataGridViewCellEventArgs e)
+		{
+			int index = e.RowIndex;
+			if (index < 0)
+			{
+				return;
+			}
+			idWhenClick = dtgView_Voucher.Rows[index].Cells[0].Value.ToString();
+			datatime();
+		}
+		public void datatime()
+		{
+			var voucher = svvch.GetVouchers().Where(x => x.MaVoucher == idWhenClick).FirstOrDefault();
+			if (voucher != null)
+			{
+				txt_MaVoucher.Text = voucher.MaVoucher;
+				cbb_LoaiVoucher.Text = voucher.MaLoaiVoucher;
+				dateTime_NgayHetHan.Text = voucher.NgayHetHan.ToString();
+				dateTime_NgayTao.Text = voucher.NgayTao.ToString();
+				txt_HSD.Text = voucher.ThoiGianDung.ToString();
+				txt_TrangThai.Text = voucher.TrangThai.ToString();
+				txt_NguoiTao.Text = voucher.NguoiTao;
+				cbb_TenVoucher.Text = voucher.TenVoucher;
+			}
+		}
 	}
 }

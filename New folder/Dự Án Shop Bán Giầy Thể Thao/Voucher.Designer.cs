@@ -60,10 +60,10 @@
 			// 
 			cbb_TenVoucher.FormattingEnabled = true;
 			cbb_TenVoucher.Items.AddRange(new object[] { "Voucher Giảm Giá Phần Trăm", "", "Voucher Giảm Giá Số Tiền Cụ Thể", "", "Voucher Mua 1 Tặng 1", "", "Voucher Lần Mua Đầu Tiên", "Voucher Sinh Nhật", "", "Voucher Khách Hàng Thân Thiết", "", "Voucher Nhóm Sản Phẩm", "", "Voucher Sự Kiện", "", "Voucher Ứng Dụng Di Động" });
-			cbb_TenVoucher.Location = new Point(779, 48);
+			cbb_TenVoucher.Location = new Point(138, 81);
 			cbb_TenVoucher.Margin = new Padding(3, 2, 3, 2);
 			cbb_TenVoucher.Name = "cbb_TenVoucher";
-			cbb_TenVoucher.Size = new Size(140, 23);
+			cbb_TenVoucher.Size = new Size(176, 23);
 			cbb_TenVoucher.TabIndex = 78;
 			// 
 			// label10
@@ -72,7 +72,7 @@
 			label10.BackColor = Color.Transparent;
 			label10.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
 			label10.ForeColor = Color.White;
-			label10.Location = new Point(674, 51);
+			label10.Location = new Point(12, 84);
 			label10.Name = "label10";
 			label10.Size = new Size(97, 20);
 			label10.TabIndex = 77;
@@ -80,7 +80,7 @@
 			// 
 			// txt_HSD
 			// 
-			txt_HSD.Location = new Point(768, 9);
+			txt_HSD.Location = new Point(863, 11);
 			txt_HSD.Margin = new Padding(3, 2, 3, 2);
 			txt_HSD.Name = "txt_HSD";
 			txt_HSD.Size = new Size(153, 23);
@@ -92,11 +92,11 @@
 			label12.BackColor = Color.Transparent;
 			label12.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
 			label12.ForeColor = Color.White;
-			label12.Location = new Point(688, 9);
+			label12.Location = new Point(769, 11);
 			label12.Name = "label12";
-			label12.Size = new Size(39, 20);
+			label12.Size = new Size(40, 20);
 			label12.TabIndex = 75;
-			label12.Text = "HSD";
+			label12.Text = "TGD";
 			// 
 			// label11
 			// 
@@ -121,7 +121,7 @@
 			// 
 			// dateTime_NgayHetHan
 			// 
-			dateTime_NgayHetHan.Location = new Point(455, 45);
+			dateTime_NgayHetHan.Location = new Point(509, 42);
 			dateTime_NgayHetHan.Margin = new Padding(3, 2, 3, 2);
 			dateTime_NgayHetHan.Name = "dateTime_NgayHetHan";
 			dateTime_NgayHetHan.Size = new Size(213, 23);
@@ -143,7 +143,7 @@
 			label8.BackColor = Color.Transparent;
 			label8.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
 			label8.ForeColor = Color.White;
-			label8.Location = new Point(326, 45);
+			label8.Location = new Point(380, 42);
 			label8.Name = "label8";
 			label8.Size = new Size(109, 20);
 			label8.TabIndex = 70;
@@ -162,7 +162,7 @@
 			// 
 			// txt_NguoiTao
 			// 
-			txt_NguoiTao.Location = new Point(455, 5);
+			txt_NguoiTao.Location = new Point(509, 8);
 			txt_NguoiTao.Margin = new Padding(3, 2, 3, 2);
 			txt_NguoiTao.Name = "txt_NguoiTao";
 			txt_NguoiTao.Size = new Size(213, 23);
@@ -174,7 +174,7 @@
 			label6.BackColor = Color.Transparent;
 			label6.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
 			label6.ForeColor = Color.White;
-			label6.Location = new Point(341, 7);
+			label6.Location = new Point(384, 8);
 			label6.Name = "label6";
 			label6.Size = new Size(85, 20);
 			label6.TabIndex = 67;
@@ -193,7 +193,7 @@
 			// 
 			// dateTime_NgayTao
 			// 
-			dateTime_NgayTao.Location = new Point(455, 81);
+			dateTime_NgayTao.Location = new Point(509, 78);
 			dateTime_NgayTao.Margin = new Padding(3, 2, 3, 2);
 			dateTime_NgayTao.Name = "dateTime_NgayTao";
 			dateTime_NgayTao.Size = new Size(213, 23);
@@ -205,7 +205,7 @@
 			label5.BackColor = Color.Transparent;
 			label5.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
 			label5.ForeColor = Color.White;
-			label5.Location = new Point(347, 82);
+			label5.Location = new Point(384, 78);
 			label5.Name = "label5";
 			label5.Size = new Size(78, 20);
 			label5.TabIndex = 64;
@@ -213,10 +213,10 @@
 			// 
 			// txt_TrangThai
 			// 
-			txt_TrangThai.Location = new Point(140, 85);
+			txt_TrangThai.Location = new Point(862, 50);
 			txt_TrangThai.Margin = new Padding(3, 2, 3, 2);
 			txt_TrangThai.Name = "txt_TrangThai";
-			txt_TrangThai.Size = new Size(174, 23);
+			txt_TrangThai.Size = new Size(154, 23);
 			txt_TrangThai.TabIndex = 63;
 			// 
 			// txt_MaVoucher
@@ -233,7 +233,7 @@
 			label3.BackColor = Color.Transparent;
 			label3.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
 			label3.ForeColor = Color.White;
-			label3.Location = new Point(10, 85);
+			label3.Location = new Point(769, 50);
 			label3.Name = "label3";
 			label3.Size = new Size(87, 20);
 			label3.TabIndex = 61;
@@ -264,20 +264,21 @@
 			// 
 			dtgView_Voucher.BackgroundColor = SystemColors.ControlLight;
 			dtgView_Voucher.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			dtgView_Voucher.Location = new Point(-2, 167);
+			dtgView_Voucher.Location = new Point(4, 167);
 			dtgView_Voucher.Margin = new Padding(3, 2, 3, 2);
 			dtgView_Voucher.Name = "dtgView_Voucher";
 			dtgView_Voucher.RowHeadersWidth = 51;
 			dtgView_Voucher.RowTemplate.Height = 29;
-			dtgView_Voucher.Size = new Size(921, 459);
+			dtgView_Voucher.Size = new Size(1065, 459);
 			dtgView_Voucher.TabIndex = 58;
+			dtgView_Voucher.CellClick += dtgView_Voucher_CellClick;
 			// 
 			// btn_Xoa
 			// 
 			btn_Xoa.BackColor = SystemColors.GradientActiveCaption;
 			btn_Xoa.BackgroundImage = (Image)resources.GetObject("btn_Xoa.BackgroundImage");
 			btn_Xoa.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-			btn_Xoa.Location = new Point(664, 118);
+			btn_Xoa.Location = new Point(803, 118);
 			btn_Xoa.Margin = new Padding(3, 2, 3, 2);
 			btn_Xoa.Name = "btn_Xoa";
 			btn_Xoa.Size = new Size(208, 45);
@@ -291,7 +292,7 @@
 			btn_Sua.BackColor = SystemColors.GradientActiveCaption;
 			btn_Sua.BackgroundImage = (Image)resources.GetObject("btn_Sua.BackgroundImage");
 			btn_Sua.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-			btn_Sua.Location = new Point(384, 118);
+			btn_Sua.Location = new Point(397, 118);
 			btn_Sua.Margin = new Padding(3, 2, 3, 2);
 			btn_Sua.Name = "btn_Sua";
 			btn_Sua.Size = new Size(203, 45);
@@ -305,7 +306,7 @@
 			button1.BackColor = SystemColors.GradientActiveCaption;
 			button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
 			button1.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-			button1.Location = new Point(76, 118);
+			button1.Location = new Point(57, 118);
 			button1.Margin = new Padding(3, 2, 3, 2);
 			button1.Name = "button1";
 			button1.Size = new Size(202, 45);
@@ -320,7 +321,7 @@
 			AutoScaleMode = AutoScaleMode.Font;
 			BackColor = SystemColors.GradientInactiveCaption;
 			BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-			ClientSize = new Size(918, 631);
+			ClientSize = new Size(1072, 631);
 			Controls.Add(cbb_TenVoucher);
 			Controls.Add(label10);
 			Controls.Add(txt_HSD);

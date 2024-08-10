@@ -81,18 +81,11 @@ namespace Dự_Án_Shop_Bán_Giầy_Thể_Thao
 			}
 		}
 
-		private void btn_Xoa_Click(object sender, EventArgs e)
-		{
-			var nv = svnv.GetNhanViens().Find(x => x.MaNhanVien == idWhenClick);
-			MessageBox.Show(svnv.Xóanv(nv));
-			LoadData();
-		}
 		public void FillData()
 		{
 			var nv = svnv.GetNhanViens().Where(x => x.MaNhanVien == idWhenClick).FirstOrDefault();
 			if (nv != null)
 			{
-				// Điền vào các trường textbox
 				txt_MaNhanVien.Text = nv.MaNhanVien;
 				txt_TenNhanVien.Text += nv.TenNhanVien;
 				txt_ViTri.Text += nv.Vitri;
@@ -122,7 +115,8 @@ namespace Dự_Án_Shop_Bán_Giầy_Thể_Thao
 			FillData();
 		}
 
-		private void btn_Sua_Click(object sender, EventArgs e)
+
+		private void btn_Sua_Click_1(object sender, EventArgs e)
 		{
 			try
 			{
@@ -150,6 +144,13 @@ namespace Dự_Án_Shop_Bán_Giầy_Thể_Thao
 			{
 				MessageBox.Show("Đã xảy ra lỗi: " + ex.Message);
 			}
+		}
+
+		private void btn_Xoa_Click_1(object sender, EventArgs e)
+		{
+			var nv = svnv.GetNhanViens().Find(x => x.MaNhanVien == idWhenClick);
+			MessageBox.Show(svnv.Xóanv(nv));
+			LoadData();
 		}
 	}
 }

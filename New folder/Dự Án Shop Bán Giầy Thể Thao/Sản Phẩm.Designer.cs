@@ -59,6 +59,7 @@
 			dgvSanPham.RowTemplate.Height = 29;
 			dgvSanPham.Size = new Size(1043, 455);
 			dgvSanPham.TabIndex = 0;
+			dgvSanPham.CellClick += dgvSanPham_CellClick;
 			// 
 			// btn_Them
 			// 

@@ -275,6 +275,7 @@
 			button2.TabIndex = 73;
 			button2.Text = "Xóa";
 			button2.UseVisualStyleBackColor = false;
+			button2.Click += button2_Click;
 			// 
 			// button3
 			// 
@@ -289,6 +290,7 @@
 			button3.TabIndex = 74;
 			button3.Text = "Sửa";
 			button3.UseVisualStyleBackColor = false;
+			button3.Click += button3_Click_1;
 			// 
 			// KhachHang
 			// 

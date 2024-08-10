@@ -42,8 +42,6 @@
 			txt_MaNhanVien = new TextBox();
 			label1 = new Label();
 			label2 = new Label();
-			btn_Xoa = new Button();
-			btn_Sua = new Button();
 			btn_Them = new Button();
 			txt_Luong = new TextBox();
 			label5 = new Label();
@@ -53,6 +51,8 @@
 			label11 = new Label();
 			txt_ViTri = new TextBox();
 			label10 = new Label();
+			btn_Sua = new Button();
+			btn_Xoa = new Button();
 			((System.ComponentModel.ISupportInitialize)dtgView_NhanVien).BeginInit();
 			SuspendLayout();
 			// 
@@ -187,34 +187,6 @@
 			label2.Size = new Size(0, 20);
 			label2.TabIndex = 30;
 			// 
-			// btn_Xoa
-			// 
-			btn_Xoa.BackColor = SystemColors.GradientActiveCaption;
-			btn_Xoa.BackgroundImage = (Image)resources.GetObject("btn_Xoa.BackgroundImage");
-			btn_Xoa.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-			btn_Xoa.Location = new Point(733, 230);
-			btn_Xoa.Margin = new Padding(3, 2, 3, 2);
-			btn_Xoa.Name = "btn_Xoa";
-			btn_Xoa.Size = new Size(190, 42);
-			btn_Xoa.TabIndex = 28;
-			btn_Xoa.Text = "Xoá";
-			btn_Xoa.UseVisualStyleBackColor = false;
-			btn_Xoa.Click += btn_Xoa_Click;
-			// 
-			// btn_Sua
-			// 
-			btn_Sua.BackColor = SystemColors.GradientActiveCaption;
-			btn_Sua.BackgroundImage = (Image)resources.GetObject("btn_Sua.BackgroundImage");
-			btn_Sua.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-			btn_Sua.Location = new Point(442, 230);
-			btn_Sua.Margin = new Padding(3, 2, 3, 2);
-			btn_Sua.Name = "btn_Sua";
-			btn_Sua.Size = new Size(210, 42);
-			btn_Sua.TabIndex = 27;
-			btn_Sua.Text = "Sửa ";
-			btn_Sua.UseVisualStyleBackColor = false;
-			btn_Sua.Click += btn_Sua_Click;
-			// 
 			// btn_Them
 			// 
 			btn_Them.BackColor = SystemColors.GradientActiveCaption;
@@ -325,6 +297,34 @@
 			label10.TabIndex = 77;
 			label10.Text = "Vị Trí";
 			// 
+			// btn_Sua
+			// 
+			btn_Sua.BackColor = SystemColors.GradientActiveCaption;
+			btn_Sua.BackgroundImage = (Image)resources.GetObject("btn_Sua.BackgroundImage");
+			btn_Sua.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+			btn_Sua.Location = new Point(442, 230);
+			btn_Sua.Margin = new Padding(3, 2, 3, 2);
+			btn_Sua.Name = "btn_Sua";
+			btn_Sua.Size = new Size(210, 42);
+			btn_Sua.TabIndex = 78;
+			btn_Sua.Text = "Sửa ";
+			btn_Sua.UseVisualStyleBackColor = false;
+			btn_Sua.Click += btn_Sua_Click_1;
+			// 
+			// btn_Xoa
+			// 
+			btn_Xoa.BackColor = SystemColors.GradientActiveCaption;
+			btn_Xoa.BackgroundImage = (Image)resources.GetObject("btn_Xoa.BackgroundImage");
+			btn_Xoa.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+			btn_Xoa.Location = new Point(743, 230);
+			btn_Xoa.Margin = new Padding(3, 2, 3, 2);
+			btn_Xoa.Name = "btn_Xoa";
+			btn_Xoa.Size = new Size(190, 42);
+			btn_Xoa.TabIndex = 79;
+			btn_Xoa.Text = "Xoá";
+			btn_Xoa.UseVisualStyleBackColor = false;
+			btn_Xoa.Click += btn_Xoa_Click_1;
+			// 
 			// Nhân_Viên
 			// 
 			AutoScaleDimensions = new SizeF(7F, 15F);
@@ -332,6 +332,8 @@
 			BackColor = SystemColors.GradientInactiveCaption;
 			BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
 			ClientSize = new Size(1048, 843);
+			Controls.Add(btn_Xoa);
+			Controls.Add(btn_Sua);
 			Controls.Add(label10);
 			Controls.Add(txt_ViTri);
 			Controls.Add(rbtn_nu);
@@ -353,8 +355,6 @@
 			Controls.Add(txt_MaNhanVien);
 			Controls.Add(label1);
 			Controls.Add(label2);
-			Controls.Add(btn_Xoa);
-			Controls.Add(btn_Sua);
 			Controls.Add(btn_Them);
 			Margin = new Padding(3, 2, 3, 2);
 			Name = "Nhân_Viên";
@@ -379,8 +379,6 @@
         private TextBox txt_MaNhanVien;
         private Label label1;
         private Label label2;
-        private Button btn_Xoa;
-        private Button btn_Sua;
         private Button btn_Them;
         private TextBox txt_Luong;
         private Label label5;
@@ -390,5 +388,7 @@
         private Label label11;
 		private TextBox txt_ViTri;
 		private Label label10;
+		private Button btn_Sua;
+		private Button btn_Xoa;
 	}
 }
